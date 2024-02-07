@@ -1,0 +1,45 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" x:Name="Screen_1_Name"
+	mc:Ignorable="d"
+	x:Class="DIL_UIDesignScreens.Day_in_Lieu___Entitled___acquire_usage"
+	Width="1024" Height="800">
+
+    <Grid x:Name="LayoutRoot" Background="White" Height="800" Width="1024">
+        <GroupBox Header=" Provide Additional Information:" Margin="29,20,42,0" FontWeight="Bold" FontSize="15" BorderThickness="2" Height="404" VerticalAlignment="Top" Foreground="#FF6B1515"/>
+        <ScrollViewer Margin="0,103.333,8,0" Height="54.551" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment"/>
+        <Label Content="Requisition No:" HorizontalAlignment="Left" Margin="54,107,0,0" VerticalAlignment="Top" Width="148.672" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+        <Label Content="Description:" HorizontalAlignment="Left" Margin="54,144,0,0" VerticalAlignment="Top" Width="148.672" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+        <Label Content="Manufaturer:" HorizontalAlignment="Left" Margin="54,182,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontWeight="Bold" Width="149" HorizontalContentAlignment="Right"/>
+        <Label Content="Used Amount:" HorizontalAlignment="Right" Margin="0,108,358,0" VerticalAlignment="Top" Width="128.07" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+        <Label Content="Status:" HorizontalAlignment="Right" Margin="0,145,358,0" VerticalAlignment="Top" Width="128.07" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+        <Label Content="Model Year:" Margin="0,187,358,0" VerticalAlignment="Top" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Right" HorizontalAlignment="Right" Width="146.561"/>
+        <Label Content="Laptops (Work from home + spare)" HorizontalAlignment="Left" Margin="208,145,0,0" VerticalAlignment="Top" Width="217.561" FontFamily="Tahoma" FontSize="13"/>
+        <Label Content="Uploaded to OneWorld " Margin="0,145,119,0" VerticalAlignment="Top" FontFamily="Tahoma" HorizontalAlignment="Right" Width="228" FontSize="13"/>
+        <Label Content="BD 5,000.000" Margin="0,109,119,0" VerticalAlignment="Top" FontFamily="Tahoma" HorizontalAlignment="Right" Width="228" FontSize="13"/>
+        <Label Content="Remarks:" HorizontalAlignment="Left" Margin="51,264,0,512" Width="152" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Right" VerticalAlignment="Top"/>
+        <TextBox Margin="216,268,69,448" TextWrapping="Wrap" FontFamily="Tahoma" FontSize="13.333" VerticalScrollBarVisibility="Visible" Height="84" VerticalAlignment="Top"/>
+        <Button Content="Submit" HorizontalAlignment="Left" Margin="212,0,0,402" VerticalAlignment="Bottom" Width="130" FontWeight="Bold" FontSize="13.333">
+            <Button.Effect>
+                <DropShadowEffect Opacity="0.5" BlurRadius="3" Color="#FF352F2F"/>
+            </Button.Effect>
+        </Button>
+        <Button Content="Cancel" HorizontalAlignment="Left" Margin="359,0,0,402" VerticalAlignment="Bottom" Width="130" FontWeight="Bold" FontSize="13.333">
+            <Button.Effect>
+                <DropShadowEffect Opacity="0.5" BlurRadius="3"/>
+            </Button.Effect>
+        </Button>
+        <Label Content="Project No:" HorizontalAlignment="Left" Margin="54,74,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Right" Width="148.673"/>
+        <Label Content="2220210" HorizontalAlignment="Left" Margin="208,71,0,0" VerticalAlignment="Top" Width="217.561" FontFamily="Tahoma" FontSize="13"/>
+        <Label Content="20220107" HorizontalAlignment="Left" Margin="208,106,0,0" VerticalAlignment="Top" Width="217.561" FontFamily="Tahoma" FontSize="13"/>
+        <Label Content="Amount:" Margin="0,74,359,0" VerticalAlignment="Top" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Right" HorizontalAlignment="Right" Width="148.673"/>
+        <Label Content="BD 5,000.000" Margin="0,73,130,0" VerticalAlignment="Top" FontFamily="Tahoma" HorizontalAlignment="Right" Width="217.561" FontSize="13"/>
+        <Label Content="Estimated Life Span:" HorizontalAlignment="Left" Margin="29,224,0,0" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Right" Width="174" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="683,189,0,589" TextWrapping="Wrap" Width="158" Height="22"/>
+        <ComboBox Margin="215,187,0,0" VerticalAlignment="Top" SelectedIndex="0" HorizontalAlignment="Left" Width="293" d:LayoutOverrides="VerticalAlignment"/>
+        <TextBox HorizontalAlignment="Left" Margin="216,226,0,552" TextWrapping="Wrap" Width="158" Height="22" VerticalAlignment="Top"/>
+        <Label Content="Year/s" HorizontalAlignment="Left" Margin="378,226,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Left" Width="57" FontSize="11" FontStyle="Italic" d:LayoutOverrides="HorizontalAlignment, VerticalAlignment"/>
+    </Grid>
+</UserControl>

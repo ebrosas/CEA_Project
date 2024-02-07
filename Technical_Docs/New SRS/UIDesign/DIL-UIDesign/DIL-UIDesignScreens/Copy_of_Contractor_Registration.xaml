@@ -1,0 +1,74 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:pi="http://schemas.microsoft.com/prototyping/2010/interactivity" x:Name="Screen_1_Name"
+	mc:Ignorable="d"
+	x:Class="DIL_UIDesignScreens.Copy_of_Contractor_Registration"
+	Width="1024" Height="800">
+
+	<Grid x:Name="LayoutRoot" Background="White" Height="800" Width="1024">
+		<Label Content="Contractor No:" HorizontalAlignment="Left" Margin="62.786,200.313,0,0" VerticalAlignment="Top" Width="148.672" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+		<TextBox HorizontalAlignment="Left" Margin="216.458,203.313,0,0" TextWrapping="Wrap" Text="60001" VerticalAlignment="Top" Width="121.113"/>
+		<Label Content="Contractor Name:" HorizontalAlignment="Left" Margin="62.786,231.829,0,0" VerticalAlignment="Top" Width="148.672" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+		<Label Content="Department to Visit:" HorizontalAlignment="Left" Margin="76.789,364.303,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontWeight="Bold"/>
+		<Label Content="Company Name:" HorizontalAlignment="Right" Margin="0,295.334,814.735,0" VerticalAlignment="Top" Width="128.07" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+		<Label Content="Contractor ID Card Generator" HorizontalAlignment="Left" Margin="37.228,130.15,0,0" VerticalAlignment="Top" FontSize="17.333" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Background="{x:Null}" Foreground="#FF291BC0">
+			<Label.Effect>
+				<DropShadowEffect Opacity="0.5" Color="#FFB6AAAA" ShadowDepth="3"/>
+			</Label.Effect>
+		</Label>
+		<Button Content="Modify" HorizontalAlignment="Left" Margin="88.941,0,0,154.889" VerticalAlignment="Bottom" Width="95" Height="26">
+			<Button.Effect>
+				<DropShadowEffect Opacity="0.5" BlurRadius="3"/>
+			</Button.Effect>
+			<i:Interaction.Triggers>
+				<i:EventTrigger EventName="Click">
+					<pi:NavigateToScreenAction TargetScreen="DIL_UIDesignScreens.Copy_of_Day_in_Lieu_Inquiry"/>
+				</i:EventTrigger>
+			</i:Interaction.Triggers>
+		</Button>
+		<Button Content="Print Card" HorizontalAlignment="Left" Margin="203.452,0,0,154.889" VerticalAlignment="Bottom" Width="95" Height="26">
+			<Button.Effect>
+				<DropShadowEffect Opacity="0.5" BlurRadius="3" Color="#FF352F2F"/>
+			</Button.Effect>
+		</Button>
+		<Button Content="Close" HorizontalAlignment="Right" Margin="0,0,609.429,154.889" VerticalAlignment="Bottom" Width="95" Height="26">
+			<i:Interaction.Triggers>
+				<i:EventTrigger EventName="Click">
+					<pi:NavigateToScreenAction TargetScreen="DIL_UIDesignScreens.Day_in_Lieu_Appoval_Search"/>
+				</i:EventTrigger>
+			</i:Interaction.Triggers>
+			<Button.Effect>
+				<DropShadowEffect Opacity="0.5" BlurRadius="3"/>
+			</Button.Effect>
+		</Button>
+		<Image Margin="0,0,0,709" Source="Image2.png" Stretch="Fill"/>
+		<Label Content="ID No. (CPR):" HorizontalAlignment="Left" Margin="62.593,329.82,0,0" VerticalAlignment="Top" Width="148.672" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+		<Label Content="Job Title:" HorizontalAlignment="Left" Margin="62.593,264.234,0,0" VerticalAlignment="Top" Width="148.672" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+		<Button Content="Search..." Margin="342.571,201.344,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="57" RenderTransformOrigin="0.706,0.092"/>
+		<Label Content="JAMES JONES" HorizontalAlignment="Left" Margin="213.651,232.705,0,0" VerticalAlignment="Top" Width="256.133" FontFamily="Tahoma"/>
+		<Label Content="ABC Company" HorizontalAlignment="Left" Margin="214.458,294.261,0,0" VerticalAlignment="Top" Width="256.133" FontFamily="Tahoma"/>
+		<Label Content="Forklift Driver" HorizontalAlignment="Left" Margin="213.458,264.778,0,0" VerticalAlignment="Top" Width="256.133" FontFamily="Tahoma"/>
+		<Label Content="801254785" HorizontalAlignment="Left" Margin="214.651,329.82,0,0" VerticalAlignment="Top" Width="256.133" FontFamily="Tahoma"/>
+		<Label Content="7600 - INFORMATION&amp;COMM.TECHNOLOGY" HorizontalAlignment="Left" Margin="214.458,364.303,0,0" VerticalAlignment="Top" Width="283.794" FontFamily="Tahoma"/>
+		<GroupBox Header="Picture Information" HorizontalAlignment="Left" Height="249.446" Margin="675.847,173.191,0,0" VerticalAlignment="Top" Width="275.153" FontWeight="Bold" FontSize="13.333" Foreground="#FF9E2361">
+			<Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Right" Height="159" Margin="0,0,46.49,47.486" VerticalAlignment="Bottom" Width="169.663" Background="#FF343D97">
+				<Image HorizontalAlignment="Left" Height="145.49" VerticalAlignment="Top" Width="157" RenderTransformOrigin="0.089,0.307" Margin="6,5.51,0,0" Source="no_picture_icon.png" Stretch="Fill"/>
+			</Border>
+		</GroupBox>
+		<Button Content="Browse..." Margin="732.176,382.678,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="76" RenderTransformOrigin="0.706,0.092"/>
+		<Button Content="Remove" Margin="821.176,382.678,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="76" RenderTransformOrigin="0.706,0.092"/>
+		<Label Content="Registration Date:" HorizontalAlignment="Left" Margin="88.941,400.303,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontWeight="Bold"/>
+		<Label Content="01-Aug-2021 10:30:00" HorizontalAlignment="Left" Margin="214.458,399.303,0,0" VerticalAlignment="Top" Width="283.794" FontFamily="Tahoma"/>
+		<GroupBox Header="Card Information" HorizontalAlignment="Left" Margin="88.941,454,0,0" VerticalAlignment="Top" Height="133.96" Width="586.983" FontSize="13.333" FontWeight="Bold" FontFamily="Segoe UI" Foreground="#FF9E2361">
+			<Label Content="Card Reference No.:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="131.672" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Right" Margin="25,14,0,0" FontSize="12"/>
+		</GroupBox>
+		<ListBox HorizontalAlignment="Left" Height="90" Margin="254.571,484.96,0,0" VerticalAlignment="Top" Width="160" ScrollViewer.VerticalScrollBarVisibility="Visible">
+			<ListBoxItem Content="210860001"/>
+			<ListBoxItem Content="210160001"/>
+		</ListBox>
+		<Button Content="Add" Margin="431.176,486.96,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="76" RenderTransformOrigin="0.706,0.092"/>
+		<Button Content="Delete" Margin="514.176,486.96,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="76" RenderTransformOrigin="0.706,0.092"/>
+	</Grid>
+</UserControl>

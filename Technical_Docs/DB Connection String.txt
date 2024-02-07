@@ -1,0 +1,9 @@
+Data Source: GRMSQLDB
+Initial Catalog: ProjectRequisition
+User ID: ceauser
+Password: Alig276of
+
+Data Source: GRBHSQDT01
+Initial Catalog: ProjectRequisition
+User ID: ceauser
+Password: ceapwd

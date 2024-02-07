@@ -1,0 +1,634 @@
+﻿/*#region Fonts */
+@font-face {
+    font-family: 'varela_round_regular';
+    src: url('../fonts/varelaround-regular.eot');
+    src: url('../fonts/varelaround-regular.eot');
+    src: url('../fonts/varelaround-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/varelaround-regular.woff2') format('woff2'), url('../fonts/varelaround-regular.woff') format('woff'), url('../fonts/varelaround-regular.ttf') format('truetype'), url('../fonts/varelaround-regular.svg#varela_roundregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'varela_round_bold';
+    src: url(../fonts/varelaround-regular.eot);
+    src: url('../fonts/varelaround-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/varelaround-regular.woff2') format('woff2'), url('../fonts/varelaround-regular.woff') format('woff'), url('../fonts/varelaround-regular.ttf') format('truetype'), url('../fonts/varelaround-regular.svg#varela_roundregular') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'baumans';
+    src: url('../fonts/baumans-regular-webfont.ttf') format('truetype'), url('../fonts/baumans-regular-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'itim';
+    src: url('../fonts/itim-regular-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'merienda';
+    src: url('../fonts/merienda-bold-webfont.ttf') format('truetype'), url('../fonts/merienda-bold-webfont.woff') format('woff'), url('../fonts/merienda-regular-webfont.ttf') format('truetype'), url('../fonts/merienda-regular-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url('../fonts/Montserrat-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat-Medium';
+    src: url('../fonts/Montserrat-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat-SemiBold';
+    src: url('../fonts/Montserrat-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat-Bold';
+    src: url('../fonts/Montserrat-Bold.ttf') format('truetype');
+    /*src: url('../fonts/Montserrat-Bold.ttf') format('truetype');*/
+}
+
+@font-face {
+    font-family: 'OriginalSurfer-Regular';
+    src: url('../fonts/OriginalSurfer-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Mukta-Regular';
+    src: url('../fonts/Mukta-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Mukta-Bold';
+    src: url('../fonts/Mukta-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Mukta-ExtraBold';
+    src: url('../fonts/Mukta-ExtraBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Ubuntu-Regular';
+    src: url('../fonts/Ubuntu-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Ubuntu-Medium';
+    src: url('../fonts/Ubuntu-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Ubuntu-MediumItalic';
+    src: url('../fonts/Ubuntu-MediumItalic.ttf') format('truetype');
+}
+
+
+@font-face {
+    font-family: 'Ubuntu-Bold';
+    src: url('../fonts/Ubuntu-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Bangers-Regular';
+    src: url('../fonts/Bangers-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Anton-Regular';
+    src: url('../fonts/Anton-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'BioRhyme-Bold';
+    src: url('../fonts/BioRhyme-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'BioRhyme-Light';
+    src: url('../fonts/BioRhyme-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url('../fonts/Roboto-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto-Light';
+    src: url('../fonts/Roboto-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('../fonts/Roboto-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Poppins-SemiBold';
+    src: url('../fonts//Poppins-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Poppins-Bold';
+    src: url('../fonts//Poppins-Bold.ttf') format('truetype');
+    /*src: url('../lib/fonts//Poppins-Bold.ttf') format('truetype');*/
+}
+
+@font-face {
+    font-family: 'Poppins-ExtraBold';
+    src: url('../fonts//Poppins-ExtraBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'CroissantOne-Regular';
+    src: url('../fonts//CroissantOne-Regular.ttf') format('truetype');
+}
+/*#endregion */
+
+/*#region Form Apperance Styles */
+.pageFooter {
+    font-family: Roboto-Bold;
+    font-size: 12px;
+}
+
+.pageTitle {
+    font-family: Montserrat-SemiBold;
+    /*font-family: itim;*/
+    font-size: 15px;
+    letter-spacing: 2px;
+    color: #4b4c4d;
+}
+
+.appTitle {
+    font-family: itim;
+    letter-spacing: 1px;
+    font-size: 36px;    
+}
+
+.appTitle2 {
+    font-family: Montserrat-Regular;
+    letter-spacing: 0px;
+    font-size: 18px;
+    padding-left: 3px;
+    /*font-style: italic; */
+}
+
+.fieldTitle {
+    font-family: Ubuntu-Bold;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #4b4c4d;
+    text-align: right;
+}
+
+.fieldLabel {
+    font-family: Montserrat-Bold;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #4b4c4d;
+    text-align: right;
+    font-weight: 800;
+    line-height: 1.5;
+}
+
+.fieldCaption {
+    font-family: Montserrat-Medium;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 600;
+    color: #54627B;
+}
+
+.fieldValue {
+    font-family: 'Montserrat-Regular';
+    font-size: 14px;
+    font-weight: 500;
+    color: #171810;
+}
+
+.formFieldCaption {
+    font-family: 'itim';
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: #4b4c4d;
+    text-align: right;
+    font-weight: 600;
+}
+
+.securityMsgTitle {
+    font-family: Roboto-Regular;
+    font-size: 16px;    
+    letter-spacing: 1px;
+    color: #4b4c4d;
+}
+
+.borderLess {
+    border: 1px solid silver;
+    border-radius: 5px 5px;
+    /* background-color: #f5f5f5;*/
+}
+
+.disabledInput {
+    border: none;
+    background-color: #f5f5f5;
+}
+
+.alertText {
+    font-weight: 600;
+    color: red
+}
+
+.openStatus {
+    background-color: blue;
+    color: red;
+    font-weight: 600;
+    border-radius: 5px 5px;
+    margin: 5px;
+}
+
+.errorPanel {
+    font-family: Montserrat-Regular;
+    font-size: 14px;
+    text-align: left;
+    /*letter-spacing: 1px;*/
+}
+
+.tablePanel {
+    font-family: "Montserrat-SemiBold";
+    font-size: 12px;
+    text-align: left;
+    color: #54627B;
+    border: 1px solid #54627B;
+    border-radius: 5px 5px 5px 5px;
+    background-color: #F5F5F5;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 10px #738FA7;
+}
+
+.modalHeader {
+    font-family: Montserrat-Bold;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    line-height: 1.7;
+    text-transform: capitalize;
+}
+
+.requiredField {
+    color: red;
+    vertical-align: middle;
+    font-size: 14px;
+}
+
+.mandatoryField {
+    vertical-align: middle;
+    font-size: 14px;
+}
+
+.groupTitle {
+    font-family: 'Montserrat-Bold';
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    color: #DB1F48;
+}
+
+.fieldsetTitle {
+    font-family: 'Montserrat-Bold';
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: #DB1F48;
+}
+
+.linkTitle {
+    font-family: Mukta-Regular;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 0.2;
+}
+
+.modalFieldTitle {
+    font-family: Montserrat-SemiBold;
+    font-size: 14px;
+    color: #4b4c4d;
+    text-align: right;
+}
+/*#endregion */
+
+/*#region DataTable Styles */
+.generalTable {
+    margin: 0 auto;
+    font-family: Verdana;
+    table-layout: fixed;
+    /*font-size: 10px;*/
+}
+
+    .generalTable th {
+        text-align: center;
+        padding-left: 0px;
+        margin-left: 0px;
+        background-color: #3F92B7;
+        color: white;
+        font-family: 'Arial Rounded MT';
+        font-size: 14px;
+    }
+
+        .generalTable th.dt-body-center, .generalTable td.dt-body-center {
+            text-align: center;
+        }
+
+    .generalTable tr:hover {
+        background-color: rgb(163, 206, 241) !important;
+        color: #3C3C3C;
+    }
+
+    .generalTable tbody tr {
+        font-size: 13px;
+        letter-spacing: 1px;
+    }
+
+    .generalTable .tableButton {
+        margin: 0px 5px;
+    }
+/*#endregion*/
+
+/*#region Links and Buttons */
+.parentLink {
+    text-decoration: none;       
+}
+
+.sideMenuTitleLink {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.sideMenuLink {
+    font-size: 12px;
+}
+
+.formActionBtn {
+    margin-left: 5px;
+    font-family: Montserrat-Regular;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 2;
+    letter-spacing: 1px;
+    background-color: #4cb6a0;
+    border-color: #4cb6a0;
+    margin-top: 2px;
+    padding: 2px 10px;
+    color: white;
+}
+
+    .formActionBtn:hover {
+        background-color: #40897a;
+        border-color: #40897a;
+        font-size: 14px;
+        font-weight: 600;
+        color: #FBE698;
+    }
+
+    .formActionBtn:active,
+    .formActionBtn.active {
+        background-color: #2e6257 !important;
+        border-color: #2e6257 !important;
+    }
+
+    .formActionBtn:focus,
+    .formActionBtn.focus {
+        background-color: #4cb6a0 !important;
+        border-color: #4cb6a0 !important;
+    }
+
+.btn-w {
+    width: 180px;
+}
+
+.gridLink {
+    font-weight: 600;
+    font-size: 13px;
+    /*text-decoration: none;*/
+    /*color: #590C69;*/
+    color: blue;
+}
+
+.mainTabPanel {
+}
+
+    .mainTabPanel a:hover, a:focus {
+        text-decoration: none;
+        outline: none;
+    }
+
+    .mainTabPanel .nav-tabs {
+        border: none;
+        border-bottom: 2px solid #0a5687;
+        margin: 0;
+    }
+
+        .mainTabPanel .nav-tabs li a {
+            padding: 5px 20px;
+            margin: 0 10px -1px 0;
+            font-family: itim;
+            font-size: 15px;
+            letter-spacing: 1px;
+            font-weight: 600;
+            color: #6f6f6f;
+            text-transform: uppercase;
+            border: 2px solid #e6e5e1;
+            border-bottom: none;
+            border-radius: 5px 5px 0 0;
+            z-index: 1;
+            position: relative;
+            transition: all 0.3s ease 0s;
+        }
+
+            .mainTabPanel .nav-tabs li a:hover,
+            .mainTabPanel .nav-tabs li.active a {
+                background: #fff;
+                color: #0a5687;
+                border: 2px solid #4f6c6a;
+                border-bottom-color: transparent;
+                font-weight: bold;
+            }
+
+            .mainTabPanel .nav-tabs li a:before {
+                content: "";
+                display: block;
+                height: 2px;
+                background: #fff;
+                position: absolute;
+                bottom: -2px;
+                left: 0;
+                right: 0;
+                transform: scaleX(0);
+                transition: all 0.3s ease-in-out 0s;
+            }
+
+            .mainTabPanel .nav-tabs li.active a:before,
+            .mainTabPanel .nav-tabs li a:hover:before {
+                transform: scaleX(1);
+            }
+
+    .mainTabPanel .tab-content {
+        font-size: 17px;
+        color: #6f6f6f;
+        line-height: 30px;
+        letter-spacing: 1px;
+        position: relative;
+        height: 62vh;
+        margin-right: -50px; /* Maximum width of scrollbar */
+        padding-right: 50px; /* Maximum width of scrollbar */
+        overflow-y: auto;
+        overflow-x: hidden;
+        margin-bottom: 3px;
+        padding: 0px 10px;
+    }
+
+    .mainTabPanel .tab-pane {
+        padding: 0px 10px;        
+    }
+
+.actionButton {
+    font-family: Montserrat-Regular;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.75;
+    letter-spacing: 1px;
+    width: 165px;
+    margin: 0px 4px;
+}
+
+.btnGroupItem {
+    font-family: Montserrat-Regular;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 1.5;
+    letter-spacing: 1px;
+}
+
+.securityButton {
+    font-family: Montserrat-Regular;
+    font-size: 14px;
+    font-weight:bolder;
+    line-height: 1.75;
+    letter-spacing: 1px;
+    margin: 0px 4px;
+}
+
+.modalButton {
+    font-family: Montserrat-Regular;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 1px;
+    width: 90px;
+    margin: 0px 4px;
+}
+/*#endregion */
+
+/*#region Panel Styles */
+.panelHeader {
+    border: 1px solid #54627B;
+    border-radius: 5px 5px 0px 0px;
+    background-color: #738FA7;
+    color: white;
+    box-sizing: border-box;
+    font-family: 'Ubuntu-Medium';
+    font-size: 14px;
+    font-weight: 600;
+    vertical-align: middle;
+    padding: 4px 10px;
+}
+
+.panelBody {
+    font-size: 12px;
+    font-family: Montserrat-SemiBold;
+    color: #54627B;
+    border: 1px solid #54627B;
+    border-radius: 0px 0px 5px 5px;
+    /*background-color: #F2F1F0;*/
+    background-color: #F5F5F5;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 10px #738FA7;
+}
+
+.panelPageTitle {
+    font-family: Montserrat-SemiBold;
+    font-size: 13px;
+    color: white;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px 5px;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 5px #61666F;
+}
+
+.requestHeader {
+    margin: 0px;
+    background-color: #f5f5f5;
+    padding: 10px 0px;
+    box-shadow: inset 0 0 7px 5px #ddd;
+}
+
+.pageErrorHeader {
+    margin: 0px;
+    background-color: white;
+    padding: 10px 0px;
+    box-shadow: inset 0 0 7px 5px #ddd;
+}
+
+.formHeader {
+    margin: 0px;
+    padding: 0px;
+    height: 37px;
+    line-height: 37px;
+    font-family: Poppins-Bold;
+    font-size: 17px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    background-color: #746C70;
+    /*background-color: #738FA7;*/
+    border-radius: 5px 5px 0px 0px;
+    /*box-shadow: 5px 5px 10px 3px #999999;*/
+}
+
+.wrap-input100 {
+    width: 100%;
+    position: relative;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    padding: 10px 30px 9px 22px;
+    margin-top: 10px;
+}
+
+.label-input100 {
+    font-family: Montserrat-SemiBold;
+    font-size: 13px;
+    line-height: 1.5;
+    text-transform: uppercase;
+    color: #3298ca;
+}
+
+.input100 {
+    display: block;
+    width: 100%;
+    background: transparent;
+    font-family: Montserrat-Regular;
+    font-size: 15px;
+    color: #555555;
+    line-height: 1.75;
+    padding-right: 15px;
+}
+/*#endregion */
+
+

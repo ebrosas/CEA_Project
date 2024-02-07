@@ -1,0 +1,61 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" x:Name="Screen_1_Name"
+	mc:Ignorable="d"
+	x:Class="DIL_UIDesignScreens.Day_in_Lieu_Requisition___Pre_approve"
+	Width="1024" Height="800">
+
+	<Grid x:Name="LayoutRoot" Background="White" Height="800" Width="1024">
+		<ScrollViewer Margin="0,103.333,8,0" Height="696.667" VerticalAlignment="Top"/>
+		<Label Content="Employee No:" HorizontalAlignment="Left" Margin="54.443,192.995,0,0" VerticalAlignment="Top" Width="148.672" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+		<TextBox HorizontalAlignment="Left" Margin="210.536,192.995,0,0" TextWrapping="Wrap" Text="10003632" VerticalAlignment="Top" Width="206.113"/>
+		<Label Content="Cost Center:" HorizontalAlignment="Left" Margin="54.443,232.995,0,0" VerticalAlignment="Top" Width="148.672" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+		<Label Content="Immediate Supervisor:" HorizontalAlignment="Left" Margin="54.432,270.105,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontWeight="Bold"/>
+		<Label Content="Employee Name:" HorizontalAlignment="Right" Margin="0,193.995,358.487,0" VerticalAlignment="Top" Width="128.07" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+		<Label Content="Department:" HorizontalAlignment="Right" Margin="0,233.995,358.487,0" VerticalAlignment="Top" Width="128.07" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+		<Label Content="Department Manager:" Margin="0,269.995,358.487,0" VerticalAlignment="Top" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Right" HorizontalAlignment="Right" Width="146.561"/>
+		<Label Content="Pre-approve Day-in-Lieu Requisition" HorizontalAlignment="Left" Margin="28.898,124.831,0,0" VerticalAlignment="Top" FontSize="17.333" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Background="{x:Null}" Foreground="#FF291BC0">
+			<Label.Effect>
+				<DropShadowEffect Opacity="0.5" Color="#FFB6AAAA" ShadowDepth="3"/>
+			</Label.Effect>
+		</Label>
+		<Border BorderBrush="Black" BorderThickness="1" Height="103.333" VerticalAlignment="Top">
+			<Border.Background>
+				<ImageBrush ImageSource="Page Banner.png"/>
+			</Border.Background>
+		</Border>
+		<Label Content="7600" HorizontalAlignment="Left" Margin="208.316,233.416,0,0" VerticalAlignment="Top" Width="217.561" FontFamily="Tahoma"/>
+		<Label Content="MOHAMED HUSNI MOHAMED AMEEN " HorizontalAlignment="Left" Margin="208.316,268.387,0,0" VerticalAlignment="Top" Width="217.561" FontFamily="Tahoma"/>
+		<Label Content="INFORMATION &amp; COMM. TECHNOLOGY" Margin="0,233.995,119.129,0" VerticalAlignment="Top" FontFamily="Tahoma" HorizontalAlignment="Right" Width="228"/>
+		<Label Content="ABDULLA A. HAMMED AL-ALAIWAT" Margin="0,268.387,119.129,0" FontFamily="Tahoma" HorizontalAlignment="Right" Width="228" VerticalAlignment="Top"/>
+		<Label Content="Reason for Working:" HorizontalAlignment="Left" Margin="51.11,0,0,287.187" VerticalAlignment="Bottom" Width="148.672" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+		<TextBox Margin="208.316,0,74.335,242.743" TextWrapping="Wrap" Text="Need to finish extra work." VerticalAlignment="Bottom" Height="64.182" FontFamily="Tahoma" FontSize="13.333" VerticalScrollBarVisibility="Visible"/>
+		<Button Content="Draft" HorizontalAlignment="Left" Margin="207.314,0,0,168.339" VerticalAlignment="Bottom" Width="130" FontWeight="Bold" FontSize="13.333" Height="26">
+			<Button.Effect>
+				<DropShadowEffect Opacity="0.5" BlurRadius="3" Color="#FF352F2F"/>
+			</Button.Effect>
+		</Button>
+		<Button Content="Submit" HorizontalAlignment="Left" Margin="355.094,0,0,168.339" VerticalAlignment="Bottom" Width="130" FontWeight="Bold" FontSize="13.333" Height="26">
+			<Button.Effect>
+				<DropShadowEffect Opacity="0.5" BlurRadius="3"/>
+			</Button.Effect>
+		</Button>
+		<Button Content="Reset Values" Margin="503.505,0,390.495,167.228" VerticalAlignment="Bottom" FontWeight="Bold" FontSize="13.333" Height="26">
+			<Button.Effect>
+				<DropShadowEffect Opacity="0.5" BlurRadius="3" Color="#FF352F2F"/>
+			</Button.Effect>
+		</Button>
+		<Button Content="&lt;&lt; Back" HorizontalAlignment="Right" Margin="0,0,242.715,167.228" VerticalAlignment="Bottom" Width="130" FontWeight="Bold" FontSize="13.333" Height="26">
+			<Button.Effect>
+				<DropShadowEffect Opacity="0.5" BlurRadius="3"/>
+			</Button.Effect>
+		</Button>
+		<Button Content="..." Margin="430.108,192.995,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="31" FontWeight="Bold"/>
+		<TextBox HorizontalAlignment="Right" Margin="0,193.995,116.907,0" TextWrapping="Wrap" Text="ERVIN OLINAS BROSAS" VerticalAlignment="Top" Width="228"/>
+		<Button Content="..." Margin="0,193.911,76.557,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="31" FontWeight="Bold"/>
+		<Label Content="Apply To:" HorizontalAlignment="Left" Margin="54.432,300.105,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontWeight="Bold" Width="148.683" HorizontalContentAlignment="Right"/>
+		<Calendar HorizontalAlignment="Left" Margin="210.536,300.105,0,321.926"/>
+	</Grid>
+</UserControl>

@@ -1,0 +1,99 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:pi="http://schemas.microsoft.com/prototyping/2010/interactivity" x:Name="Screen_1_Name"
+	mc:Ignorable="d"
+	x:Class="DIL_UIDesignScreens.Day_in_Lieu_Appoval_Search"
+	Width="1024" Height="800">
+
+    <Grid x:Name="LayoutRoot" Background="White" Height="800" Width="1024">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup"/>
+        </VisualStateManager.VisualStateGroups>
+        <Label Content="Fiscal Year" HorizontalAlignment="Left" Margin="53.346,166.549,0,0" VerticalAlignment="Top" Width="148.672" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+        <Label Content="Project Status" HorizontalAlignment="Left" Margin="27.801,201.129,0,0" VerticalAlignment="Top" Width="174.217" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+        <Label Content="Project Inquiry" HorizontalAlignment="Left" Margin="28.898,107.08,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Background="{x:Null}" Foreground="#FF291BC0">
+            <Label.Effect>
+                <DropShadowEffect Opacity="0.5" Color="#FFB6AAAA" ShadowDepth="3"/>
+            </Label.Effect>
+        </Label>
+        <GroupBox Header="       Projects List" Margin="28.898,0,41.906,109.557" FontWeight="Bold" FontSize="13.333" BorderThickness="2" Height="354.666" VerticalAlignment="Bottom" Foreground="#FF9E2361">
+            <DataGrid Margin="12.222,11.14,19.444,0" RenderTransformOrigin="0.5,0.5" AutoGenerateColumns="False" FontSize="12" FontWeight="Normal" FontFamily="Tahoma" Height="309.486" VerticalAlignment="Top">
+                <DataGrid.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleY="0.18"/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="0.552"/>
+                    </TransformGroup>
+                </DataGrid.RenderTransform>
+                <DataGrid.Columns>
+                    <DataGridHyperlinkColumn Binding="{x:Null}" ContentBinding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="New Requisition"/>
+                    <DataGridHyperlinkColumn Header="Project No." Width="120"/>
+                    <DataGridTextColumn Header="Project Date" Width="150"/>
+                    <DataGridTextColumn Header="Exp. Type" Width="80"/>
+                    <DataGridTextColumn Header="Description" Width="120"/>
+                    <DataGridTextColumn Header="Detailed Description" Width="150"/>
+                    <DataGridTextColumn Header="Account No." Width="80"/>
+                    <DataGridTextColumn Header="Status" Width="130"/>
+                    <DataGridTextColumn Header="Project Amount" Width="150"/>
+                </DataGrid.Columns>
+                <ListBoxItem Content="Project No."/>
+                <ListBoxItem Content="Test"/>
+                <ListBoxItem/>
+                <ListBoxItem/>
+                <ListBoxItem/>
+                <ListBoxItem/>
+                <ListBoxItem/>
+                <ListBoxItem/>
+                <ComboBoxItem/>
+                <ComboBoxItem/>
+                <ComboBoxItem/>
+            </DataGrid>
+        </GroupBox>
+        <Label Content="Expenditure Type" HorizontalAlignment="Right" Margin="0,163.082,362.373,0" VerticalAlignment="Top" Width="128.07" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="34.333" Margin="28.898,0,0,437.664" VerticalAlignment="Bottom" Width="33.666">
+            <Border.Background>
+                <ImageBrush ImageSource="search.png"/>
+            </Border.Background>
+        </Border>
+        <Image Margin="0,0,0,709" Source="CEA Banner.PNG" Stretch="Fill"/>
+        <Label Content="Cost Center" HorizontalAlignment="Left" Margin="27.801,234.597,0,0" VerticalAlignment="Top" Width="174.217" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+        <Label Content="Project No." HorizontalAlignment="Left" Margin="584.417,198.605,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontWeight="Bold"/>
+        <Label Content="Keywords" HorizontalAlignment="Left" Margin="533.557,234.596,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontWeight="Bold" Width="128.07" HorizontalContentAlignment="Right"/>
+        <Button Content="Search" HorizontalAlignment="Left" Margin="207.018,0,0,495.632" VerticalAlignment="Bottom" Width="92" Height="26">
+            <Button.Effect>
+                <DropShadowEffect Opacity="0.5" BlurRadius="3"/>
+            </Button.Effect>
+        </Button>
+        <Button Content="Reset" HorizontalAlignment="Left" Margin="315.071,0,0,495.632" VerticalAlignment="Bottom" Width="88.927" Height="26">
+            <Button.Effect>
+                <DropShadowEffect Opacity="0.5" BlurRadius="3" Color="#FF352F2F"/>
+            </Button.Effect>
+        </Button>
+        <ComboBox Margin="207.018,169.072,0,0" VerticalAlignment="Top" SelectedIndex="0" HorizontalAlignment="Left" Width="121.828">
+            <ComboBoxItem Content="2023"/>
+        </ComboBox>
+        <ComboBox Margin="207.018,203.652,0,0" VerticalAlignment="Top" SelectedIndex="0" HorizontalAlignment="Left" Width="121.828">
+            <ComboBoxItem Content="Active"/>
+        </ComboBox>
+        <ComboBox HorizontalAlignment="Left" Margin="207.018,237.12,0,0" VerticalAlignment="Top" Width="293.794" SelectedIndex="0">
+            <ComboBoxItem/>
+            <ComboBoxItem Content="ABC Company"/>
+        </ComboBox>
+        <ComboBox HorizontalAlignment="Right" Margin="0,163.082,90.245,0" VerticalAlignment="Top" Width="262.77" SelectedIndex="0">
+            <ComboBoxItem/>
+            <ComboBoxItem Content="ABC Company"/>
+        </ComboBox>
+        <TextBox HorizontalAlignment="Right" Margin="0,201.129,90.245,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262.77" Height="22"/>
+        <TextBox HorizontalAlignment="Right" Margin="0,237.12,90.245,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262.77" Height="22"/>
+        <Button Content="Reset" HorizontalAlignment="Left" Margin="315.071,0,0,495.632" VerticalAlignment="Bottom" Width="88.927" Height="26">
+            <Button.Effect>
+                <DropShadowEffect Opacity="0.5" BlurRadius="3" Color="#FF352F2F"/>
+            </Button.Effect>
+        </Button>
+        <TextBox HorizontalAlignment="Right" Margin="0,0,90.245,159.717" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="143.102" Height="22"/>
+        <Label Content="Total Projects Value (BD)" HorizontalAlignment="Left" Margin="605.396,0,0,157.233" VerticalAlignment="Bottom" FontFamily="Tahoma" FontWeight="Bold" Width="180.257" HorizontalContentAlignment="Right"/>
+    </Grid>
+</UserControl>

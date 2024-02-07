@@ -1,0 +1,258 @@
+﻿@model CEAApp.Web.ViewModels.RequisitionReportVM
+@using CEAApp.Web.DIServices
+@inject IConverterService ConverterService;
+@inject IConfiguration Configuration;
+
+@{
+    ViewData["Title"] = "Requisition Report";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    string userName = ConverterService.ConvertObjectToString(TempData.Peek("UserID"));
+}
+
+
+<div class="formWrapper container-fluid">
+    <form asp-area="ReportFunctions" asp-controller="Report" asp-action="Index" method="get">
+
+        @*  <div class="alert alert-danger alert-dismissible fade show errorPanel" style='display: @(!string.IsNullOrWhiteSpace(Model.ErrorMessage) ? "block" : "none")'>
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        <strong>Error! </strong>&nbsp;<span class="errorText">@Model.ErrorMessage</span>
+        </div>
+        <div class="alert alert-success alert-dismissible fade show successPanel" style='display: @(!string.IsNullOrWhiteSpace(Model.NotificationMessage) ? "block" : "none")'>
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        <strong>Success!</strong>&nbsp;<span class="successText">@Model.NotificationMessage</span>
+        </div>*@
+
+        <div class="container-fluid p-0 m-0">
+            <div class="row no-gutters">
+                <div class="col-12 mt-2">
+                    <div class="formHeader">
+                        <span><i class="fas fa-print fa-1x fa-fw"></i></span>
+                        @ViewData["Title"]
+                    </div>
+                </div>
+            </div>
+
+            <div class="requestHeader">
+                <div class="form-row">
+                    <div class="col-12 mx-auto px-5">
+                        <div class="alert alert-danger alert-dismissible fade show errorMsgBox" hidden>
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong>Error! </strong>&nbsp;<span class="errorMsg">Test error!</span>
+                        </div>
+                        <div class="alert alert-success alert-dismissible fade show successMsgBox" hidden>
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong>Success!</strong>&nbsp;<span class="successMsg">Test success!</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid ps-2 pe-0 me-0 pt-3 pb-2">
+                  @*  <div class="row pt-0 mt-0 pe-4">
+                        <div class="col-sm-12 text-danger clearfix">
+                            <span class="font-italic float-end">- indicates a required field</span>
+                            <span class="float-end me-1"><i class="fas fa-asterisk fa-fw fa-xs"></i></span>
+                        </div>
+                    </div>*@
+
+                    <div class="row pt-2">
+                        <div class="col-sm-2 fieldLabel">
+                            <label class="col-form-label">Cost Center</label>
+                        </div>
+                        <div class="col-sm-4">
+                            @* <select id="cboFiscalYear" class="form-select fieldValue w-50"
+                            title="Tips:" data-toggle="popover" data-content="Select Fiscal Year" data-trigger="hover" data-placement="top"
+                            asp-for="FiscalYear" asp-items="Model.FiscalYearArray" name="fiscalYear" style="padding-left: -5px;">
+                            <option value=""> </option>
+                            </select>  *@
+                            @Html.DropDownListFor(Model => Model.RequisitionReport.CostCenter,@Model.costCenterList,"All", new { @class = "form-control form-select" , @Id="CostCenterId"})
+                        </div>
+                        <div class="col-sm-2 fieldLabel">
+                            <label class="col-form-label">Expenditure Type</label>
+                        </div>
+                        <div class="col-sm-3 pe-4">
+                            @Html.DropDownListFor(Model => Model.RequisitionReport.ExpenditureType,@Model.ExpenseTypeList,"All", new { @class = "form-control form-select", @Id="ExpenditureTypeId" })
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+
+                    <div class="row pt-2">
+                        <div class="col-sm-2 fieldLabel">
+                            <label class="col-form-label">Requisition Status </label>
+                        </div>
+                        <div class="col-sm-4">
+                            @Html.DropDownListFor(Model => Model.RequisitionReport.RequisitionStatus, new List<SelectListItem>
+                            {
+                                new SelectListItem{ Text="All", Value = "0" },
+                                new SelectListItem{ Text="Closed", Value = "11" },
+                                new SelectListItem{ Text="Outstanding", Value = "15", Selected=true },
+                            }, new { @class = "form-control form-select", @Id="RequisitionStatus" })
+                        </div>
+                        <div class="col-sm-2 fieldLabel">
+                            <label class="col-form-label">Fiscal Year </label>
+                        </div>
+                        <div class="col-sm-4 pe-4">
+                            <div class="input-group input-group-sm mt-1">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text inputGroupTitle" style="height: 31px;">
+                                        <i class="far fa-calendar-alt fa-xs fa-fw"></i>
+                                        From                                        
+                                    </span>
+                                </div>
+                                 @Html.DropDownListFor(Model => Model.RequisitionReport.FiscalYear,@Model.FiscalYearList, "All",new { @class = "borderLess fieldValue form-control-sm", @Id="FormFiscalYearId", @style="width: 120px; text-align: center;" })
+                                
+                                <div class="input-group-prepend ml-2 ps-4">
+                                    <span class="input-group-text inputGroupTitle" style="height: 31px;">
+                                        <i class="far fa-calendar-alt fa-xs fa-fw"></i>
+                                        To                                        
+                                    </span>
+                                </div>
+                               @Html.DropDownListFor(Model => Model.RequisitionReport.FiscalYear,@Model.FiscalYearList, "All",new { @class = "borderLess fieldValue form-control-sm", @Id="ToFiscalYearId", @style="width: 120px; text-align: center;"})
+                            </div>
+                        </div>
+                       
+                    </div>
+
+                  @*  <div class="row pt-2">
+                        <div class="col-sm-2 fieldLabel">
+                            <label class="col-form-label">Fiscal Year</label>
+                        </div>
+                        <div class="col-sm-4">
+                            @Html.DropDownListFor(Model => Model.RequisitionReport.FiscalYear,@Model.FiscalYearList, "All",new { @class = "borderLess fieldValue form-control-sm", @Id="FormFiscalYearId", @style="width: 120px; text-align: center;" })
+                            &nbsp; ~ &nbsp;
+                            @Html.DropDownListFor(Model => Model.RequisitionReport.FiscalYear,@Model.FiscalYearList, "All",new { @class = "borderLess fieldValue form-control-sm", @Id="ToFiscalYearId", @style="width: 120px; text-align: center;"})
+                        </div>
+                        <div class="col-sm-2 fieldLabel">*@
+                            @* <label class="col-form-label">Keywords</label>*@
+                      @*  </div>
+                        <div class="col-sm-3 pe-4">*@
+                            @*<input id="txtKeyword" class="form-control form-control-sm fieldValue"
+                            placeholder="enter search string here..." maxlength="50" />*@
+                       @* </div>
+                        <div class="col-sm-1"></div>
+                    </div>*@
+
+                    <div class="row pt-2">
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-10">
+                            <button type="button" id="btnSearch" class="btn btn-sm btn-success float-sm-start text-white border-0 actionButton"
+                                    style="width: 130px;" tabindex="18"
+                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Search for database records"
+                                    onclick="SearchButtonClick()">
+                                <span class="spinner-border spinner-border-sm spinicon" hidden></span>
+                                <span class="normalicon"><i class="fas fa-search fa-fw fa-lg"></i></span>&nbsp;
+                                Search
+                            </button>
+                            <button id="btnReset" type="reset" class="btn btn-sm btn-warning text-white border-0 rounded-3 actionButton" onclick="ResetButtonClick()"
+                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Clears the form" style="width: 130px;" tabindex="12">
+                                <span><i class="fas fa-sync fa-fw fa-lg"></i></span>&nbsp;
+                                Reset
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="row mt-2 mb-1 groupTitle">
+                        <div class="col-sm-12 clearfix">
+                            <span class="ps-3">Search Results:</span> &nbsp;
+                            <span class="float-sm-end">
+
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="row mt-0 pt-0 mx-2 mb-2">
+                        <div class="col-sm-12 ps-2 pe-3">
+                            <div class="container-fluid tablePanel gridWrapper">
+                                <div class="table-responsive py-3" style="-ms-overflow-style: auto;">
+
+                                    <table id="requisitionTable" class="generalTable display nowrap stripe row-border table-bordered" style="width: 100%;">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 50px;">
+                                                    @Html.DisplayNameFor(model => model.RequisitionReport.ProjectNo)
+                                                </th>
+                                                <th style="width: 50px;">
+                                                    @Html.DisplayNameFor(model => model.RequisitionReport.CostCenter)
+                                                </th>
+                                                <th style="width: 50px;">
+                                                    @Html.DisplayNameFor(model => model.RequisitionReport.FiscalYear)
+                                                </th>
+                                                <th style="width: 50px;">
+                                                    @Html.DisplayNameFor(model => model.RequisitionReport.RequisitionNo)
+                                                </th>
+                                                @* <th style="width: 120px;">
+                                                @Html.DisplayNameFor(model => model.RequisitionReport.RequisitionStatus)
+                                                </th> *@
+                                                <th style="width: 90px; ">
+                                                    @Html.DisplayNameFor(model => model.RequisitionReport.RequisitionDescription)
+                                                </th>
+                                                <th style="width: 50px;">
+                                                    @Html.DisplayNameFor(model => model.RequisitionReport.RequisitionDate)
+                                                </th>
+                                                <th style="width: 50px;">
+                                                    @Html.DisplayNameFor(model => model.RequisitionReport.RequisitionStatus)
+                                                </th>
+                                                <th style="width: 50px;">
+                                                    @Html.DisplayNameFor(model => model.RequisitionReport.RequisitionAmount)
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+        <div>
+            <input type="hidden" id="hidUserName" value="@userName" name="UserName" />
+            <input type="hidden" id="hidFormCode" asp-for="FormCode" />
+            <input type="hidden" id="hidCallerForm" asp-for="@Model.CallerForm" name="callerForm" />
+        </div>
+
+    </form>
+</div>
+
+@section Styles{
+    <style type="text/css">
+        .ui-tooltip-content::after, .ui-tooltip-content::before {
+            content: "";
+            position: absolute;
+            border-style: solid;
+            display: block;
+            left: 90px;
+        }
+
+        .ui-tooltip-content::before {
+            bottom: -10px;
+            border-color: #AAA transparent;
+            border-width: 10px 10px 0;
+        }
+
+        .ui-tooltip-content::after {
+            bottom: -7px;
+            border-color: white transparent;
+            border-width: 10px 10px 0;
+        }
+    </style>
+
+}
+
+
+    @section Scripts{
+    <script src="~/js/RequisitionReport.js?v=@Configuration["AppSettings:JavaScriptFileVersion"]"></script>
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+}
+
+
+
+

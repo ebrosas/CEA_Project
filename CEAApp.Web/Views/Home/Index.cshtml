@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div style="display: none;">
+    <h1>TypeScript Tutorial</h1>
+    <div id="ts-example">
+        <br />
+        <button type="button" class="btn btn-primary btn-md" onclick="TSButton()">
+            Click Me
+        </button>
+    </div>    
+</div>
+
+
+@section Scripts{
+    <script>
+        // Initialize tooltips
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
+
+    @*<script src="~/js/projectInquiry.js"></script>*@
+    @*<script src="~/js/project.js"></script>*@
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,692 @@
+CEA Enhancements Project
+
+Menu Items:
+
+1. User Functions
+   - Project Inquiry
+   - Requisition Inquiry	
+   - Create New Request
+
+2. Reports
+   - Detailed Expenses Report
+   - Expense Report
+   - Requisition Report  
+
+3. Administration
+   - Upload Projects
+   - Requisition Administration
+   - Assign Equipment Number
+
+UI Forms
+
+For Users 
+1. Project Inquiry (4 days)
+   Links / Buttons:
+   - New Requisition => Opens the "CEA/MRE Requisition" form
+   - Project No. => Opens the "Project Details View" form
+   - Merge Projects button => Opens the "Merge Projects" form  (Currently not used)
+
+2. Project Details View (3 days)
+   Buttons:
+   - Close the Project => Opens a pop-up form asking form confirmation to close the project
+   - Edit Project => Opens the "Create\Edit Project" form
+   - Create New Requisition => Opens the "CEA/MRE Requisition" form 
+
+3. Requisition Inquiry (4 days)
+   Links:
+   - Project No. => Opens the "Project Details View" form
+   - Requisition No. => Opens the "CEA/MRE Requisition" form 
+   - Status => Opens the "CEA/MRE Requisition Status View" form
+   - View Expenses => Opens the "Expenses View" form
+
+5. CEA/MRE Requisition (8 days)
+   Linked Forms:
+   - Print Requisition => Opens the "Item Non-Capitalized Report"
+   - View Approvers => Opens the "CEA/MRE Requisition Status View" form 
+   - View Expenses => Opens the "Expenses View" form
+   - Recall this Requisition => Opens the "Change Requisition Status" pop-up form
+   Lookup buttons:   
+   - Project No. => not required cause it's not functioning 
+   - Originator => Opens the "Search Employees" pop-up form
+   - Equipment No. => Opens the "Search Equipment Number" pop-up form
+   - Attachment => Opens the "Upload Files" pop-up form
+
+5. CEA / MRE Administration - used by Marian for posting CEA requisition to JDE and for closing CEA request (5 days)
+   Links / Buttons:
+   - Requisition No. => Opens the "CEA/MRE Requisition Form"
+   - Close Requisition button => use to close the CEA request
+
+6. Equipment Number Assignment (7 days)
+   Links:
+   - Equipment No. => Opens the "Search Equipment Number" pop-up form
+
+7. Merge Project (not required)
+
+Administration Forms
+1. Upload Project Setup (5 days)
+2. Page Security Setup (5 days) => used to assign page-level access to specific database user's groups
+3. Groups Administration (not required)
+   - Assign User to Group
+   - Manage Group 
+
+Report Forms:
+1. Detailed Expense Report (5 days) => opens the "CEA/MRE/INC Report" form
+   Buttons:
+   - View Report => fetches report data from DB
+   - View Report in Excel => used to export the grid data into Excel sheet file
+
+2. Expenses Report (5 days) => opens the "CEA/MRE/INC Report" form but shows different info in the grid
+   Buttons:
+   - View Report => fetches report data from DB
+   - View Report in Excel => used to export the grid data into Excel sheet file
+   
+3. Requisition Report (3 days) => opens the expense report form
+   Buttons:
+   - View Report => Fetch report data from DB to be displayed on the grid
+
+4. Item Non-Capitalized Report (3 days)
+
+Project Nos:
+2220210
+
+Web Forms:
+
+1. Project Details View
+   - Fields that can be edited
+	* Fiscal Year 
+	* Expected Project Date 
+	* Account Code	
+	* Object Code	
+	* Subject Code
+	* Cost Centre
+	* Expenditure Type
+	* Budgeted Project Amount 	
+	* Description
+	* Detailed description
+
+2. Requisition Inquiry
+   Mapped the following workflow statuses to the requisition status
+ 
+   	Workflow Status Handling Code	Requisition Status		Requisition Status Description
+	Open				Active				Active
+					AwaitingApproval		In Queue
+					AwaitingChairmanApproval	Awaiting Chairman Approval
+					Blank	
+					DraftAndSubmitted		All Open Statuses
+					Notified			Notified
+					OnLeave				On Leave
+					Reactivated			Reactivated
+					Reassigned			Reassigned
+					RequisitionAdministration	All Open Statuses
+					Resigned			Resigned
+					Submitted			Submitted for Approval
+					SubmittedForApproval		Awaiting Approval
+					Terminated			Terminated
+
+	PostedJDE			UploadedToOneWorld		Uploaded to OneWorld
+
+	Approved			Approved			Approved
+					ChairmanApproved		Chairman Approved
+
+	Cancelled			Cancelled			Cancelled
+	Rejected			Rejected			Rejected
+	Draft				Draft				Draft
+
+	Closed				Closed				Closed
+					Completed			Completed
+   Functionalities:
+   1. Search button 
+      	Stored Procedure (old system): Projectuser.spGetRequisitions
+ 	Stored Procedure (new system): Projectuser.Pr_SearchRequisition
+
+
+
+3. CEA Requisition
+
+   Financial Details Fields
+   a) Budgeted Project Amount = ProjectAmount
+   b) Used Amount = UsedAmount
+   c) Balance Project Amount = ProjectBalanceAmt
+   d) Estimated Cost = RequestedAmt
+   e) Additional Amount = AdditionalBudgetAmt
+   f) Reason for Additional Amount = ReasonForAdditionalAmt
+  
+   Buttons Logic:
+   1. Status: Submitted for approval, Uploaded to OneWorld		
+      User Type: Normal Users
+      Visible Buttons: 	Print Requisition, View Approvers, View Expenses, Recall this Requisition, Go Back    
+
+   2. Status: Rejected		
+      User Type: Normal Users
+      Visible Buttons: 	Print Requisition, View Approvers, View Expenses, Activate this Requisition, Go Back
+
+   3. Status: Closed		
+      User Type: Normal Users
+      Visible Buttons: 	Print Requisition, View Approvers, View Expenses, Re-open this Requisition, Go Back
+
+   4. Status: Draft		
+      User Type: Normal Users
+      Visible Buttons: 	Save as Draft, Submit, Delete Draft, Go Back
+     
+
+   UI Logic:
+   1. When a submitted CEA is opened by the creator or admin
+	- Buttons Enabled: View, Reset, Print, Recall Request, Go Back
+      
+      When a submitted CEA is opened by normal user
+	- Buttons Enabled: View, Reset, Print, Go Back
+
+   2. When opening submitted request for approval or validation
+	- Buttons Enabled: Approve, Reject, Reassign, View, Print, Go Back
+
+   3. When creating new CEA request
+	Buttons Enabled: btnDraft, btnSubmit, Reset, Go Back 
+
+	Fields Enabled (Details tab):
+	- Item Type (Required)
+	- Originator (Required)
+	- Requisition Description (Required)
+	- Date (Required)
+	- Item Required (Required)
+	- Reason for Requisition
+	- Plant Location
+	- Est. Life Span (Required)
+	- Date of Commision (Required)
+	- Equipment Parent No.
+
+	Date Entry Buttons:
+	- Project Number search button
+	- Originator search button
+	- Equipment No. search button
+
+	Fields Enabled (Financial Details tab):
+	- Estimated Cost
+	- Year (displays 5 years starting from current year)
+	- Quarter (shows Q1, Q2, Q3, Q4)
+	- Amount
+
+	Flags:
+	1) editable - means control will be enabled for creating new CEA request
+	2) createBtn - consist of the following buttons: btnDraft, btnSubmit
+	3) approveBtn - consist of the following buttons: btnApprove, btnReject
+	4) viewBtn - consist of the following buttons: btnView, btnPrint, btnRecall
+	5) generalBtn - consist of the following buttons: btnReset, btnBack
+	6) updateBtn - consist of the following buttons: btnDelete
+
+	Required Fields:
+	- Item Type
+	- Originator 
+	- Requisition Description 
+	- Item Required 
+	- Est. Life Span 
+	- Reason for Requisition
+	- Date of Commision 
+	- Estimated Cost
+
+	- Date 
+	- Plant Location
+
+	Schedule of Expense Logic:
+	Upon Submission:
+	- Total sum of expense items must be equal to the value of "Estimated Cost".
+	- If total expense items is greater than the value of "Balance Project Amount", a pop-up message will appear asking the user to request for additional amount.
+	  If user clicks "Okay" button, the value of "Additional Amount" field will be set to the difference of amount between "Balance Project Amount" and total schedule of expenses. The "Reason for Additional Amount" will appear, which will be a mandatory field, and the notes called "Additional Amount Requested" will also shows up.
+          If use clicks "Cancel", the value of "Additional Amount" field will be set to zero.
+	- If CEA was submitted as draft, the "Delete Draft" button should be visible when viewing the request.
+	- Balance Project Amount
+
+	File Attachment Logic:
+	- Maximum file size is 20 MB
+
+   3. When saving CEA request as draft
+	* The following buttons should be visible: Save as Draft, Submit, Delete Draft, Reset, Go Back
+	* Calls the following stored procedure in sequence:
+		a) Projectuser.Pr_Requisition_CUD / Projectuser.spSaveRequisition = used for saving CEA details into "Requisition" table
+		b) Projectuser.Pr_RequisitionAttachments_CUD / Projectuser.spInsertRequisitionAttachments = used for saving file attachment into "RequisitionAttachments" table
+		c) Projectuser.Pr_Expense_CUD = used for saving schedule of expenses into "Expense" table
+		   (Notes: When saving expense records, the Requisition No. is passed to the RequisitionID field)
+		
+   4. When submitting CEA request 
+	* The following buttons should be visible: Save as Draft, Submit, Delete Draft, Reset, Go Back
+	* Calls the following stored procedure in sequence:
+		a) Projectuser.Pr_Requisition_CUD / Projectuser.spSaveRequisition = used for saving CEA details into "Requisition" table
+		b) Projectuser.Pr_RequisitionAttachments_CUD / Projectuser.spInsertRequisitionAttachments = used for saving file attachment into "RequisitionAttachments" table
+		c) Projectuser.Pr_Expense_CUD = used for saving schedule of expenses into "Expense" table
+		   (Notes: When saving expense records, the Requisition No. is passed to the RequisitionID field)
+		d) Projectuser.Pr_ConfigureCEAApprovers / Projectuser.spConfigureRequisitionApprovers - used to populate the requisition approvers
+		e) Projectuser.Pr_SetRequisitionStatus / Projectuser.spSetRequisitionStatus - used to update the status to "Submitted for Approval"
+		f) Projectuser.spSaveCEADataInOneWorld / Projectuser.Pr_SaveCEADataToOneWorld - used to insert records in JDE staging tables
+
+  5. When deleting a Draft requisition
+	* The following stored procedure is being called: Projectuser.spDeleteRequisition
+
+  6. When re-activating a rejected CEA request
+	* The following stored procedure will be called: Projectuser.Pr_ChangeRequisitionStatus
+	* Only the person who has rejected the request or the System Administrator can reactivate the requisition
+	* Uses the following distribution code to fetch the System Administrators:
+		Distribution Code: CEAADMIN
+          	Description: CEA System Administrators group
+		Live: 10003632, 10003512
+		Test: 10003632
+
+  7. When approving assigned CEA request
+	The following stored procedures will be called when the Approve button is clicked: 
+	1. Projectuser.spApproveRequisition (old) => Projectuser.Pr_ApproveRequisition (new) - Called in the ApproveRequisition() method
+	2. Projectuser.spGetApproverList (old) => Projectuser.Pr_GetApproverList (new) - Called in the NotifyRequisitionApprovers() method
+	  
+
+Workflow Setup:
+
+Process Code: CEAWF
+Request Type Code: CEAREQ
+Request Type Name: CEA/MRE Requisition
+Request Type Description: CEA Workflow
+Request Type No.: 22
+
+Workflow Business Rules:
+
+1. Upon submission, the request
+
+1. If approval process is completed, the following actions will take place:
+	a) Send notification to the CEA uploader group to do administrative task - it calls this stored procedure: Projectuser.spGetCEAAdministratorEmailList. Should send email to this group: CEAUPLOADR
+	b) Send notification to the cost center secretary, originator, manager, and other approvers about the completion of the approval process. It calls this stored procedure: spGetCostCenterEmailList => Projectuser.Pr_GetCostCenterEmailList 
+	c) Send notification to the Equipment number assigners to assign and confirm the equipment numbers of the given Requisition
+
+Worfklow Actors:
+
+Distribution Code		Description							Members (Live)			Members (Test)		Notes
+CEAADMIN			CEA System Administrators group					10003632,10005035,10003512	10003632,10005035
+CEOSEC 				Secretary to the CEO						10003674			10003870
+CEAUPLOADR			Members are authorized to do CEA administrative tasks		10003674 			10003632
+												10003632			10003512
+												10003512
+CFO				Chief Financial Officer						10003685			10003512		This code is used for "61 - Executive Manager – Finance" approval group type 
+OPGENMNGR			Operation Gen. Manager						10001668			10005035		This code is used for "70 - GM-Ops" approval group type 
+CEO				Chief Executive Manager						10003838			10003726		This code is used for "71 - Chief Executive Officer" approval group type 
+CHAIRMNSEC  			Secretary of the Chairman					10003674			10003870		This code is used for "67 - Chairman" approval group type 
+EQUIPADMIN			Users who can assign equipment no to a CEA			10003598			10003632
+												10003124			10003656
+
+
+
+Item Category Approvers:
+
+Category Code	Description				Approver	Distribution Code		Description							Test Approver
+ADMIN		Administration				10003838	ICADMIN				CEA item category approvers for Administration			10003674
+CIVIL		Civil Engineering			10001668	ICCIVIL				CEA item category approvers for Civil Engineering		10003264 
+ICT		Computer Related			10003662	ICICT				CEA item category approvers for Computer Related		10003870
+ELECTRICAL	Electrical Engineering			10001668	ICELECTRL			CEA item category approvers for Electrical Engineering		10003264
+FURNITURE	Furniture & Stationary			10003838	ICFURNITRE			CEA item category approvers for Furniture & Stationary		10003674
+HR		Human Resources				10003666	ICHR				CEA item category approvers for Human Resources			10003870
+MAINTAIN	Maintenance Related			10003838	ICMAINTAIN			CEA item category approvers for Maintenance Related		10003674
+MECHANICAL	Mechanical Engineering			10001668	ICMECHANCL			CEA item category approvers for Mechanical Engineering		10003264
+MEDICAL		Medical Related				10003838	ICMEDICAL			CEA item category approvers for Medical Related			10003656
+OFFICEEQIP	Office Equipments			10003838	ICOFFICE			CEA item category approvers for Office Equipments		10003656
+PROJECT		Projects				10003838	ICPROJECT			CEA item category approvers for Projects			10003656
+QUALITY		Quality Related				10003838	ICQUALITY			CEA item category approvers for Quality Related			10003656
+SAFETY		Safety Related				10003828	ICSAFETY			CEA item category approvers for Safety Related			10003656
+TRANSPORT	Transportation Related			10003828	ICTRANSPRT			CEA item category approvers for Transportation Related		10003656
+
+Close the request => pr_CloseServiceRequest
+Reject the request => pr_UpdateServiceRequestStatusByCode
+CreateTransactionProcessWF => pr_CreateProcessWorkflow
+UpdateServiceRequestInstanceID => pr_UpdateServiceRequestInstanceID
+Reassign to other approver => spReassignToApprover
+
+Workflow Stored Procedures that need to be modified to implement the CEA workflow:
+
+DB Object Name					Status			Completion Date		Remarks
+fnCheckIfNewWFEngine
+pr_ApproveRejectServiceRequest			Completed		30/08/2023		Implemented the CEA workflow
+pr_AssignServiceRequestToNext			Completed		30/08/2023		Implemented the CEA workflow
+pr_CancelServiceRequest				Completed		30/08/2023		Implemented the CEA workflow
+pr_CloseServiceRequest				Completed		30/08/2023		Implemented the CEA workflow
+pr_CreateProcessWorkflow			Completed		30/08/2023		Implemented the CEA workflow
+pr_GetCurrentDistributionMember			Completed		30/08/2023		Implemented the CEA workflow
+pr_GetDistributionMember			Completed		30/08/2023		Implemented the CEA workflow
+pr_GetDistributionMemberAlternate		Completed		30/08/2023		Implemented the CEA workflow
+pr_GetMailRecipient				Completed		30/08/2023		Implemented the CEA workflow
+pr_RejectServiceRequest				Completed		30/08/2023		Implemented the CEA workflow
+pr_SetCurrentDistributionMember
+pr_UpdateServiceRequestInstanceID		Completed		29/08/2023		Stored procedure already updated
+pr_UpdateServiceRequestStatus			Completed		30/08/2023		Implemented the CEA workflow
+pr_UpdateServiceRequestStatusByCode		Completed		29/08/2023		Stored procedure already updated
+pr_UpdateTransactionActivity			Completed		30/08/2023		Implemented the CEA workflow
+pr_ValidateServiceRequest
+
+Original Location: C:\NET Projects\GAP\GARMCO Application Portal System\DB Scripts\Original Scripts\Stored Procedure
+Modification Location: C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\Scripts\Deployment\JDE_PRODUCTION\Stored Procedures
+	
+#region Request Type
+public enum RequestType
+{
+	HelpdeskRequest = 0,
+        ExpenseRequest,
+	TravelRequest,
+	CashAdvance,
+	LeaveRequest = 4,
+	PurchaseRequisition,
+	TSR,
+	PAF,
+	EPA = 11,
+	DIL = 14,
+	ClearanceForm = 16,
+	StoresIssueRequisition = 17,
+	RecruitmentRequisition = 18,
+	InvoiceRequisition = 19,
+	ECR = 20,
+	ProbationaryRequisition = 21,
+	CEA = 22,
+	ISMS,
+	SwipeCorrectionRequest,
+	OvertimeApprovalRequest
+}
+#endregion
+
+CEA Header Approval Statuses:
+
+Approval Status ID		Status Code			Status Description
+1				Draft				Draft
+2				Submitted			Submitted for Approval
+3				Approved			Approved
+8				Rejected			Rejected
+10				Cancelled			Cancelled
+11				Closed				Closed
+15				UploadedToOneWorld		Uploaded to OneWorld
+17				AwaitingChairmanApproval	Awaiting Chairman Approval
+
+How to add references to old .Net Framework DLLs in .NET core
+
+C:\NET Projects\GARMCO Control Libraries\GARMCO Workflow Engine\GARMCO.AMS.CommonWF.BL.dll
+C:\NET Projects\GARMCO Control Libraries\Releases\GARMCO.Common.DAL.Employee.dll
+
+
+Workflow Errors:
+
+There was an error while trying to serialize parameter http://tempuri.org/:requestItem. The InnerException message was 'Enum value '0' is invalid for type 'WFServiceProxy.GARMCOConstantsServiceRole' and cannot be serialized. Ensure that the necessary enum values are present and are marked with EnumMemberAttribute attribute if the type has DataContractAttribute attribute.'.  Please see InnerException for more details.
+No connection could be made because the target machine actively refused it. (localhost:3662)
+The HTTP request is unauthorized with client authentication scheme 'Anonymous'. The authentication header received from the server was 'Negotiate, NTLM'.
+The server did not provide a meaningful reply; this might be caused by a contract mismatch, a premature session shutdown or an internal server error.
+The formatter threw an exception while trying to deserialize the message: There was an error while trying to deserialize parameter http://tempuri.org/:requestItem. The InnerException message was 'Invalid enum value 'Unknown' cannot be deserialized into type 'GARMCO.AMS.CommonWF.BL.Helpers.GARMCOConstants+RequestTypeStatusCode'. Ensure that the necessary enum values are present and are marked with EnumMemberAttribute attribute if the type has DataContractAttribute attribute.'.  Please see InnerException for more details.
+Could not load file or assembly 'System.Data.SqlClient, Version=0.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'. The system cannot find the file specified.
+
+
+ public const string STATUS_CANCELLED_BY_USER = "101";
+        public const string STATUS_CODE_DRAFT = "01";
+        public const string STATUS_CODE_REQUEST_SENT = "02";
+        public const string STATUS_CODE_APPROVED = "120";
+        public const string STATUS_CODE_ASSIGNEDTO_NEXT_APPROVER = "121";
+        public const string STATUS_CODE_CLOSE_BY_APPROVER = "123";
+        public const string STATUS_CODE_REASSIGNED_TO_OTHER_APPROVER = "122";
+        public const string STATUS_CODE_REJECTED = "110";
+        public const string STATUS_CODE_WAITING_FOR_APPROVAL = "05";
+        public const string STATUS_CODE_REJECTED_BY_VALIDATOR = "112";
+        public const string STATUS_CODE_REVIEWED_BY_VALIDATOR = "130";
+        public const string STATUS_CODE_REASSIGNED_OTHER_VALIDATOR = "132";
+        public const string STATUS_CODE_FOR_VALIDATION = "16";
+        public const string STATUS_CODE_FOR_EVALUATION = "510";
+        public const string STATUS_CODE_RESUBMITTED_FOR_APPROVAL = "511";
+        public const string STATUS_HANDLING_CODE_APPROVED = "Approved";
+        public const string STATUS_HANDLING_CODE_CANCELLED = "Cancelled";
+        public const string STATUS_HANDLING_CODE_CLOSED = "Closed";
+        public const string STATUS_HANDLING_CODE_OPEN = "Open";
+        public const string STATUS_HANDLING_CODE_REJECTED = "Rejected";
+        public const string STATUS_HANDLING_CODE_VALIDATED = "Validated";        
+
+http://localhost:8888/UserFunctions/RequisitionInquiry
+http://localhost:8888/UserFunctions/Project/ProjectDetail?projectNo=2220210&callerForm=RequisitionInquiry
+
+Email link to Creator after submission:
+http://localhost:8888/UserFunctions/Project/CEARequisition?requisitionNo=@7&actionType=0
+
+Email link to the Originator for validation:
+http://localhost:8888/UserFunctions/Project/CEARequisition?requisitionNo=@7&actionType=7
+
+Email link to the approver:
+http://localhost:8888/UserFunctions/Project/CEARequisition?requisitionNo=@7&actionType=3
+
+Email link to the Marian:
+http://localhost:8888/UserFunctions/Project/CEARequisition?requisitionNo=@7&actionType=8
+
+EXEC Projectuser.spGetApproverList 4115, 1, 'SubmittedForApproval'
+
+
+New Workflow Approval Process:
+
+1. Approval by the Originator
+	Action Role: Approver
+	Parameter Name: RequestOrigEmpNo 
+
+2. Cost Center approval
+	Action Role: Approver
+	a) Superintendent
+	   Test: 7600 => 10003656 - TAFSIR AHMAD SIDDIQ AHMAD 
+	b) Cost Center Manager
+	   Test: 7600 => 10003512 - HUSAIN ABEDALI ABDULLA HASAN SABAH
+
+3. Item Category approval
+	Action Role: Approver
+	Item Type: Computer Related 
+	Dist. Code: ICICT
+	Test: 10003870 FATIMA JAFFAR ABDULLA 
+
+4. Approval by Executive Manager - Operations
+	Action Role: Approver
+	Condition: if RequestUnderGMO = true
+	Dist. Code: OPGENMNGR
+	Test: 10005035 ANTONY AUGUSTY 
+	Live:
+
+5. Approval by Executive Manager - Finance
+	Action Role: Approver
+	Dist. Code: CFO
+	Test: 10003726 SREEJITH KARIPADAKAN 
+	Live:
+
+6. Management approval for budgeted requisition
+	Action Role: Approver
+	Condition: if RequestIsBudgeted = true
+	a) CEO
+	   Dist. Code: CEO
+   	   Threshold: if RequestTotalAmount > 20,000 BD        
+	   Test: 10003661 IMRAN QAYYUM BAIG 
+	   Live
+	b) Chairman
+	   Dist. Code: CHAIRMNSEC
+   	   Threshold: if RequestTotalAmount > 100,000 BD 
+	   Test: 10003605 RASHED MOHAMED WAQAR 
+	   Live
+
+7. Management approval for unbudgeted requisition
+	Action Role: Approver
+	Condition: if RequestIsBudgeted = false
+	a) CEO
+	   Dist. Code: CEO
+   	   Threshold: if RequestTotalAmount > 5,000 BD        
+	   Test: 10003661 IMRAN QAYYUM BAIG 
+	   Live
+	b) Chairman
+	   Dist. Code: CHAIRMNSEC
+   	   Threshold: if RequestTotalAmount > 50,000 BD 
+	   Test: 10003605 RASHED MOHAMED WAQAR 
+	   Live
+
+8. Notify the Secretary of CEO for the Administrative Task
+	Action Role: Email Notification only
+	Dist. Code: CEOSEC
+	Test: 10003870 FATIMA JAFFAR ABDULLA 
+	Live
+
+Old Database Workflow Logic:
+
+When CEA approval is completed:
+1. NotifyCEAAdministrativeUsers() => this method is used to send notification to the CEA Administrators to upload the request to JDE. It uses the following stored procedure to get the members of "CEAUPLOADR" distrubution group:
+	Old: Projectuser.spGetCEAAdministratorEmailList
+	New: Projectuser.Pr_GetCEAAdministratorEmailList
+2. NotifyCostCenterUsers() => this method is used to send notification to the Cost Center approvers about the completion of approval process. It uses the following stored procedures.
+	Old: Projectuser.spGetCostCenterEmailList
+	New: Projectuser.Pr_GetCostCenterEmailList 
+3. NotifyEquipmentNoAssigners() => this method is used to send notification to the Equipment Administrators (Dist. Group Code: EQUIPADMIN) to assign equipment number to the CEA. It uses the following stored procedures:
+	Old: Projectuser.spGetEquipmentNoAssigners
+	New: Projectuser.Pr_GetEquipmentNoAssigners 
+
+4. Reassigning to other approver
+	Old: Projectuser.spReassignToApprover
+	New: Projectuser.Pr_ReassignToApprover
+	
+
+Email Templates:
+
+1. NotifyApprover
+	Parameters:
+	@1 => Approver Name
+	@2 => CEA Number
+	@3 => URL
+	@4 => CEA Number
+
+Workflow Status Code Mapping
+
+CEA Status Code		CEA Approval Status 			Status Code		Status Description		Status Handling Code
+UploadedToOneWorld	Uploaded to OneWorld			600			Uploaded to OneWorld		PostedJDE
+
+
+Workflow Testing:
+
+Test Case #1:
+CEA Requisition #20230055
+Workflow Stages:
+	1. Approval by Originator - Success
+	2. Approval by Superintendent - Failed
+
+
+Test Case #2:
+CEA Requisition #20230057
+Workflow Stages:
+	1. Approval by Originator - Success
+	2. Approval by Superintendent - Failed
+
+Test Case #3:
+CEA Requisition #20230060
+Title: Workflow Test Case #3
+Workflow Stages:
+	1. Approval by Originator - Success
+	2. Approval by Superintendent - Success
+	3. Approval by Cost Center Manager - Success
+	4. Approval by CFO - Success
+
+Test Case #4:
+CEA Requisition #20230066
+Title: Workflow Test Case #4
+Constraints: Originator is the same as the creator and belongs to ICT department
+Workflow Stages:
+	1. Approval by Originator - Success
+	2. Approval by Superintendent - Success
+	3. Approval by Cost Center Manager - Success
+	4. Approval by CFO - Success
+	5. Management approval for budgeted requisition - Failed
+
+Test Case #5:
+CEA Requisition #20230067
+Title: Workflow Test Case #5
+Constraints: Originator is the same as the creator and belongs to ICT department. Total amount is less than 5000 BD
+Workflow Stages:
+	1. Approval by Originator - Success
+	2. Approval by Superintendent (10003656 - TAFSIR AHMAD SIDDIQ AHMAD) - Success
+	3. Approval by Cost Center Manager (10003512 - HUSAIN ABEDALI ABDULLA HASAN SABAH) - Success
+	4. Approval by Item Category (10003870 FATIMA JAFFAR ABDULLA)  - 
+	4. Approval by CFO (10003726 SREEJITH KARIPADAKAN) - Success
+	5. Notify the Secretary of CEO for the Administrative Task (10003870 FATIMA JAFFAR ABDULLA) - Failed
+
+Test Case #6:
+CEA Requisition #20230069
+Title: Workflow Test Case #6
+Constraints: Originator is not the same as the creator but belongs to ICT department. Total amount is less than 5000 BD
+Workflow Stages:
+	1. Approval by Originator - Success
+	2. Approval by Superintendent (10003656 - TAFSIR AHMAD SIDDIQ AHMAD) - Success
+	3. Approval by Cost Center Manager (10003512 - HUSAIN ABEDALI ABDULLA HASAN SABAH) - Success
+	4. Approval by Item Category (10003870 FATIMA JAFFAR ABDULLA)  - Success
+	4. Approval by CFO (10003726 SREEJITH KARIPADAKAN) - Success
+	5. Notify the Secretary of CEO for the Administrative Task (10003870 FATIMA JAFFAR ABDULLA) - Success
+
+Test Case #7:
+CEA Requisition #20230070
+Title: Workflow Test Case #7
+Scenario: Originator is the same as the creator, and both but belong to ICT department. Project is budgeted and total amount is greater than 20,000 BD
+Workflow Stages:
+	1. Approval by Originator - Passed
+	2. Approval by Superintendent (10003656 - TAFSIR AHMAD SIDDIQ AHMAD) - Passed
+	3. Approval by Cost Center Manager (10003512 - HUSAIN ABEDALI ABDULLA HASAN SABAH) - Passed
+	4. Approval by Item Category (10003870 FATIMA JAFFAR ABDULLA)  - Passed
+	5. Approval by CFO (10003726 SREEJITH KARIPADAKAN) - Passed
+	6. Management approval for budgeted requisition
+		a) CEO
+	   		Dist. Code: CEO
+   	   		Threshold: if RequestTotalAmount > 20,000 BD        
+	   		Test: 10003870 FATIMA JAFFAR ABDULLA 
+			Result: Failed
+
+		b) Chairman
+	   		Dist. Code: CHAIRMNSEC
+   	   		Threshold: if RequestTotalAmount > 100,000 BD 
+	   		Test: 10003605 RASHED MOHAMED WAQAR 
+	7. Notify the Secretary of CEO for the Administrative Task (10003870 FATIMA JAFFAR ABDULLA)  	
+
+Test Case #8:
+Title: Workflow Test Case #8
+Project No: 2210073
+CEA No.: 20230086
+Scenario: Originator is the same as the creator, and both but belong to ICT department. Project is budgeted and total amount is greater than 20,000 BD
+Workflow Stages:
+	1. Approval by Originator - Passed
+	2. Approval by Superintendent (10003656 - TAFSIR AHMAD SIDDIQ AHMAD) - Passed
+	3. Approval by Cost Center Manager (10003512 - HUSAIN ABEDALI ABDULLA HASAN SABAH) - Passed
+	4. Approval by Item Category (10003870 FATIMA JAFFAR ABDULLA)  - Passed
+	5. Approval by CFO (10003726 SREEJITH KARIPADAKAN) - Passed
+	6. Management approval for budgeted requisition
+		a) CEO
+	   		Dist. Code: CEO
+   	   		Threshold: if RequestTotalAmount > 20,000 BD        
+	   		Test: 10003661 IMRAN QAYYUM BAIG 
+			Result: Passed		
+	7. Notify the Secretary of CEO for the Administrative Task (10003870 FATIMA JAFFAR ABDULLA)  
+
+Test Case #9:
+CEA No.: 20210029
+Purpose: Test the approval flow of the CEA requisition created using the old DB workflow
+
+Test Requisitions for completed and CEAs:
+20230139 
+
+
+Ahmed Abdali CEA Downloas issues:
+- CEA #20220095 showing duplicate records for NIDEC in the excel file
+- CEA #20220015 shows double amount
+- PO #60191991 was rejected but amount still shows in the report it uses CEA #20220163
+
+Cannot implicitly convert type 'decimal' to 'int'. An explicit conversion exists (are you missing a cast?)
+
+http://localhost:8888 
+http://grbhdevt02:8690
+
+http://grbhdevt02:8690/UserFunctions/Project/CEARequisition?requisitionNo=20230129&actionType=7
+http://localhost:8888/UserFunctions/Project/CEARequisition?requisitionNo=20230129&actionType=7
+
+http://grbhdevt02:8690/UserFunctions/Project/CEARequisition?requisitionNo=20230128&actionType=3
+http://localhost:8888/UserFunctions/Project/CEARequisition?requisitionNo=20230128&actionType=3
+
+http://localhost:8888/UserFunctions/Project/CEARequisition?requisitionNo=20230129&actionType=7
+
+20230136
+
+modChangeStatus
+modReassignment
+
+txtReassignTo
+txtOriginator
+
+ <input type="hidden" id="hidUserName" value="@userName" name="UserName" />      
+            <input type="hidden" id="hidUserEmpNo" value="@userEmpNo" name="UserEmpNo" />
+
+
+hidCEAAdminJSON

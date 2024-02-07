@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\CEAApp.Web.props" />
+</Project>

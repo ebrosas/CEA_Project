@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Blend for Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DIL-UIDesign", "DIL-UIDesign\DIL-UIDesign.csproj", "{157CF2C8-5812-40B7-A80D-1BCFAAD9CAA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DIL-UIDesignScreens", "DIL-UIDesign\DIL-UIDesignScreens\DIL-UIDesignScreens.csproj", "{62DE91C3-38B5-47A3-9624-B61AC5EF0BCF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{157CF2C8-5812-40B7-A80D-1BCFAAD9CAA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{157CF2C8-5812-40B7-A80D-1BCFAAD9CAA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{157CF2C8-5812-40B7-A80D-1BCFAAD9CAA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{157CF2C8-5812-40B7-A80D-1BCFAAD9CAA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62DE91C3-38B5-47A3-9624-B61AC5EF0BCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62DE91C3-38B5-47A3-9624-B61AC5EF0BCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62DE91C3-38B5-47A3-9624-B61AC5EF0BCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62DE91C3-38B5-47A3-9624-B61AC5EF0BCF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

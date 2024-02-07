@@ -1,0 +1,402 @@
+﻿@using Microsoft.Extensions.Configuration
+@using CEAApp.Web.DIServices
+@using CEAApp.Web.Models
+
+@model ProjectViewModel
+
+@inject IConfiguration Configuration
+@inject IConverterService ConverterService
+@inject ILookupService LookupService
+@inject IHttpContextAccessor HttpContextAccessor;
+
+@{
+    ViewData["Title"] = "Project Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    // Get the current logged on User ID
+    //var userName = @HttpContextAccessor.HttpContext.Session.GetString("_UserID"); 
+    var userName = ConverterService.ConvertObjectToString(TempData.Peek("UserID"));
+}
+
+<div class="formWrapper container-fluid">
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" id="hidProjectNo" asp-for="ProjectDetail.ProjectNo" name="ProjectNo" />
+        <input type="hidden" id="hidProjectID" asp-for="ProjectDetail.ProjectID" name="ProjectID" />
+
+        <div class="alert alert-danger alert-dismissible fade show errorPanel" style='display: @(!string.IsNullOrWhiteSpace(Model.ErrorMessage) ? "block" : "none")'>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <strong>Error! </strong>&nbsp;<span class="errorText">@Model.ErrorMessage</span>
+        </div>
+        <div class="alert alert-success alert-dismissible fade show successPanel" style='display: @(!string.IsNullOrWhiteSpace(Model.NotificationMessage) ? "block" : "none")'>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <strong>Success!</strong>&nbsp;<span class="successText">@Model.NotificationMessage</span>
+        </div>
+
+        <div class="container-fluid p-0 m-0">
+            <div class="row no-gutters">
+                <div class="col-12 mt-2">
+                    <div class="formHeader">
+                        <span><i class="fas fa-edit fa-1x fa-fw"></i></span>                        
+                        @ViewData["Title"]
+                    </div>
+                </div>
+            </div>
+
+            <div class="requestHeader">
+                <div class="form-row">
+                    <div class="col-12 mx-auto px-5">
+                        <div class="alert alert-danger alert-dismissible fade show errorMsgBox" hidden>
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong>Error! </strong>&nbsp;<span class="errorMsg">Test error!</span>
+                        </div>
+                        <div class="alert alert-success alert-dismissible fade show successMsgBox" hidden>
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong>Success!</strong>&nbsp;<span class="successMsg">Test success!</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid ps-2 pe-0 me-0 pt-1 pb-2">                      
+                    <div class="row pt-0 mt-0 pe-4">
+                        <div class="col-sm-12 text-danger clearfix">
+                            <span class="font-italic float-end">- indicates a required field</span>
+                            <span class="float-end me-1"><i class="fas fa-asterisk fa-fw fa-xs"></i></span>
+                        </div>
+                    </div>
+                    <div class="row pt-2">
+                        <div class="col-sm-2 fieldLabel">
+                            <label asp-for="ProjectDetail.ProjectNo" class="col-form-label"></label>                            
+                        </div>
+                        <div class="col-sm-3">
+                            <input asp-for="ProjectDetail.ProjectNo" class="form-control form-control-sm fieldValue fw-bold text-danger" disabled />  
+                            <span asp-validation-for="ProjectDetail.ProjectNo" class="text-danger"></span>
+                        </div>
+                        <div class="col-sm-2 fieldLabel">
+                            <label asp-for="ProjectDetail.ProjectStatus" class="col-form-label"></label>
+                        </div>
+                        <div class="col-sm-4 pe-3">
+                            <input asp-for="ProjectDetail.ProjectStatus" class="form-control form-control-sm fieldValue" disabled />  
+                            <span asp-validation-for="ProjectDetail.ProjectStatus" class="text-danger"></span>
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+                    <div class="row pt-2">
+                        <div class="col-sm-2 fieldLabel">
+                            <span><i class="fas fa-asterisk fa-fw fa-xs text-danger"></i></span>
+                            <label asp-for="ProjectDetail.FiscalYear" class="col-form-label" data-field="FiscalYear"></label>
+                        </div>
+                        <div class="col-sm-3">
+                            <select class="form-select fieldValue w-50 editable" data-editable="Yes" disabled
+                                    title="Tips:" data-toggle="popover" data-content="Select Fiscal Year" data-trigger="hover" data-placement="top"  
+                                    asp-for="ProjectDetail.FiscalYear" asp-items="Model.FiscalYearArray" name="FiscalYear" style="padding-left: -5px;">
+                                <option value="">All</option>
+                            </select>  
+                            <span asp-validation-for="ProjectDetail.FiscalYear" class="text-danger"></span>
+                            <div class="form-row errorPanel" id="FiscalYearError" hidden>
+                                <div class="col-sm-12">
+                                    <div class="alert alert-danger alert-dismissible mt-1 fade show">
+                                        <span><i class="fas fa-times-circle fa-fw fa-lg"></i></span>
+                                        <span class="errorText"></span>
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+                        <div class="col-sm-2 fieldLabel">
+                            <span><i class="fas fa-asterisk fa-fw fa-xs text-danger"></i></span>
+                            <label asp-for="ProjectDetail.ExpenditureTypeCode" class="col-form-label d-inline-block text-truncate ps-2 text-start" data-field="ExpenditureType"></label>
+                        </div>
+                        <div class="col-sm-4 pe-3">
+                            <select class="form-control form-select fieldValue editable" data-editable="Yes" disabled 
+                                    title="Tips:" data-toggle="popover" data-content="Select Expenditure Type" data-trigger="hover" data-placement="top"  
+                                    asp-for="ProjectDetail.ExpenditureTypeCode" asp-items="Model.ExpenseTypeArray" name="ExpenditureType" style="padding-left: -5px;">
+                                <option value=""> </option>
+                            </select>  
+                            <input type="hidden" id="hidExpenditureType" asp-for="ProjectDetail.ExpenditureTypeCode" name="ExpenditureTypeCode" />
+                            <span asp-validation-for="ProjectDetail.ExpenditureTypeCode" class="text-danger"></span>
+                            <div class="form-row errorPanel" id="ExpenditureTypeError" hidden>
+                                <div class="col-sm-12">
+                                    <div class="alert alert-danger alert-dismissible mt-1 fade show">
+                                        <span><i class="fas fa-times-circle fa-fw fa-lg"></i></span>
+                                        <span class="errorText"></span>
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+
+                    <div class="row pt-2">
+                        <div class="col-sm-5">
+                            <div class="row my-1">
+                                <div class="col-sm-5 fieldLabel pe-4">
+                                    <span><i class="fas fa-asterisk fa-fw fa-xs text-danger"></i></span>
+                                    <label asp-for="ProjectDetail.ExpectedProjectDate" class="col-form-label" data-field="ExpectedProjectDate"></label>                                    
+                                </div>
+                                <div class="col p-0 m-0">
+                                    <div class="input-group input-group-sm">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="far fa-calendar-alt fa-fw"></i></span>
+                                        </div>
+                                        <input asp-for="ProjectDetail.ExpectedProjectDate" name="ExpectedProjectDate" class="fieldValue editable" data-editable="Yes" disabled style="width: 145px; text-align: center;" />  
+                                        @*<input class="borderLess fieldValue form-control-sm" type="text" id="txtProjectDate" maxlength="10" tabindex="17" data-readonly-field="false" 
+                                            style="width: 145px; font-size: 14px; text-align: center;" readonly />*@
+                                        @*<input type="hidden" id="hdnProjectDate" />*@
+                                        <span asp-validation-for="ProjectDetail.ExpectedProjectDate" class="text-danger"></span>
+                                        <div class="form-row errorPanel" id="ExpectedProjectDateError" hidden>
+                                            <div class="col-sm-12">
+                                                <div class="alert alert-danger alert-dismissible mt-1 fade show">
+                                                    <span><i class="fas fa-times-circle fa-fw fa-lg"></i></span>
+                                                    <span class="errorText"></span>
+                                                </div>
+                                            </div>
+                                        </div>  
+                                    </div>  
+                                </div>
+                            </div>
+                            <div class="row mb-1 mt-2">
+                                <div class="col-sm-5 pe-4 fieldLabel">
+                                    <span><i class="fas fa-asterisk fa-fw fa-xs text-danger"></i></span>
+                                    <label asp-for="ProjectDetail.CostCenter" class="col-form-label" data-field="CostCenter"></label>                            
+                                </div>
+                                <div class="col p-0 m-0">
+                                   <select class="form-control form-select fieldValue editable" data-editable="Yes" disabled 
+                                            title="Tips:" data-toggle="popover" data-content="Select cost center" data-trigger="hover" data-placement="top"
+                                            asp-for="ProjectDetail.CostCenter" asp-items="Model.CostCenterArray" name="CostCenter" style="padding-left: -5px;">
+                                        <option value=""></option>
+                                    </select>
+                                    <span asp-validation-for="ProjectDetail.CostCenter" class="text-danger"></span>
+                                    <div class="form-row errorPanel" id="CostCenterError" hidden>
+                                        <div class="col-sm-12">
+                                            <div class="alert alert-danger alert-dismissible mt-1 fade show">
+                                                <span><i class="fas fa-times-circle fa-fw fa-lg"></i></span>
+                                                <span class="errorText"></span>
+                                            </div>
+                                        </div>
+                                    </div>   
+                                </div>                                
+                            </div>
+                            <div class="row mb-1 mt-2">
+                                <div class="col-sm-5 pe-4 fieldLabel">
+                                    <label asp-for="ProjectDetail.AccountNo" class="col-form-label"></label>                            
+                                </div>
+                                <div class="col p-0 m-0">
+                                    <input asp-for="ProjectDetail.AccountNo" class="form-control form-control-sm fieldValue" disabled />  
+                                    <span asp-validation-for="ProjectDetail.AccountNo" class="text-danger"></span>
+                                </div>                                
+                            </div>
+                        </div>
+                        <div class="col-sm-2 fieldLabel">
+                            <span><i class="fas fa-asterisk fa-fw fa-xs text-danger"></i></span>
+                            <label asp-for="ProjectDetail.Description" class="col-form-label" data-field="Description"></label>
+                        </div>
+                        <div class="col-sm-4 pt-1">
+                            <textarea asp-for="ProjectDetail.Description" name="Description" rows="5" 
+                                class="form-control form-control-sm fieldValue editable" data-editable="Yes" disabled
+                                maxlength="500" tabindex="14">
+                            </textarea>
+                            <span asp-validation-for="ProjectDetail.Description" class="text-danger"></span>
+                            <div class="form-row errorPanel" id="DescriptionError" hidden>
+                                <div class="col-sm-12">
+                                    <div class="alert alert-danger alert-dismissible mt-1 fade show">
+                                        <span><i class="fas fa-times-circle fa-fw fa-lg"></i></span>
+                                        <span class="errorText"></span>
+                                    </div>
+                                </div>
+                            </div>   
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+
+                    <div class="row pt-2">
+                        <div class="col-sm-5">
+                            <div class="row my-1">
+                                <div class="col-sm-5 fieldLabel pe-4">
+                                    <span><i class="fas fa-asterisk fa-fw fa-xs text-danger"></i></span>
+                                    <label asp-for="ProjectDetail.ProjectAmount" class="col-form-label" data-field="ProjectAmount"></label>    
+                                </div>
+                                <div class="col p-0 m-0">
+                                    <input asp-for="ProjectDetail.ProjectAmount" class="form-control form-control-sm fieldValue editable" name="ProjectAmount" data-editable="Yes" disabled />  
+                                    <span asp-validation-for="ProjectDetail.ProjectAmount" class="text-danger"></span>
+                                    <div class="form-row errorPanel" id="ProjectAmountError" hidden>
+                                        <div class="col-sm-12">
+                                            <div class="alert alert-danger alert-dismissible mt-1 fade show">
+                                                <span><i class="fas fa-times-circle fa-fw fa-lg"></i></span>
+                                                <span class="errorText"></span>
+                                            </div>
+                                        </div>
+                                    </div>    
+                                </div>
+                            </div>
+                            <div class="row mb-1 mt-2">
+                                <div class="col-sm-5 pe-4 fieldLabel">
+                                    <label asp-for="ProjectDetail.UsedAmount" class="col-form-label"></label>                            
+                                </div>
+                                <div class="col p-0 m-0">
+                                   <input asp-for="ProjectDetail.UsedAmount" class="form-control form-control-sm fieldValue" disabled />  
+                                    <span asp-validation-for="ProjectDetail.UsedAmount" class="text-danger"></span>
+                                </div>                                
+                            </div>
+                            <div class="row mb-1 mt-2">
+                                <div class="col-sm-5 pe-4 fieldLabel">
+                                    <label asp-for="ProjectDetail.BalanceAmount" class="col-form-label d-inline-block text-truncate ps-2 text-start"></label>                            
+                                </div>
+                                <div class="col p-0 m-0">
+                                   <input asp-for="ProjectDetail.BalanceAmount" class="form-control form-control-sm fieldValue" disabled />  
+                                    <span asp-validation-for="ProjectDetail.BalanceAmount" class="text-danger"></span>
+                                </div>                                
+                            </div>
+                        </div>
+                        <div class="col-sm-2 fieldLabel">
+                            <label asp-for="ProjectDetail.DetailDescription" class="col-form-label" data-field="DetailDescription"></label>
+                        </div>
+                        <div class="col-sm-4 pt-1">
+                            <textarea asp-for="ProjectDetail.DetailDescription" name="DetailDescription" rows="5" 
+                                class="form-control form-control-sm fieldValue editable" data-editable="Yes" disabled
+                                maxlength="500" tabindex="14">
+                            </textarea>
+                            <span asp-validation-for="ProjectDetail.DetailDescription" class="text-danger"></span>
+                            <div class="form-row errorPanel" id="DetailDescriptionError" hidden>
+                                <div class="col-sm-12">
+                                    <div class="alert alert-danger alert-dismissible mt-1 fade show">
+                                        <span><i class="fas fa-times-circle fa-fw fa-lg"></i></span>
+                                        <span class="errorText"></span>
+                                    </div>
+                                </div>
+                            </div>                               
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+
+                    <div class="row pt-1 pb-3">
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-10 ps-1">
+                            <button type="button" id="btnCreate" class="btn btn-sm btn-primary float-sm-start text-white border-0 rounded-3 actionButton" 
+                                style="width: 160px;" tabindex="18" hidden
+                                data-bs-toggle="tooltip" data-bs-placement="top" title="Create new CEA request">
+                                <span class="spinner-border spinner-border-sm" hidden></span>
+                                <span><i class="far fa-file-alt fa-fw fa-lg"></i></span>&nbsp;
+                                Create New
+                            </button>
+                            <button type="button" id="btnEdit" class="btn btn-sm btn-danger float-sm-start text-white border-0 rounded-3 actionButton" 
+                                style="width: 130px;" tabindex="18" hidden
+                                data-bs-toggle="tooltip" data-bs-placement="top" title="Edit project details">
+                                <span class="spinner-border spinner-border-sm" hidden></span>
+                                <span><i class="fas fa-edit fa-fw fa-lg"></i></span>&nbsp;
+                                Edit
+                            </button>
+                            <button type="button" id="btnSave" 
+                                class="btn btn-sm btn-outline-success float-sm-start actionButton rounded-3" disabled 
+                                style="width: 130px;" tabindex="18" hidden                               
+                                data-bs-toggle="tooltip" data-bs-placement="top" title="Save data changes">
+                                <span class="spinner-border spinner-border-sm" hidden></span>
+                                <span><i class="fas fa-save fa-fw fa-lg"></i></span>&nbsp;
+                                Save
+                            </button>
+                            <button type="button" id="btnReset" class="btn btn-sm btn-warning text-white rounded-3 actionButton"
+                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Clears the form"
+                                    style="width: 130px;" tabindex="22">
+                                <span><i class="fas fa-sync-alt fa-fw fa-lg"></i></span>&nbsp;
+                                Reset
+                            </button>
+                            <a asp-area="UserFunctions" asp-controller="Project" asp-action="Index" class="btn btn-sm btn-outline-secondary rounded-3 actionButton ps-0 ms-0 backButton" 
+                                data-bs-toggle="tooltip" data-bs-placement="top" title="Go back to previous page"
+                                style="width: 130px;">
+                                <span><i class="fas fa-arrow-circle-left fa-fw fa-lg"></i></span>&nbsp; 
+                                Go Back
+                            </a>
+
+                            @*@{
+                                var saveParams = new Dictionary<string, string>
+                                {
+                                    {"ProjectNo", @Model.ProjectDetail.ProjectNo},
+                                    {"ProjectID", @Model.ProjectDetail.ProjectID.ToString()},
+                                    {"FiscalYear", @Model.ProjectDetail.FiscalYear.ToString()}
+                                };
+                            }*@
+                            @*<button id="btnHiddenSave" asp-area="UserFunctions" asp-controller="Project" asp-action="ProjectDetail" asp-all-route-data="saveParams" formmethod="post" hidden>Save</button>*@
+                            <input type="reset" id="btnHiddenReset" value="Reset Form" hidden />
+                            <input type="submit" asp-area="UserFunctions" asp-controller="Project" asp-action="ProjectDetail" formmethod="post" id="btnHiddenSubmit" value="Submit" hidden />
+                        </div>
+                    </div>
+
+                    <div class="row mt-1 mb-1 groupTitle">
+                        <div class="col-sm-12 clearfix">
+                            @*<span class="ps-3">CEA/MRE Requisitions for Project #: @ViewBag.ProjectNo</span> &nbsp;*@
+                            <span class="ps-3">CEA/MRE Requisitions for Project #: @TempData.Peek("ProjectNo")</span> &nbsp;
+                        </div>
+                    </div>
+
+                    <div class="row mt-0 pt-0 mx-2 mb-2">
+                        <div class="col-sm-12 ps-2 pe-3">
+                            <div class="container-fluid tablePanel gridWrapper">
+                                <div class="table-responsive py-3" style="-ms-overflow-style: auto;">
+                                    <table id="requisitionTable" class="generalTable display nowrap stripe row-border  table-bordered" style="width: 100%;">
+                                        <thead>
+                                            <tr>
+                                                <th class="centeredColumn">
+                                                    <label asp-for="RequisitionList.FirstOrDefault().requisitionNo"></label>    
+                                                </th>
+                                                <th class="centeredColumn">
+                                                    <label asp-for="RequisitionList.FirstOrDefault().requisitionDate"></label>    
+                                                </th>
+                                                <th class="centeredColumn doNotOrder">
+                                                    <label asp-for="RequisitionList.FirstOrDefault().description"></label>    
+                                                </th>
+                                                <th class="centeredColumn">
+                                                    <label asp-for="RequisitionList.FirstOrDefault().dateofComission"></label>    
+                                                </th>                                                
+                                                <th class="centeredColumn">
+                                                    <label asp-for="RequisitionList.FirstOrDefault().amount"></label>    
+                                                </th>
+                                                <th class="centeredColumn">
+                                                    <label asp-for="RequisitionList.FirstOrDefault().approvalStatus"></label>    
+                                                </th>
+                                                <th class="centeredColumn">
+                                                    <label asp-for="RequisitionList.FirstOrDefault().usedAmount"></label>    
+                                                </th>
+                                                <th class="centeredColumn">
+                                                    <label asp-for="RequisitionList.FirstOrDefault().createDate"></label>    
+                                                </th>    
+                                                <th class="centeredColumn">
+                                                    <label asp-for="RequisitionList.FirstOrDefault().createdByName"></label>    
+                                                </th>
+                                                <th class="hiddenColumn" style="display: none;">
+                                                    Requisition ID
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+
+        <div>
+            <input type="hidden" id="hidUserName" value="@userName" name="UserName" />
+            <input type="hidden" id="hidFormCode" asp-for="FormCode" />
+            <input type="hidden" id="hidCallerForm" asp-for="@Model.CallerForm" name="callerForm" />
+            <input type="hidden" asp-for="ToastNotification" name="ToastNotification" />
+        </div>
+    </form>
+</div>
+
+@section Scripts{
+    <script>
+        // Initialize tooltips
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
+
+    <script src="~/lib/jqueryui/jquery-ui.min.js"></script>
+    <script src="~/js/projectDetail.js"></script>
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+

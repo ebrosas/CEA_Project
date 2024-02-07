@@ -1,0 +1,107 @@
+
+Enhancement Requests:
+1. HD #185111 - Capital Assets acquisition and disposal
+
+Main Menus:
+
+1. Expense Claim
+   Dashboard Icons:
+   - Claims Created
+   - Claims Completed
+   - Claims In-progress
+   - Claims Rejected
+
+
+Sidebar Menus:
+1. Admin
+   - Dashboard
+   - View Request
+   - Reassignment
+
+2. Create New Claim
+3. Department Request
+4. Assigned Request
+
+2. Expense Claim
+   - Create New Claim
+   - View Submitted Claims
+   - View Assigned Claims
+
+3. Travel Request
+   - Create New Request
+   - View Submitted Requests
+   - View Assigned Requests
+
+Technical Notes:
+- When modifying an existing project, confirm that the project file includes a package reference for the Microsoft.AspNetCore.App metapackage or the Microsoft.AspNetCore.Authentication NuGet package.
+   
+Third Party Tools
+1. sweetalert - URL: https://sweetalert.js.org/guides/#installation
+2. toastr - URL: codeseven-github.io/toastr
+3. HTML tables - URL: datatables.net
+4. Font Awesome Kit: <script src="https://kit.fontawesome.com/5f40f00358.js" crossorigin="anonymous"></script>
+
+Add-Nuget Packages for the Solution:
+- Microsoft.EntityFrameworkCore
+- Microsoft.EntityFrameworkCore.SqlServer
+- Microsoft.EntityFrameworkCore.Tools
+- Microsotf.AspNetCore.Mvc.Razor.RuntimeCompilation
+
+Scaffold-DbContext Command
+Use Scaffold-DbContext to create a model based on your existing database. The following parameters can be specified with Scaffold-DbContext in Package Manager Console:
+
+Scaffold-DbContext [-Connection] [-Provider] [-OutputDir] [-Context] [-Schemas>] [-Tables>] 
+                    [-DataAnnotations] [-Force] [-Project] [-StartupProject] [<CommonParameters>]
+
+Example: Scaffold-DbContext "server=localhost;port=3306;user=root;password=mypass;database=sakila" MySql.Data.EntityFrameworkCore -OutputDir Sakila -Tables actor,film,film_actor,language -f   
+
+Adding multiple tables all at once:
+Scaffold-DbContext "Server=GRBHSQDT02;Database=ProjectRequisition;User ID=ceauser;Password=ceapwd;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Context ApplicationDbContext -Tables Project,Requisition,ApprovalStatus,ProjectStatus -f
+
+Adding 1 table at a time:
+Scaffold-DbContext "Server=GRBHSQDT02;Database=ProjectRequisition;User ID=ceauser;Password=ceapwd;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Context ApplicationDbContext -Tables Project -f
+Scaffold-DbContext "Server=GRBHSQDT01;Database=GrmTravelExpense;User ID=teuser;Password=tepwd;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Context ApplicationDbContext -Tables TravelRequest -f
+
+Use the following command to get the detailed help on Scaffold-DbContext command:
+get-help scaffold-dbcontext –detailed
+
+
+Microsoft.Data.SqlClient.SqlException: 'The parameterized query '(@mode int,@reqTypeID int,@reqTypeParentID int,@reqTypeCode varc' expects the parameter '@reqTypeCode', which was not supplied.'
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+Dependencies:
+
+1. How to install Dapper: Open Package Manager Console and then execute the following script 
+   PM> NuGet\Install-Package Dapper
+
+<th class="centeredColumn" style="width: 180px;">
+                                                    New Requisition
+                                                </th>
+                                                <th class="centeredColumn" style="width: 150px;">
+                                                    Project No.
+                                                </th>
+                                                <th class="centeredColumn" style="width: 150px;">
+                                                    Project Date
+                                                </th>
+                                                <th class="centeredColumn" style="width: 150px;">
+                                                    Expense Type
+                                                </th>
+                                                <th class="centeredColumn doNotOrder" style="width: 250px;">
+                                                    Description
+                                                </th>
+                                                <th class="centeredColumn doNotOrder" style="width: 300px;">
+                                                    Detailed Description
+                                                </th>
+                                                <th class="centeredColumn" style="width: 150px;">
+                                                    Account No.
+                                                </th>
+                                                <th class="centeredColumn" style="width: 150px;">
+                                                    Status
+                                                </th>
+                                                <th class="centeredColumn" style="width: 150px;">
+                                                    Project Amount
+                                                </th>
+
+
+

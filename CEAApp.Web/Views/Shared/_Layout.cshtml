@@ -1,0 +1,255 @@
+﻿@using Microsoft.AspNetCore.Http;
+@using CEAApp.Web.DIServices
+@using System.Security.Claims;
+
+@inject IHttpContextAccessor HttpContextAccessor;
+@inject IConverterService ConverterService;
+
+@{
+    string userName = ConverterService.ConvertObjectToString(TempData.Peek("UserID"));
+    string userFullName =  ConverterService.ConvertObjectToString(TempData.Peek("UserEmpName"));
+    string userFirstName =  ConverterService.GetUserFirstName(TempData.Peek("UserEmpName").ToString());
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="CEA & MRE Management System" />
+    <meta name="keywords" content="cea, mre, inc, ervin" />
+    <meta name="author" content="Ervin Olinas Brosas" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
+    <title>@ViewData["Title"] - CEA / MRE Management System</title>
+
+     <!--External CSS libraries-->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />    
+    <link rel="stylesheet" href="~/lib/jqueryui/jquery-ui.min.css" />
+    <link rel="stylesheet" href="~/lib/datatables/datatables.min.css" />
+    <link rel="stylesheet" href="~/lib/fontawesome/all.min.css" />
+    <link rel="stylesheet" href="~/lib/loader/waitMe.min.css" />
+    <link rel="stylesheet" href="~/lib/toastr/toastr.min.css" />
+
+    <!--Local CSS files-->
+    <link rel="stylesheet" href="~/css/layoutStyle.css" />
+    <link rel="stylesheet" href="~/css/common.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/CEAApp.Web.styles.css" asp-append-version="true" />    
+</head>
+<body>
+    <header>
+        <div id="parentDiv" class="d-flex flex-row w-100 ps-2 fixed-top" style="background-color: #51555B;">
+            <div class="col-8 py-2">
+                <img src="~/images/cealogo.png" class="img-thumbnail rounded" alt="CEA App logo" width="45" height="40">
+                <div class="d-inline align-bottom">
+                    <span class="fw-bolder text-success text-uppercase appTitle">&nbsp;CEA</span>
+                    <span class="fw-bold text-warning appTitle" style="font-size: 34px;">/</span>
+                    <span class="fw-bold text-danger text-uppercase appTitle">MRE</span>
+                    <span class="fw-bold text-white-50 appTitle2">Management System</span>
+                </div>
+            </div>
+            <div class="container-fluid clearfix me-2 mt-3">
+                <div class="float-end text-end">
+                    <span class="fw-bold text-white-50 d-block">Welcome, @userFullName</span>
+                    <code><span class="fw-lighter fst-italic text-white-50" style="font-family: Verdana; font-size: 10pt;">Username: GARMCO\@userName</span></code>
+                </div>                
+            </div>
+        </div>
+    </header>
+
+    <section id="bodySection" style="padding: 0px; margin: 0px;">
+        <form id="form1" runat="server">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="side-nav shadow" style="padding-top: 75px;">
+                        <nav>
+                            <div>
+                                <ul>       
+                                    <li class="parentLink" id="mnuUserFunction">
+                                        <a class="sideMenuTitleLink" id="lnkUserFunction" href="javascript:void(0)">
+                                            <span><i class="fas fas fa-user-lock fa-fw"></i></span>
+                                            <span class="menuTextBold">User Functions</span>
+                                        </a>
+                                        <span class="fa-pull-right">
+                                            <a class="sideMenuTitleLink" id="btnToggleUserFunction" href="javascript:void(0)">
+                                                <span><i id="lnkPlusMinusUF" class="fa fa-minus-circle"></i></span>
+                                            </a>
+                                        </span>
+
+                                        <div class="nav-second-level">
+                                            <ul>
+                                                <li>
+                                                    <a class="sideMenuLink" id="lnkProjectInquiry" asp-area="UserFunctions" asp-controller="Project" asp-action="Index">
+                                                        <span><i class="fas fa-search fa-1x fa-fw"></i></span>
+                                                        <span class="menuText">Project Inquiry</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="sideMenuLink" id="lnkRequestInquiry" asp-area="UserFunctions" asp-controller="Project" asp-action="RequisitionInquiry">
+                                                        <span><i class="fas fa-cog fa-1x fa-fw"></i></span>
+                                                        <span class="menuText">Requisition Inquiry</span>
+                                                    </a>
+                                                </li>
+                                                <li hidden>
+                                                    <a class="sideMenuLink" id="lnkCreateNew" href="javascript:void(0)">
+                                                        <span><i class="fas fa-plus-circle fa-1x fa-fw" aria-hidden="true"></i></span>
+                                                        <span class="menuText">Create New Request</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="parentLink" id="mnuReportFunction">
+                                        <a class="sideMenuTitleLink" id="lnkReportFunction" href="javascript:void(0)">
+                                            <span><i class="fas fas fa-user-lock fa-fw"></i></span>
+                                            <span class="menuTextBold">Report Functions</span>
+                                        </a>
+                                        <span class="fa-pull-right">
+                                            <a class="sideMenuTitleLink" id="btnToggleReportFunction" href="javascript:void(0)">
+                                                <span><i id="lnkPlusMinusRF" class="fa fa-minus-circle"></i></span>
+                                            </a>
+                                        </span>
+
+                                        <div class="nav-second-level">
+                                            <ul>
+                                                <li>
+                                                    <a class="sideMenuLink" id="lnkDetailedExpense" asp-area="ReportFunctions" asp-controller="Report" asp-action="DetailedExpenseReport">
+                                                        <span><i class="fas fa-shoe-prints fa-1x fa-fw"></i></span>
+                                                        <span class="menuText">Detailed Expense Report</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="sideMenuLink" id="lnkExpenseReport" asp-area="ReportFunctions" asp-controller="Report" asp-action="ExpenseReport">
+                                                        <span><i class="fas fa-print fa-1x fa-fw"></i></span>
+                                                        <span class="menuText">Expense Report</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="sideMenuLink" id="lnkRequisitionReport" asp-area="ReportFunctions" asp-controller="Report" asp-action="RequisitionReport">
+                                                        <span><i class="fas fa-print fa-1x fa-fw" aria-hidden="true"></i></span>
+                                                        <span class="menuText">Requisition Report</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="parentLink" id="mnuAdmin">
+                                        <a class="sideMenuTitleLink" id="lnkAdmin" href="javascript:void(0)">
+                                            <span><i class="fas fas fa-user-lock fa-fw"></i></span>
+                                            <span class="menuTextBold">Administration</span>
+                                        </a>
+                                        <span class="fa-pull-right">
+                                            <a class="sideMenuTitleLink" id="btnToggleAdmin" href="javascript:void(0)">
+                                                <span><i id="lnkPlusMinus" class="fa fa-plus-circle"></i></span>
+                                            </a>
+                                        </span>
+
+                                        <div class="nav-second-level" data-open="no" style="display: none;">
+                                            <ul>
+                                                <li>
+                                                    <a class="sideMenuLink" id="lnkUploadProject" asp-area="AdminFunctions" asp-controller="Admin" asp-action="UploadProject">
+                                                        <span><i class="fas fa-upload fa-fw"></i></span>
+                                                        <span class="menuText">Upload Projects</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="sideMenuLink" id="lnkRequestAdmin" asp-area="AdminFunctions" asp-controller="Admin" asp-action="RequisitionAdmin">
+                                                        <span><i class="fas fa-cog fa-1x fa-fw"></i></span>
+                                                        <span class="menuText">Request Administration</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="sideMenuLink" id="lnkAssignEquipment" asp-area="AdminFunctions" asp-controller="Admin" asp-action="ManageEquipmentNo">
+                                                        <span><i class="fas fa-share-square fa-fw" aria-hidden="true"></i></span>
+                                                        <span class="menuText">Assign Equipment No.</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="sideMenuLink" id="lnkReassign" asp-area="AdminFunctions" asp-controller="Admin" asp-action="Reassignment">
+                                                        <span><i class="fas fa-exchange-alt fa-fw" aria-hidden="true"></i></span>
+                                                        <span class="menuText">Reassignment</span>
+                                                    </a>
+                                                </li>                                                
+                                                <li hidden>
+                                                    <a class="sideMenuLink" id="lnkRecreate" href="javascript:void(0)">
+                                                        <span><i class="fas fa-sync-alt fa-spin fa-fw"></i></span>
+                                                        <span class="menuText">Rereate Workflow</span>
+                                                    </a>
+                                                </li>
+                                                 <li hidden>
+                                                    <a class="sideMenuLink" id="lnkRequisitionPrint" asp-area="ReportFunctions" asp-controller="Report" asp-action="RequisitionPrint">
+                                                        <span><i class="fas fa-upload fa-fw"></i></span>
+                                                        <span class="menuText">Requisition Print</span>
+                                                    </a>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+
+                    <div class="container-fluid">
+                        <main role="main" style="position: relative; left: 250px; top: 90px; padding-right: 250px;">
+                            @RenderBody()
+                        </main>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <footer class="border-top footer text-muted mt-0 pt-0 border-0" style="line-height: 30px;" hidden>
+        <div class="container-fluid pageFooter mt-0 pt-0 ps-2 text-white small p-1" style="background-color: #7F8FA3;">
+            <div class="clearfix">
+                <div class="float-lg-end pe-2 align-text-top">
+                    Copyright &copy; 2023 - CEA App ver. 2.0
+                </div>
+                <div class="float-start">
+                    <span>Environment: <span id="lblEnvironment" class="fw-bold text-danger text-uppercase">Test</span> </span>
+                </div>
+            </div>
+        </div>
+    </footer>        
+
+    <!--External Javascript libraries-->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/jqueryui/jquery-ui.min.js"></script>
+    <script src="~/lib/datatables/datatables.min.js"></script>
+    <script src="~/lib/moment/moment.js"></script>
+    <script src="~/lib/moment/ellipsis.js"></script>
+    <script src="~/lib/fontawesome/all.min.js"></script>
+    <script src="~/lib/loader/waitMe.min.js"></script>
+    <script src="~/lib/toastr/toastr.min.js"></script>
+    <script src="~/lib/sweetalert/sweetalert.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/dataTables.buttons.min.js"></script> 
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/buttons.html5.min.js"></script>
+
+    <!--Local Javascript files-->
+    <script src="~/js/layout.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/app.js"></script>
+    <script src="~/js/common.js"></script>
+    @await RenderSectionAsync("Styles", required: false)
+    @await RenderSectionAsync("Scripts", required: false)
+
+  @*  <script>
+
+        const options = {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+        };
+        setInterval(myTimer, 1000);
+
+        function myTimer() {
+          const d = new Date();
+          document.getElementById("timeSpan").innerHTML = d.toLocaleTimeString("en-US", options);
+        }
+    </script>*@
+</body>
+</html>

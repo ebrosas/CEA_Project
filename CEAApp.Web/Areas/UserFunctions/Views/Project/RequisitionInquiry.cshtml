@@ -1,0 +1,358 @@
+﻿@using Microsoft.Extensions.Configuration
+@using CEAApp.Web.DIServices
+@using CEAApp.Web.Models
+
+@model ProjectViewModel
+
+@inject IConfiguration Configuration
+@inject IConverterService ConverterService
+@inject ILookupService LookupService
+@inject IHttpContextAccessor HttpContextAccessor;
+
+@{
+    ViewData["Title"] = "Requisitions  Inquiry";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    // Get the current logged on User ID
+    var userName = ConverterService.ConvertObjectToString(TempData.Peek("UserID"));
+}
+
+<div class="formWrapper container-fluid">
+    <form asp-area="UserFunctions" asp-controller="Project" method="get">
+        <div class="alert alert-danger alert-dismissible fade show errorPanel" style='display: @(!string.IsNullOrWhiteSpace(Model.ErrorMessage) ? "block" : "none")'>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <strong>Error! </strong>&nbsp;<span class="errorText">@Model.ErrorMessage</span>
+        </div>
+        <div class="alert alert-success alert-dismissible fade show successPanel" style='display: @(!string.IsNullOrWhiteSpace(Model.NotificationMessage) ? "block" : "none")'>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <strong>Success!</strong>&nbsp;<span class="successText">@Model.NotificationMessage</span>
+        </div>
+
+        <div class="container-fluid p-0 m-0">
+            <div class="row no-gutters">
+                <div class="col-12 mt-2">
+                    <div class="formHeader">
+                        <span><i class="fas fa-chart-pie fa-1x fa-fw"></i></span>
+                        @ViewData["Title"]
+                    </div>
+                </div>
+            </div>
+
+            <div class="requestHeader">
+                <div class="form-row">
+                    <div class="col-12 mx-auto px-5">
+                        <div class="alert alert-danger alert-dismissible fade show errorMsgBox" hidden>
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong>Error! </strong>&nbsp;<span class="errorMsg">Test error!</span>
+                        </div>
+                        <div class="alert alert-success alert-dismissible fade show successMsgBox" hidden>
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong>Success!</strong>&nbsp;<span class="successMsg">Test success!</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid ps-2 pe-0 me-0 pt-3 pb-2">  
+                    <div class="row pt-0 mt-0 pe-4" hidden>
+                        <div class="col-sm-12 text-danger clearfix">
+                            <span class="font-italic float-end">- indicates a required field</span>
+                            <span class="float-end me-1"><i class="fas fa-asterisk fa-fw fa-xs"></i></span>
+                        </div>
+                    </div>
+                    <div class="row pt-2">
+                        <div class="col-sm-2 fieldLabel">                            
+                            <label asp-for="SearchFilter.FiscalYear" class="col-form-label d-inline-block text-truncate ps-2 text-start" data-field="FiscalYear"></label>                            
+                        </div>
+                        <div class="col-sm-4">
+                            <select id="cboFiscalYear" asp-for="SearchFilter.FiscalYear" asp-items="Model.FiscalYearArray" name="FiscalYear" 
+                                class="form-select fieldValue w-50" title="Tips:" data-toggle="popover" data-content="Select Fiscal Year" data-trigger="hover" data-placement="top"  
+                                style="padding-left: -5px;">
+                                <option value="">All</option>
+                            </select>    
+                            <div class="form-row errorPanel" id="fiscalYearValid" hidden>
+                                <div class="col-sm-12">
+                                    <div class="alert alert-danger alert-dismissible mt-1 fade show">
+                                        <span><i class="fas fa-times-circle fa-fw fa-lg"></i></span>
+                                        <span class="errorText"></span>
+                                    </div>
+                                </div>
+                            </div>    
+                        </div>
+                        <div class="col-sm-2 fieldLabel">
+                            <label asp-for="SearchFilter.ExpenditureType" class="col-form-label d-inline-block text-truncate ps-2 text-start" data-field="ExpenditureType"></label>                            
+                        </div>
+                        <div class="col-sm-3 pe-4">
+                            <select asp-for="SearchFilter.ExpenditureType" asp-items="Model.ExpenditureTypeArray" name="ExpenditureType" class="form-control form-select fieldValue"
+                                    title="Tips:" data-toggle="popover" data-content="Select Expenditure Type" data-trigger="hover" data-placement="top"
+                                    style="padding-left: -5px;">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+                    <div class="row pt-2">
+                        <div class="col-sm-2 fieldLabel">
+                            <label asp-for="SearchFilter.Status" class="col-form-label d-inline-block text-truncate ps-2 text-start" data-field="Status"></label>                            
+                        </div>
+                        <div class="col-sm-4">
+                            <select asp-for="SearchFilter.Status" asp-items="Model.RequisitionStatusArray" name="Status" class="form-control form-select fieldValue"
+                                    title="Tips:" data-toggle="popover" data-content="Select Status" data-trigger="hover" data-placement="top"
+                                    style="padding-left: -5px;">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                        <div class="col-sm-2 fieldLabel">
+                            <label asp-for="SearchFilter.ProjectNo" class="col-form-label d-inline-block text-truncate ps-2 text-start" data-field="ProjectNo"></label>                            
+                        </div>
+                        <div class="col-sm-3 pe-4">
+                            <input asp-for="SearchFilter.ProjectNo" name="ProjectNo" class="form-control form-control-sm fieldValue" maxlength="12"
+                                data-bs-toggle="tooltip" data-bs-placement="top" title="Enter numeric values only!" 
+                                onkeypress="return onlyNumberKeyInq(event)" />
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+                    <div class="row pt-2">
+                        <div class="col-sm-2 fieldLabel">
+                            <label asp-for="SearchFilter.CostCenter" class="col-form-label d-inline-block text-truncate ps-2 text-start" data-field="CostCenter"></label>                            
+                        </div>
+                        <div class="col-sm-4">
+                            <select asp-for="SearchFilter.CostCenter" asp-items="Model.CostCenterArray" name="CostCenter" class="form-control form-select fieldValue" 
+                                title="Tips:" data-toggle="popover" data-content="Select cost center" data-trigger="hover" data-placement="top"
+                                style="padding-left: -5px;">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                        <div class="col-sm-2 fieldLabel">
+                            <label asp-for="SearchFilter.RequisitionNo" class="col-form-label d-inline-block text-truncate ps-2 text-start" data-field="RequisitionNo"></label>                            
+                        </div>
+                        <div class="col-sm-3 pe-4">
+                            <input asp-for="SearchFilter.RequisitionNo" name="RequisitionNo" class="form-control form-control-sm fieldValue" maxlength="12" 
+                                data-bs-toggle="tooltip" data-bs-placement="top" title="Enter numeric values only!"
+                                onkeypress="return onlyNumberKeyInq(event)" />
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>    
+                    <div class="row pt-2">
+                        <div class="col-sm-2 fieldLabel pt-1">
+                            <label asp-for="SearchFilter.StartDate" class="col-form-label d-inline-block text-truncate ps-2 text-start" data-field="RequisitionDate"></label>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="input-group input-group-sm mt-1">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text inputGroupTitle" style="height: 31px;">
+                                        <i class="far fa-calendar-alt fa-xs fa-fw"></i>
+                                        From                                        
+                                    </span>
+                                </div>
+                                <input asp-for="SearchFilter.StartDate" name="StartDate" class="borderLess fieldValue form-control-sm me-2" type="text" maxlength="10" tabindex="5" data-readonly-field="true"  
+                                    style="width: 120px; font-size: 14px; text-align: center; height: 13px;" />
+                                <input type="hidden" id="hdnReqStartDate" />
+                                <div class="input-group-prepend ml-2">
+                                    <span class="input-group-text inputGroupTitle" style="height: 31px;">
+                                        <i class="far fa-calendar-alt fa-xs fa-fw"></i>
+                                        To                                        
+                                    </span>
+                                </div>
+                                <input asp-for="SearchFilter.EndDate" name="EndDate" class="borderLess fieldValue form-control-sm" type="text" maxlength="10" tabindex="6" data-readonly-field="true"  
+                                    style="width: 120px; font-size: 14px; text-align: center; height: 13px;" />
+                                <input type="hidden" id="hdnReqEndDate" />
+                            </div> 
+                            <div class="form-row errorPanel" id="durationValid" hidden>
+                                <div class="col-sm-12">
+                                    <div class="alert alert-danger alert-dismissible mt-1 fade show">
+                                        <strong>Error!</strong>&nbsp;<span class="errorText"></span>
+                                    </div>
+                                </div>
+                            </div>                             
+                        </div>
+                        <div class="col-sm-2 fieldLabel">
+                            <label asp-for="SearchFilter.Keywords" class="col-form-label d-inline-block text-truncate ps-2 text-start" data-field="Keywords"></label>                            
+                        </div>
+                        <div class="col-sm-3 pe-4">
+                            <input asp-for="SearchFilter.Keywords" name="Keywords" class="form-control form-control-sm fieldValue" 
+                                placeholder="enter search string here..." maxlength="50" />
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>    
+                    <div class="row pt-2">
+                        <div class="col-sm-2 fieldLabel">
+                             <div class="form-check form-switch col-form-label">                                
+                                <label class="form-check-label text-danger" for="approvalSwitch">Filter Pending Approvals</label>
+                                <input class="form-check-input" type="checkbox" id="approvalSwitch" name="ShowAssigned" value="no">
+                            </div>       
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <select asp-for="SearchFilter.ApprovalType" asp-items="Model.ApprovalTypeArray" name="ApprovalType" class="form-control form-control-sm form-select fieldValue"
+                                        title="Tips:" data-toggle="popover" data-content="Select status type" data-trigger="hover" data-placement="top" disabled
+                                        style="padding-left: -5px;">
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-12 pt-1">
+                                    <div class="input-group groupAssignPerson" hidden>
+                                        <input id="txtOtherEmpNo" class="form-control form-control-sm fieldValue" type="text" maxlength="100" tabindex="15" data-readonly-field="false"  
+                                            title="Notes:" data-toggle="popover" data-content="Please enter the employee no. or type the name to filter the list." data-trigger="hover" data-placement="top"
+                                            name="OtherEmpNo" value="" placeholder="search employee here..." required style="font-size: 14px;" />
+                                        <button id="btnFindEmp" class="btn btn-sm btn-secondary" type="button"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Search for specific employee">
+                                            <span><i class="fas fa-binoculars fa-fw fa-lg"></i></span>&nbsp;
+                                        </button>
+                                    </div>                                    
+                                    <input type="hidden" id="hidOtherEmpNo" />
+                                    <div class="form-row errorPanel" id="otherEmpValid" hidden>
+                                        <div class="col-sm-12">
+                                            <div class="alert alert-danger alert-dismissible mt-1 fade show">
+                                                <span><i class="fas fa-times-circle fa-fw fa-lg"></i></span>
+                                                <span class="errorText"></span>
+                                            </div>
+                                        </div>
+                                    </div>   
+                                </div>
+                            </div>                            
+                        </div>
+                        <div class="col-sm-2 fieldLabel">
+                            <label asp-for="SearchFilter.CreatedBy" class="col-form-label d-inline-block text-truncate ps-2 text-start"></label>                            
+                        </div>
+                        <div class="col-sm-3 pe-4">
+                            <div id="createdByDiv" class="row mt-1">
+                                <div class="col-sm-1 ms-2 form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="createdByOption" id="createdByAll" value="0">
+                                    <label class="form-check-label" for="createdByAll">All</label>
+                                </div>
+                                <div class="col-sm-1 form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="createdByOption" id="createdByMe" value="1" checked >
+                                    <label class="form-check-label" for="createdByMe">Me</label>
+                                </div>
+                                <div class="col-sm-1 form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="createdByOption" id="createdByOthers" value="2">
+                                    <label class="form-check-label" for="createdByOthers">Others</label>
+                                </div>
+                                <div class="col"></div>
+                            </div>
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>    
+                    <div class="row mt-1">
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-10 ps-2">
+                            <button type="button" id="btnSearch" class="btn btn-sm btn-success float-sm-start text-white border-0 rounded-3 actionButton" 
+                                @*data-bs-toggle="tooltip" data-bs-placement="bottom" title="Search requisitions from the database"*@
+                                style="width: 130px;" tabindex="18"
+                                onclick="searchButtonInquiry()">
+                                <span class="spinner-border spinner-border-sm spinicon" hidden></span>
+                                <span class="normalicon"><i class="fas fa-search fa-fw fa-lg"></i></span>&nbsp;
+                                Search
+                            </button>
+                            <button type="button" id="btnReset" class="btn btn-sm btn-warning text-white border-0 rounded-3 actionButton"
+                                    @*data-bs-toggle="tooltip" data-bs-placement="bottom" title="Clears the data entry form"*@
+                                    onclick="resetButtonInquiry()" style="width: 130px;" tabindex="22">
+                                <span><i class="fas fa-sync fa-fw fa-lg"></i></span>&nbsp;
+                                Reset
+                            </button>
+                            <input type="reset" id="btnHiddenReset" value="Reset Form" hidden />
+                        </div>
+                    </div>
+
+                    <div class="row mt-2 mb-1 groupTitle">
+                        <div class="col-sm-12 clearfix">
+                            <span class="ps-3 text-primary">Search Results:</span> &nbsp;
+                            <span class="float-sm-end">
+                                <button type="button" class="btn btn-link pe-4 me-4 linkTitle" hidden>Add New Contractor</button>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="row mt-0 pt-0 mx-2 mb-2">
+                        <div class="col-sm-12 ps-2 pe-3">
+                            <div class="container-fluid tablePanel gridWrapper">
+                                <div class="table-responsive py-3" style="-ms-overflow-style: auto;">
+                                    <table id="requisitionTable" class="generalTable display nowrap stripe row-border  table-bordered" style="width: 100%;">
+                                        <thead>
+                                            <tr>
+                                                <th class="centeredColumn">
+                                                    <label asp-for="RequisitionList.FirstOrDefault().projectNo"></label>    
+                                                </th>
+                                                <th class="centeredColumn">
+                                                    <label asp-for="RequisitionList.FirstOrDefault().requisitionNo"></label>    
+                                                </th>
+                                                <th class="centeredColumn">
+                                                    <label asp-for="RequisitionList.FirstOrDefault().approvalStatus"></label>    
+                                                </th>
+                                                <th class="centeredColumn">
+                                                    <label asp-for="RequisitionList.FirstOrDefault().currentlyAssignedTo"></label>    
+                                                </th>
+                                                <th class="centeredColumn">
+                                                    <label asp-for="RequisitionList.FirstOrDefault().requisitionDate"></label>    
+                                                </th>                                                
+                                                <th class="centeredColumn doNotOrder">
+                                                    <label asp-for="RequisitionList.FirstOrDefault().description"></label>    
+                                                </th>
+                                                <th class="centeredColumn">
+                                                    <label asp-for="RequisitionList.FirstOrDefault().dateofComission"></label>    
+                                                </th>
+                                                <th class="centeredColumn">
+                                                    <label asp-for="RequisitionList.FirstOrDefault().amount"></label>    
+                                                </th>
+                                                <th class="centeredColumn">
+                                                    <label asp-for="RequisitionList.FirstOrDefault().fiscalYear"></label>    
+                                                </th>
+                                                <th class="centeredColumn">
+                                                    <label asp-for="RequisitionList.FirstOrDefault().costCenter"></label>    
+                                                </th>      
+                                                <th class="centeredColumn">
+                                                    <label asp-for="RequisitionList.FirstOrDefault().createDate"></label>    
+                                                </th>   
+                                                <th class="centeredColumn doNotOrder">
+                                                    <label asp-for="RequisitionList.FirstOrDefault().createdByName"></label>    
+                                                </th>
+                                                <th class="centeredColumn doNotOrder">
+
+                                                </th>
+                                                <th class="hiddenColumn" style="display: none;">
+                                                    <label asp-for="RequisitionList.FirstOrDefault().requisitionID"></label>  
+                                                </th>
+                                                <th class="hiddenColumn" style="display: none;">
+                                                    <label asp-for="RequisitionList.FirstOrDefault().assignedToEmpNo"></label>  
+                                                </th>
+                                                <th class="hiddenColumn" style="display: none;">
+                                                    <label asp-for="RequisitionList.FirstOrDefault().useNewWF"></label>  
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>      
+                
+                <input type="hidden" id="hidUserName" value="@userName" name="UserName" />
+                <input type="hidden" id="hidFormCode" asp-for="FormCode" />
+                <input type="hidden" id="hidEmpNo" asp-for="SearchFilter.EmpNo" name="EmpNo" />
+                <input type="hidden" id="hidSearchEmpNo" asp-for="SearchFilter.SearchEmpNo" name="SearchEmpNo" />
+                <input type="hidden" id="hidSearchEmpName" asp-for="SearchFilter.SearchEmpName" name="SearchEmpName" />
+                <input type="hidden" asp-for="InvokeSearch" name="InvokeSearch" />
+                <input type="hidden" asp-for="ToastNotification" name="ToastNotification" />
+                <input type="hidden" asp-for="IgnoreSavedData" name="IgnoreSavedData" />                
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts{
+    <script>
+        // Initialize tooltips
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
+
+    <script src="~/lib/jqueryui/jquery-ui.min.js"></script>
+    <script src="~/js/requisitionInquiry.js?v=@Configuration["AppSettings:JavaScriptFileVersion"]"></script>
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

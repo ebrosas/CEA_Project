@@ -1,0 +1,2205 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\CEAApp.Web.bundle.scp.css",
+      "PackagePath": "staticwebassets\\CEAApp.Web.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\css\\common.css",
+      "PackagePath": "staticwebassets\\css\\common.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\css\\layoutStyle.css",
+      "PackagePath": "staticwebassets\\css\\layoutStyle.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\ARLRDBD.eot",
+      "PackagePath": "staticwebassets\\fonts\\ARLRDBD.eot"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\ARLRDBD.svg",
+      "PackagePath": "staticwebassets\\fonts\\ARLRDBD.svg"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\ARLRDBD.ttf",
+      "PackagePath": "staticwebassets\\fonts\\ARLRDBD.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\ARLRDBD.woff",
+      "PackagePath": "staticwebassets\\fonts\\ARLRDBD.woff"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\ARLRDBD.woff2",
+      "PackagePath": "staticwebassets\\fonts\\ARLRDBD.woff2"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\Anton-Regular.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Anton-Regular.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\Bangers-Regular.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Bangers-Regular.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\BioRhyme-Bold.ttf",
+      "PackagePath": "staticwebassets\\fonts\\BioRhyme-Bold.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\BioRhyme-ExtraBold.ttf",
+      "PackagePath": "staticwebassets\\fonts\\BioRhyme-ExtraBold.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\BioRhyme-ExtraLight.ttf",
+      "PackagePath": "staticwebassets\\fonts\\BioRhyme-ExtraLight.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\BioRhyme-Light.ttf",
+      "PackagePath": "staticwebassets\\fonts\\BioRhyme-Light.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\BioRhyme-Regular.ttf",
+      "PackagePath": "staticwebassets\\fonts\\BioRhyme-Regular.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\FontAwesome.otf",
+      "PackagePath": "staticwebassets\\fonts\\FontAwesome.otf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\Montserrat-Bold.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Montserrat-Bold.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\Montserrat-Medium.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Montserrat-Medium.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\Montserrat-Regular.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Montserrat-Regular.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\Montserrat-SemiBold.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Montserrat-SemiBold.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\Mukta-Bold.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Mukta-Bold.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\Mukta-ExtraBold.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Mukta-ExtraBold.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\Mukta-ExtraLight.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Mukta-ExtraLight.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\Mukta-Light.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Mukta-Light.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\Mukta-Medium.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Mukta-Medium.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\Mukta-Regular.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Mukta-Regular.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\Mukta-SemiBold.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Mukta-SemiBold.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\Poppins-Bold.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Poppins-Bold.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\Poppins-BoldItalic.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Poppins-BoldItalic.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\Poppins-ExtraBold.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Poppins-ExtraBold.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\Poppins-ExtraBoldItalic.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Poppins-ExtraBoldItalic.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\Poppins-SemiBold.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Poppins-SemiBold.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\Poppins-SemiBoldItalic.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Poppins-SemiBoldItalic.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\Roboto-Bold.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Roboto-Bold.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\Roboto-Light.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Roboto-Light.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\Roboto-Regular.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Roboto-Regular.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\Ubuntu-Bold.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Ubuntu-Bold.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\Ubuntu-BoldItalic.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Ubuntu-BoldItalic.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\Ubuntu-Italic.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Ubuntu-Italic.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\Ubuntu-Light.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Ubuntu-Light.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\Ubuntu-LightItalic.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Ubuntu-LightItalic.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\Ubuntu-Medium.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Ubuntu-Medium.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\Ubuntu-MediumItalic.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Ubuntu-MediumItalic.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\Ubuntu-Regular.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Ubuntu-Regular.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\baumans-regular-webfont.ttf",
+      "PackagePath": "staticwebassets\\fonts\\baumans-regular-webfont.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\baumans-regular-webfont.woff",
+      "PackagePath": "staticwebassets\\fonts\\baumans-regular-webfont.woff"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\baumans-regular-webfont.woff2",
+      "PackagePath": "staticwebassets\\fonts\\baumans-regular-webfont.woff2"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\fontawesome-webfont.eot",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.eot"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\fontawesome-webfont.svg",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.svg"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\fontawesome-webfont.ttf",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\fontawesome-webfont.woff",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.woff"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\fontawesome-webfont.woff2",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.woff2"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\glyphicons-halflings-regular.eot",
+      "PackagePath": "staticwebassets\\fonts\\glyphicons-halflings-regular.eot"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\glyphicons-halflings-regular.svg",
+      "PackagePath": "staticwebassets\\fonts\\glyphicons-halflings-regular.svg"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\glyphicons-halflings-regular.ttf",
+      "PackagePath": "staticwebassets\\fonts\\glyphicons-halflings-regular.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\glyphicons-halflings-regular.woff",
+      "PackagePath": "staticwebassets\\fonts\\glyphicons-halflings-regular.woff"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\glyphicons-halflings-regular.woff2",
+      "PackagePath": "staticwebassets\\fonts\\glyphicons-halflings-regular.woff2"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\itim-regular-webfont.woff",
+      "PackagePath": "staticwebassets\\fonts\\itim-regular-webfont.woff"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\itim-regular-webfont.woff2",
+      "PackagePath": "staticwebassets\\fonts\\itim-regular-webfont.woff2"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\merienda-bold-webfont.ttf",
+      "PackagePath": "staticwebassets\\fonts\\merienda-bold-webfont.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\merienda-bold-webfont.woff",
+      "PackagePath": "staticwebassets\\fonts\\merienda-bold-webfont.woff"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\merienda-bold-webfont.woff2",
+      "PackagePath": "staticwebassets\\fonts\\merienda-bold-webfont.woff2"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\merienda-regular-webfont.ttf",
+      "PackagePath": "staticwebassets\\fonts\\merienda-regular-webfont.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\merienda-regular-webfont.woff",
+      "PackagePath": "staticwebassets\\fonts\\merienda-regular-webfont.woff"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\merienda-regular-webfont.woff2",
+      "PackagePath": "staticwebassets\\fonts\\merienda-regular-webfont.woff2"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\nunito-v10-latin-600.eot",
+      "PackagePath": "staticwebassets\\fonts\\nunito-v10-latin-600.eot"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\nunito-v10-latin-600.svg",
+      "PackagePath": "staticwebassets\\fonts\\nunito-v10-latin-600.svg"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\nunito-v10-latin-600.ttf",
+      "PackagePath": "staticwebassets\\fonts\\nunito-v10-latin-600.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\nunito-v10-latin-600.woff",
+      "PackagePath": "staticwebassets\\fonts\\nunito-v10-latin-600.woff"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\nunito-v10-latin-600.woff2",
+      "PackagePath": "staticwebassets\\fonts\\nunito-v10-latin-600.woff2"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\nunito-v10-latin-700.eot",
+      "PackagePath": "staticwebassets\\fonts\\nunito-v10-latin-700.eot"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\nunito-v10-latin-700.svg",
+      "PackagePath": "staticwebassets\\fonts\\nunito-v10-latin-700.svg"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\nunito-v10-latin-700.ttf",
+      "PackagePath": "staticwebassets\\fonts\\nunito-v10-latin-700.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\nunito-v10-latin-700.woff",
+      "PackagePath": "staticwebassets\\fonts\\nunito-v10-latin-700.woff"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\nunito-v10-latin-700.woff2",
+      "PackagePath": "staticwebassets\\fonts\\nunito-v10-latin-700.woff2"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\nunito-v10-latin-800.eot",
+      "PackagePath": "staticwebassets\\fonts\\nunito-v10-latin-800.eot"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\nunito-v10-latin-800.svg",
+      "PackagePath": "staticwebassets\\fonts\\nunito-v10-latin-800.svg"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\nunito-v10-latin-800.ttf",
+      "PackagePath": "staticwebassets\\fonts\\nunito-v10-latin-800.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\nunito-v10-latin-800.woff",
+      "PackagePath": "staticwebassets\\fonts\\nunito-v10-latin-800.woff"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\nunito-v10-latin-800.woff2",
+      "PackagePath": "staticwebassets\\fonts\\nunito-v10-latin-800.woff2"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\nunito-v10-latin-900.eot",
+      "PackagePath": "staticwebassets\\fonts\\nunito-v10-latin-900.eot"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\nunito-v10-latin-900.svg",
+      "PackagePath": "staticwebassets\\fonts\\nunito-v10-latin-900.svg"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\nunito-v10-latin-900.ttf",
+      "PackagePath": "staticwebassets\\fonts\\nunito-v10-latin-900.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\nunito-v10-latin-900.woff",
+      "PackagePath": "staticwebassets\\fonts\\nunito-v10-latin-900.woff"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\nunito-v10-latin-900.woff2",
+      "PackagePath": "staticwebassets\\fonts\\nunito-v10-latin-900.woff2"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\nunito-v10-latin-regular.eot",
+      "PackagePath": "staticwebassets\\fonts\\nunito-v10-latin-regular.eot"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\nunito-v10-latin-regular.svg",
+      "PackagePath": "staticwebassets\\fonts\\nunito-v10-latin-regular.svg"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\nunito-v10-latin-regular.ttf",
+      "PackagePath": "staticwebassets\\fonts\\nunito-v10-latin-regular.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\nunito-v10-latin-regular.woff",
+      "PackagePath": "staticwebassets\\fonts\\nunito-v10-latin-regular.woff"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\nunito-v10-latin-regular.woff2",
+      "PackagePath": "staticwebassets\\fonts\\nunito-v10-latin-regular.woff2"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\varelaround-regular.eot",
+      "PackagePath": "staticwebassets\\fonts\\varelaround-regular.eot"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\varelaround-regular.svg",
+      "PackagePath": "staticwebassets\\fonts\\varelaround-regular.svg"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\varelaround-regular.ttf",
+      "PackagePath": "staticwebassets\\fonts\\varelaround-regular.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\varelaround-regular.woff",
+      "PackagePath": "staticwebassets\\fonts\\varelaround-regular.woff"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\fonts\\varelaround-regular.woff2",
+      "PackagePath": "staticwebassets\\fonts\\varelaround-regular.woff2"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\images\\cealogo.png",
+      "PackagePath": "staticwebassets\\images\\cealogo.png"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\images\\check_icon.png",
+      "PackagePath": "staticwebassets\\images\\check_icon.png"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\images\\garmco_logo.png",
+      "PackagePath": "staticwebassets\\images\\garmco_logo.png"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\images\\requestcreated.png",
+      "PackagePath": "staticwebassets\\images\\requestcreated.png"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\js\\app.js",
+      "PackagePath": "staticwebassets\\js\\app.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\js\\app.js.map",
+      "PackagePath": "staticwebassets\\js\\app.js.map"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\js\\common.js",
+      "PackagePath": "staticwebassets\\js\\common.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\js\\common.js.map",
+      "PackagePath": "staticwebassets\\js\\common.js.map"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\js\\layout.js",
+      "PackagePath": "staticwebassets\\js\\layout.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\js\\project.js",
+      "PackagePath": "staticwebassets\\js\\project.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\js\\projectInquiry.js",
+      "PackagePath": "staticwebassets\\js\\projectInquiry.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\js\\projectInquiry.js.map",
+      "PackagePath": "staticwebassets\\js\\projectInquiry.js.map"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Buttons-2.3.4\\css\\buttons.bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Buttons-2.3.4\\css\\buttons.bootstrap.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Buttons-2.3.4\\css\\buttons.bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Buttons-2.3.4\\css\\buttons.bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Buttons-2.3.4\\css\\buttons.bootstrap4.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Buttons-2.3.4\\css\\buttons.bootstrap4.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Buttons-2.3.4\\css\\buttons.bootstrap4.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Buttons-2.3.4\\css\\buttons.bootstrap4.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Buttons-2.3.4\\css\\buttons.bootstrap5.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Buttons-2.3.4\\css\\buttons.bootstrap5.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Buttons-2.3.4\\css\\buttons.bootstrap5.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Buttons-2.3.4\\css\\buttons.bootstrap5.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Buttons-2.3.4\\css\\buttons.bulma.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Buttons-2.3.4\\css\\buttons.bulma.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Buttons-2.3.4\\css\\buttons.bulma.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Buttons-2.3.4\\css\\buttons.bulma.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Buttons-2.3.4\\css\\buttons.dataTables.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Buttons-2.3.4\\css\\buttons.dataTables.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Buttons-2.3.4\\css\\buttons.dataTables.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Buttons-2.3.4\\css\\buttons.dataTables.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Buttons-2.3.4\\css\\buttons.foundation.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Buttons-2.3.4\\css\\buttons.foundation.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Buttons-2.3.4\\css\\buttons.foundation.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Buttons-2.3.4\\css\\buttons.foundation.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Buttons-2.3.4\\css\\buttons.jqueryui.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Buttons-2.3.4\\css\\buttons.jqueryui.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Buttons-2.3.4\\css\\buttons.jqueryui.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Buttons-2.3.4\\css\\buttons.jqueryui.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Buttons-2.3.4\\css\\buttons.semanticui.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Buttons-2.3.4\\css\\buttons.semanticui.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Buttons-2.3.4\\css\\buttons.semanticui.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Buttons-2.3.4\\css\\buttons.semanticui.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Buttons-2.3.4\\css\\common.scss",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Buttons-2.3.4\\css\\common.scss"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Buttons-2.3.4\\css\\mixins.scss",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Buttons-2.3.4\\css\\mixins.scss"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Buttons-2.3.4\\js\\buttons.bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Buttons-2.3.4\\js\\buttons.bootstrap.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Buttons-2.3.4\\js\\buttons.bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Buttons-2.3.4\\js\\buttons.bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Buttons-2.3.4\\js\\buttons.bootstrap4.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Buttons-2.3.4\\js\\buttons.bootstrap4.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Buttons-2.3.4\\js\\buttons.bootstrap4.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Buttons-2.3.4\\js\\buttons.bootstrap4.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Buttons-2.3.4\\js\\buttons.bootstrap5.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Buttons-2.3.4\\js\\buttons.bootstrap5.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Buttons-2.3.4\\js\\buttons.bootstrap5.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Buttons-2.3.4\\js\\buttons.bootstrap5.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Buttons-2.3.4\\js\\buttons.bulma.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Buttons-2.3.4\\js\\buttons.bulma.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Buttons-2.3.4\\js\\buttons.bulma.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Buttons-2.3.4\\js\\buttons.bulma.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Buttons-2.3.4\\js\\buttons.colVis.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Buttons-2.3.4\\js\\buttons.colVis.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Buttons-2.3.4\\js\\buttons.colVis.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Buttons-2.3.4\\js\\buttons.colVis.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Buttons-2.3.4\\js\\buttons.dataTables.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Buttons-2.3.4\\js\\buttons.dataTables.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Buttons-2.3.4\\js\\buttons.dataTables.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Buttons-2.3.4\\js\\buttons.dataTables.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Buttons-2.3.4\\js\\buttons.foundation.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Buttons-2.3.4\\js\\buttons.foundation.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Buttons-2.3.4\\js\\buttons.foundation.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Buttons-2.3.4\\js\\buttons.foundation.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Buttons-2.3.4\\js\\buttons.html5.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Buttons-2.3.4\\js\\buttons.html5.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Buttons-2.3.4\\js\\buttons.html5.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Buttons-2.3.4\\js\\buttons.html5.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Buttons-2.3.4\\js\\buttons.jqueryui.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Buttons-2.3.4\\js\\buttons.jqueryui.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Buttons-2.3.4\\js\\buttons.jqueryui.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Buttons-2.3.4\\js\\buttons.jqueryui.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Buttons-2.3.4\\js\\buttons.print.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Buttons-2.3.4\\js\\buttons.print.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Buttons-2.3.4\\js\\buttons.print.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Buttons-2.3.4\\js\\buttons.print.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Buttons-2.3.4\\js\\buttons.semanticui.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Buttons-2.3.4\\js\\buttons.semanticui.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Buttons-2.3.4\\js\\buttons.semanticui.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Buttons-2.3.4\\js\\buttons.semanticui.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Buttons-2.3.4\\js\\dataTables.buttons.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Buttons-2.3.4\\js\\dataTables.buttons.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Buttons-2.3.4\\js\\dataTables.buttons.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Buttons-2.3.4\\js\\dataTables.buttons.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\DataTables-1.13.2\\css\\dataTables.bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\DataTables-1.13.2\\css\\dataTables.bootstrap.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\DataTables-1.13.2\\css\\dataTables.bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\DataTables-1.13.2\\css\\dataTables.bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\DataTables-1.13.2\\css\\dataTables.bootstrap4.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\DataTables-1.13.2\\css\\dataTables.bootstrap4.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\DataTables-1.13.2\\css\\dataTables.bootstrap4.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\DataTables-1.13.2\\css\\dataTables.bootstrap4.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\DataTables-1.13.2\\css\\dataTables.bootstrap5.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\DataTables-1.13.2\\css\\dataTables.bootstrap5.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\DataTables-1.13.2\\css\\dataTables.bootstrap5.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\DataTables-1.13.2\\css\\dataTables.bootstrap5.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\DataTables-1.13.2\\css\\dataTables.bulma.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\DataTables-1.13.2\\css\\dataTables.bulma.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\DataTables-1.13.2\\css\\dataTables.bulma.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\DataTables-1.13.2\\css\\dataTables.bulma.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\DataTables-1.13.2\\css\\dataTables.dataTables.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\DataTables-1.13.2\\css\\dataTables.dataTables.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\DataTables-1.13.2\\css\\dataTables.dataTables.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\DataTables-1.13.2\\css\\dataTables.dataTables.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\DataTables-1.13.2\\css\\dataTables.foundation.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\DataTables-1.13.2\\css\\dataTables.foundation.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\DataTables-1.13.2\\css\\dataTables.foundation.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\DataTables-1.13.2\\css\\dataTables.foundation.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\DataTables-1.13.2\\css\\dataTables.jqueryui.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\DataTables-1.13.2\\css\\dataTables.jqueryui.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\DataTables-1.13.2\\css\\dataTables.jqueryui.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\DataTables-1.13.2\\css\\dataTables.jqueryui.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\DataTables-1.13.2\\css\\dataTables.semanticui.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\DataTables-1.13.2\\css\\dataTables.semanticui.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\DataTables-1.13.2\\css\\dataTables.semanticui.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\DataTables-1.13.2\\css\\dataTables.semanticui.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\DataTables-1.13.2\\css\\jquery.dataTables.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\DataTables-1.13.2\\css\\jquery.dataTables.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\DataTables-1.13.2\\css\\jquery.dataTables.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\DataTables-1.13.2\\css\\jquery.dataTables.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\DataTables-1.13.2\\images\\sort_asc.png",
+      "PackagePath": "staticwebassets\\lib\\datatables\\DataTables-1.13.2\\images\\sort_asc.png"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\DataTables-1.13.2\\images\\sort_asc_disabled.png",
+      "PackagePath": "staticwebassets\\lib\\datatables\\DataTables-1.13.2\\images\\sort_asc_disabled.png"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\DataTables-1.13.2\\images\\sort_both.png",
+      "PackagePath": "staticwebassets\\lib\\datatables\\DataTables-1.13.2\\images\\sort_both.png"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\DataTables-1.13.2\\images\\sort_desc.png",
+      "PackagePath": "staticwebassets\\lib\\datatables\\DataTables-1.13.2\\images\\sort_desc.png"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\DataTables-1.13.2\\images\\sort_desc_disabled.png",
+      "PackagePath": "staticwebassets\\lib\\datatables\\DataTables-1.13.2\\images\\sort_desc_disabled.png"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\DataTables-1.13.2\\js\\dataTables.bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\DataTables-1.13.2\\js\\dataTables.bootstrap.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\DataTables-1.13.2\\js\\dataTables.bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\DataTables-1.13.2\\js\\dataTables.bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\DataTables-1.13.2\\js\\dataTables.bootstrap4.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\DataTables-1.13.2\\js\\dataTables.bootstrap4.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\DataTables-1.13.2\\js\\dataTables.bootstrap4.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\DataTables-1.13.2\\js\\dataTables.bootstrap4.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\DataTables-1.13.2\\js\\dataTables.bootstrap5.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\DataTables-1.13.2\\js\\dataTables.bootstrap5.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\DataTables-1.13.2\\js\\dataTables.bootstrap5.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\DataTables-1.13.2\\js\\dataTables.bootstrap5.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\DataTables-1.13.2\\js\\dataTables.bulma.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\DataTables-1.13.2\\js\\dataTables.bulma.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\DataTables-1.13.2\\js\\dataTables.bulma.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\DataTables-1.13.2\\js\\dataTables.bulma.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\DataTables-1.13.2\\js\\dataTables.dataTables.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\DataTables-1.13.2\\js\\dataTables.dataTables.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\DataTables-1.13.2\\js\\dataTables.dataTables.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\DataTables-1.13.2\\js\\dataTables.dataTables.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\DataTables-1.13.2\\js\\dataTables.foundation.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\DataTables-1.13.2\\js\\dataTables.foundation.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\DataTables-1.13.2\\js\\dataTables.foundation.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\DataTables-1.13.2\\js\\dataTables.foundation.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\DataTables-1.13.2\\js\\dataTables.jqueryui.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\DataTables-1.13.2\\js\\dataTables.jqueryui.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\DataTables-1.13.2\\js\\dataTables.jqueryui.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\DataTables-1.13.2\\js\\dataTables.jqueryui.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\DataTables-1.13.2\\js\\dataTables.semanticui.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\DataTables-1.13.2\\js\\dataTables.semanticui.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\DataTables-1.13.2\\js\\dataTables.semanticui.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\DataTables-1.13.2\\js\\dataTables.semanticui.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\DataTables-1.13.2\\js\\jquery.dataTables.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\DataTables-1.13.2\\js\\jquery.dataTables.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\DataTables-1.13.2\\js\\jquery.dataTables.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\DataTables-1.13.2\\js\\jquery.dataTables.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\DateTime-1.3.0\\css\\dataTables.dateTime.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\DateTime-1.3.0\\css\\dataTables.dateTime.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\DateTime-1.3.0\\css\\dataTables.dateTime.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\DateTime-1.3.0\\css\\dataTables.dateTime.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\DateTime-1.3.0\\js\\dataTables.dateTime.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\DateTime-1.3.0\\js\\dataTables.dateTime.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\DateTime-1.3.0\\js\\dataTables.dateTime.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\DateTime-1.3.0\\js\\dataTables.dateTime.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Responsive-2.4.0\\css\\responsive.bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Responsive-2.4.0\\css\\responsive.bootstrap.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Responsive-2.4.0\\css\\responsive.bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Responsive-2.4.0\\css\\responsive.bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Responsive-2.4.0\\css\\responsive.bootstrap4.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Responsive-2.4.0\\css\\responsive.bootstrap4.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Responsive-2.4.0\\css\\responsive.bootstrap4.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Responsive-2.4.0\\css\\responsive.bootstrap4.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Responsive-2.4.0\\css\\responsive.bootstrap5.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Responsive-2.4.0\\css\\responsive.bootstrap5.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Responsive-2.4.0\\css\\responsive.bootstrap5.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Responsive-2.4.0\\css\\responsive.bootstrap5.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Responsive-2.4.0\\css\\responsive.bulma.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Responsive-2.4.0\\css\\responsive.bulma.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Responsive-2.4.0\\css\\responsive.bulma.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Responsive-2.4.0\\css\\responsive.bulma.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Responsive-2.4.0\\css\\responsive.dataTables.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Responsive-2.4.0\\css\\responsive.dataTables.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Responsive-2.4.0\\css\\responsive.dataTables.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Responsive-2.4.0\\css\\responsive.dataTables.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Responsive-2.4.0\\css\\responsive.foundation.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Responsive-2.4.0\\css\\responsive.foundation.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Responsive-2.4.0\\css\\responsive.foundation.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Responsive-2.4.0\\css\\responsive.foundation.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Responsive-2.4.0\\css\\responsive.jqueryui.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Responsive-2.4.0\\css\\responsive.jqueryui.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Responsive-2.4.0\\css\\responsive.jqueryui.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Responsive-2.4.0\\css\\responsive.jqueryui.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Responsive-2.4.0\\css\\responsive.semanticui.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Responsive-2.4.0\\css\\responsive.semanticui.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Responsive-2.4.0\\css\\responsive.semanticui.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Responsive-2.4.0\\css\\responsive.semanticui.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Responsive-2.4.0\\js\\dataTables.responsive.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Responsive-2.4.0\\js\\dataTables.responsive.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Responsive-2.4.0\\js\\dataTables.responsive.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Responsive-2.4.0\\js\\dataTables.responsive.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Responsive-2.4.0\\js\\responsive.bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Responsive-2.4.0\\js\\responsive.bootstrap.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Responsive-2.4.0\\js\\responsive.bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Responsive-2.4.0\\js\\responsive.bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Responsive-2.4.0\\js\\responsive.bootstrap4.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Responsive-2.4.0\\js\\responsive.bootstrap4.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Responsive-2.4.0\\js\\responsive.bootstrap4.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Responsive-2.4.0\\js\\responsive.bootstrap4.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Responsive-2.4.0\\js\\responsive.bootstrap5.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Responsive-2.4.0\\js\\responsive.bootstrap5.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Responsive-2.4.0\\js\\responsive.bootstrap5.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Responsive-2.4.0\\js\\responsive.bootstrap5.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Responsive-2.4.0\\js\\responsive.bulma.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Responsive-2.4.0\\js\\responsive.bulma.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Responsive-2.4.0\\js\\responsive.bulma.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Responsive-2.4.0\\js\\responsive.bulma.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Responsive-2.4.0\\js\\responsive.dataTables.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Responsive-2.4.0\\js\\responsive.dataTables.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Responsive-2.4.0\\js\\responsive.dataTables.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Responsive-2.4.0\\js\\responsive.dataTables.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Responsive-2.4.0\\js\\responsive.foundation.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Responsive-2.4.0\\js\\responsive.foundation.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Responsive-2.4.0\\js\\responsive.foundation.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Responsive-2.4.0\\js\\responsive.foundation.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Responsive-2.4.0\\js\\responsive.jqueryui.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Responsive-2.4.0\\js\\responsive.jqueryui.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Responsive-2.4.0\\js\\responsive.jqueryui.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Responsive-2.4.0\\js\\responsive.jqueryui.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Responsive-2.4.0\\js\\responsive.semanticui.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Responsive-2.4.0\\js\\responsive.semanticui.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Responsive-2.4.0\\js\\responsive.semanticui.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Responsive-2.4.0\\js\\responsive.semanticui.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\RowReorder-1.3.2\\css\\rowReorder.bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\RowReorder-1.3.2\\css\\rowReorder.bootstrap.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\RowReorder-1.3.2\\css\\rowReorder.bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\RowReorder-1.3.2\\css\\rowReorder.bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\RowReorder-1.3.2\\css\\rowReorder.bootstrap4.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\RowReorder-1.3.2\\css\\rowReorder.bootstrap4.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\RowReorder-1.3.2\\css\\rowReorder.bootstrap4.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\RowReorder-1.3.2\\css\\rowReorder.bootstrap4.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\RowReorder-1.3.2\\css\\rowReorder.bootstrap5.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\RowReorder-1.3.2\\css\\rowReorder.bootstrap5.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\RowReorder-1.3.2\\css\\rowReorder.bootstrap5.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\RowReorder-1.3.2\\css\\rowReorder.bootstrap5.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\RowReorder-1.3.2\\css\\rowReorder.bulma.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\RowReorder-1.3.2\\css\\rowReorder.bulma.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\RowReorder-1.3.2\\css\\rowReorder.bulma.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\RowReorder-1.3.2\\css\\rowReorder.bulma.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\RowReorder-1.3.2\\css\\rowReorder.dataTables.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\RowReorder-1.3.2\\css\\rowReorder.dataTables.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\RowReorder-1.3.2\\css\\rowReorder.dataTables.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\RowReorder-1.3.2\\css\\rowReorder.dataTables.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\RowReorder-1.3.2\\css\\rowReorder.foundation.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\RowReorder-1.3.2\\css\\rowReorder.foundation.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\RowReorder-1.3.2\\css\\rowReorder.foundation.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\RowReorder-1.3.2\\css\\rowReorder.foundation.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\RowReorder-1.3.2\\css\\rowReorder.jqueryui.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\RowReorder-1.3.2\\css\\rowReorder.jqueryui.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\RowReorder-1.3.2\\css\\rowReorder.jqueryui.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\RowReorder-1.3.2\\css\\rowReorder.jqueryui.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\RowReorder-1.3.2\\css\\rowReorder.semanticui.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\RowReorder-1.3.2\\css\\rowReorder.semanticui.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\RowReorder-1.3.2\\css\\rowReorder.semanticui.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\RowReorder-1.3.2\\css\\rowReorder.semanticui.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\RowReorder-1.3.2\\js\\dataTables.rowReorder.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\RowReorder-1.3.2\\js\\dataTables.rowReorder.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\RowReorder-1.3.2\\js\\dataTables.rowReorder.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\RowReorder-1.3.2\\js\\dataTables.rowReorder.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\RowReorder-1.3.2\\js\\rowReorder.bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\RowReorder-1.3.2\\js\\rowReorder.bootstrap.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\RowReorder-1.3.2\\js\\rowReorder.bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\RowReorder-1.3.2\\js\\rowReorder.bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\RowReorder-1.3.2\\js\\rowReorder.bootstrap4.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\RowReorder-1.3.2\\js\\rowReorder.bootstrap4.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\RowReorder-1.3.2\\js\\rowReorder.bootstrap4.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\RowReorder-1.3.2\\js\\rowReorder.bootstrap4.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\RowReorder-1.3.2\\js\\rowReorder.bootstrap5.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\RowReorder-1.3.2\\js\\rowReorder.bootstrap5.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\RowReorder-1.3.2\\js\\rowReorder.bootstrap5.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\RowReorder-1.3.2\\js\\rowReorder.bootstrap5.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\RowReorder-1.3.2\\js\\rowReorder.bulma.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\RowReorder-1.3.2\\js\\rowReorder.bulma.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\RowReorder-1.3.2\\js\\rowReorder.bulma.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\RowReorder-1.3.2\\js\\rowReorder.bulma.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\RowReorder-1.3.2\\js\\rowReorder.dataTables.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\RowReorder-1.3.2\\js\\rowReorder.dataTables.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\RowReorder-1.3.2\\js\\rowReorder.dataTables.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\RowReorder-1.3.2\\js\\rowReorder.dataTables.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\RowReorder-1.3.2\\js\\rowReorder.foundation.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\RowReorder-1.3.2\\js\\rowReorder.foundation.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\RowReorder-1.3.2\\js\\rowReorder.foundation.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\RowReorder-1.3.2\\js\\rowReorder.foundation.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\RowReorder-1.3.2\\js\\rowReorder.jqueryui.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\RowReorder-1.3.2\\js\\rowReorder.jqueryui.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\RowReorder-1.3.2\\js\\rowReorder.jqueryui.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\RowReorder-1.3.2\\js\\rowReorder.jqueryui.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\RowReorder-1.3.2\\js\\rowReorder.semanticui.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\RowReorder-1.3.2\\js\\rowReorder.semanticui.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\RowReorder-1.3.2\\js\\rowReorder.semanticui.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\RowReorder-1.3.2\\js\\rowReorder.semanticui.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Select-1.6.0\\css\\select.bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Select-1.6.0\\css\\select.bootstrap.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Select-1.6.0\\css\\select.bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Select-1.6.0\\css\\select.bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Select-1.6.0\\css\\select.bootstrap4.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Select-1.6.0\\css\\select.bootstrap4.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Select-1.6.0\\css\\select.bootstrap4.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Select-1.6.0\\css\\select.bootstrap4.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Select-1.6.0\\css\\select.bootstrap5.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Select-1.6.0\\css\\select.bootstrap5.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Select-1.6.0\\css\\select.bootstrap5.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Select-1.6.0\\css\\select.bootstrap5.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Select-1.6.0\\css\\select.bulma.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Select-1.6.0\\css\\select.bulma.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Select-1.6.0\\css\\select.bulma.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Select-1.6.0\\css\\select.bulma.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Select-1.6.0\\css\\select.dataTables.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Select-1.6.0\\css\\select.dataTables.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Select-1.6.0\\css\\select.dataTables.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Select-1.6.0\\css\\select.dataTables.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Select-1.6.0\\css\\select.foundation.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Select-1.6.0\\css\\select.foundation.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Select-1.6.0\\css\\select.foundation.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Select-1.6.0\\css\\select.foundation.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Select-1.6.0\\css\\select.jqueryui.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Select-1.6.0\\css\\select.jqueryui.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Select-1.6.0\\css\\select.jqueryui.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Select-1.6.0\\css\\select.jqueryui.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Select-1.6.0\\css\\select.semanticui.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Select-1.6.0\\css\\select.semanticui.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Select-1.6.0\\css\\select.semanticui.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Select-1.6.0\\css\\select.semanticui.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Select-1.6.0\\js\\dataTables.select.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Select-1.6.0\\js\\dataTables.select.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Select-1.6.0\\js\\dataTables.select.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Select-1.6.0\\js\\dataTables.select.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Select-1.6.0\\js\\select.bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Select-1.6.0\\js\\select.bootstrap.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Select-1.6.0\\js\\select.bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Select-1.6.0\\js\\select.bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Select-1.6.0\\js\\select.bootstrap4.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Select-1.6.0\\js\\select.bootstrap4.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Select-1.6.0\\js\\select.bootstrap4.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Select-1.6.0\\js\\select.bootstrap4.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Select-1.6.0\\js\\select.bootstrap5.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Select-1.6.0\\js\\select.bootstrap5.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Select-1.6.0\\js\\select.bootstrap5.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Select-1.6.0\\js\\select.bootstrap5.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Select-1.6.0\\js\\select.bulma.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Select-1.6.0\\js\\select.bulma.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Select-1.6.0\\js\\select.bulma.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Select-1.6.0\\js\\select.bulma.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Select-1.6.0\\js\\select.dataTables.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Select-1.6.0\\js\\select.dataTables.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Select-1.6.0\\js\\select.dataTables.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Select-1.6.0\\js\\select.dataTables.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Select-1.6.0\\js\\select.foundation.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Select-1.6.0\\js\\select.foundation.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Select-1.6.0\\js\\select.foundation.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Select-1.6.0\\js\\select.foundation.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Select-1.6.0\\js\\select.jqueryui.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Select-1.6.0\\js\\select.jqueryui.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Select-1.6.0\\js\\select.jqueryui.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Select-1.6.0\\js\\select.jqueryui.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Select-1.6.0\\js\\select.semanticui.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Select-1.6.0\\js\\select.semanticui.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\Select-1.6.0\\js\\select.semanticui.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\Select-1.6.0\\js\\select.semanticui.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\datatables.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\datatables.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\datatables.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\datatables.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\datatables.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables\\datatables.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\datatables\\datatables.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables\\datatables.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fontawesome\\all.css",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\all.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fontawesome\\all.js",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\all.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fontawesome\\all.min.css",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\all.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fontawesome\\all.min.js",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\all.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\ARLRDBD.eot",
+      "PackagePath": "staticwebassets\\lib\\fonts\\ARLRDBD.eot"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\ARLRDBD.svg",
+      "PackagePath": "staticwebassets\\lib\\fonts\\ARLRDBD.svg"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\ARLRDBD.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\ARLRDBD.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\ARLRDBD.woff",
+      "PackagePath": "staticwebassets\\lib\\fonts\\ARLRDBD.woff"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\ARLRDBD.woff2",
+      "PackagePath": "staticwebassets\\lib\\fonts\\ARLRDBD.woff2"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\Anton-Regular.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\Anton-Regular.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\Bangers-Regular.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\Bangers-Regular.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\BioRhyme-Bold.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\BioRhyme-Bold.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\BioRhyme-ExtraBold.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\BioRhyme-ExtraBold.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\BioRhyme-ExtraLight.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\BioRhyme-ExtraLight.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\BioRhyme-Light.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\BioRhyme-Light.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\BioRhyme-Regular.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\BioRhyme-Regular.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\FontAwesome.otf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\FontAwesome.otf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\Montserrat-Bold.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\Montserrat-Bold.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\Montserrat-Medium.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\Montserrat-Medium.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\Montserrat-Regular.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\Montserrat-Regular.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\Montserrat-SemiBold.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\Montserrat-SemiBold.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\Mukta-Bold.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\Mukta-Bold.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\Mukta-ExtraBold.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\Mukta-ExtraBold.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\Mukta-ExtraLight.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\Mukta-ExtraLight.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\Mukta-Light.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\Mukta-Light.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\Mukta-Medium.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\Mukta-Medium.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\Mukta-Regular.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\Mukta-Regular.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\Mukta-SemiBold.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\Mukta-SemiBold.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\Poppins-Bold.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\Poppins-Bold.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\Poppins-BoldItalic.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\Poppins-BoldItalic.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\Poppins-ExtraBold.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\Poppins-ExtraBold.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\Poppins-ExtraBoldItalic.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\Poppins-ExtraBoldItalic.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\Poppins-SemiBold.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\Poppins-SemiBold.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\Poppins-SemiBoldItalic.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\Poppins-SemiBoldItalic.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\Roboto-Bold.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\Roboto-Bold.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\Roboto-Light.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\Roboto-Light.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\Roboto-Regular.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\Roboto-Regular.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\Ubuntu-Bold.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\Ubuntu-Bold.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\Ubuntu-BoldItalic.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\Ubuntu-BoldItalic.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\Ubuntu-Italic.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\Ubuntu-Italic.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\Ubuntu-Light.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\Ubuntu-Light.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\Ubuntu-LightItalic.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\Ubuntu-LightItalic.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\Ubuntu-Medium.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\Ubuntu-Medium.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\Ubuntu-MediumItalic.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\Ubuntu-MediumItalic.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\Ubuntu-Regular.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\Ubuntu-Regular.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\baumans-regular-webfont.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\baumans-regular-webfont.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\baumans-regular-webfont.woff",
+      "PackagePath": "staticwebassets\\lib\\fonts\\baumans-regular-webfont.woff"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\baumans-regular-webfont.woff2",
+      "PackagePath": "staticwebassets\\lib\\fonts\\baumans-regular-webfont.woff2"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\fontawesome-webfont.eot",
+      "PackagePath": "staticwebassets\\lib\\fonts\\fontawesome-webfont.eot"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\fontawesome-webfont.svg",
+      "PackagePath": "staticwebassets\\lib\\fonts\\fontawesome-webfont.svg"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\fontawesome-webfont.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\fontawesome-webfont.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\fontawesome-webfont.woff",
+      "PackagePath": "staticwebassets\\lib\\fonts\\fontawesome-webfont.woff"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\fontawesome-webfont.woff2",
+      "PackagePath": "staticwebassets\\lib\\fonts\\fontawesome-webfont.woff2"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\glyphicons-halflings-regular.eot",
+      "PackagePath": "staticwebassets\\lib\\fonts\\glyphicons-halflings-regular.eot"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\glyphicons-halflings-regular.svg",
+      "PackagePath": "staticwebassets\\lib\\fonts\\glyphicons-halflings-regular.svg"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\glyphicons-halflings-regular.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\glyphicons-halflings-regular.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\glyphicons-halflings-regular.woff",
+      "PackagePath": "staticwebassets\\lib\\fonts\\glyphicons-halflings-regular.woff"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\glyphicons-halflings-regular.woff2",
+      "PackagePath": "staticwebassets\\lib\\fonts\\glyphicons-halflings-regular.woff2"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\itim-regular-webfont.woff",
+      "PackagePath": "staticwebassets\\lib\\fonts\\itim-regular-webfont.woff"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\itim-regular-webfont.woff2",
+      "PackagePath": "staticwebassets\\lib\\fonts\\itim-regular-webfont.woff2"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\merienda-bold-webfont.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\merienda-bold-webfont.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\merienda-bold-webfont.woff",
+      "PackagePath": "staticwebassets\\lib\\fonts\\merienda-bold-webfont.woff"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\merienda-bold-webfont.woff2",
+      "PackagePath": "staticwebassets\\lib\\fonts\\merienda-bold-webfont.woff2"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\merienda-regular-webfont.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\merienda-regular-webfont.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\merienda-regular-webfont.woff",
+      "PackagePath": "staticwebassets\\lib\\fonts\\merienda-regular-webfont.woff"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\merienda-regular-webfont.woff2",
+      "PackagePath": "staticwebassets\\lib\\fonts\\merienda-regular-webfont.woff2"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\nunito-v10-latin-600.eot",
+      "PackagePath": "staticwebassets\\lib\\fonts\\nunito-v10-latin-600.eot"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\nunito-v10-latin-600.svg",
+      "PackagePath": "staticwebassets\\lib\\fonts\\nunito-v10-latin-600.svg"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\nunito-v10-latin-600.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\nunito-v10-latin-600.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\nunito-v10-latin-600.woff",
+      "PackagePath": "staticwebassets\\lib\\fonts\\nunito-v10-latin-600.woff"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\nunito-v10-latin-600.woff2",
+      "PackagePath": "staticwebassets\\lib\\fonts\\nunito-v10-latin-600.woff2"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\nunito-v10-latin-700.eot",
+      "PackagePath": "staticwebassets\\lib\\fonts\\nunito-v10-latin-700.eot"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\nunito-v10-latin-700.svg",
+      "PackagePath": "staticwebassets\\lib\\fonts\\nunito-v10-latin-700.svg"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\nunito-v10-latin-700.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\nunito-v10-latin-700.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\nunito-v10-latin-700.woff",
+      "PackagePath": "staticwebassets\\lib\\fonts\\nunito-v10-latin-700.woff"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\nunito-v10-latin-700.woff2",
+      "PackagePath": "staticwebassets\\lib\\fonts\\nunito-v10-latin-700.woff2"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\nunito-v10-latin-800.eot",
+      "PackagePath": "staticwebassets\\lib\\fonts\\nunito-v10-latin-800.eot"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\nunito-v10-latin-800.svg",
+      "PackagePath": "staticwebassets\\lib\\fonts\\nunito-v10-latin-800.svg"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\nunito-v10-latin-800.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\nunito-v10-latin-800.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\nunito-v10-latin-800.woff",
+      "PackagePath": "staticwebassets\\lib\\fonts\\nunito-v10-latin-800.woff"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\nunito-v10-latin-800.woff2",
+      "PackagePath": "staticwebassets\\lib\\fonts\\nunito-v10-latin-800.woff2"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\nunito-v10-latin-900.eot",
+      "PackagePath": "staticwebassets\\lib\\fonts\\nunito-v10-latin-900.eot"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\nunito-v10-latin-900.svg",
+      "PackagePath": "staticwebassets\\lib\\fonts\\nunito-v10-latin-900.svg"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\nunito-v10-latin-900.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\nunito-v10-latin-900.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\nunito-v10-latin-900.woff",
+      "PackagePath": "staticwebassets\\lib\\fonts\\nunito-v10-latin-900.woff"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\nunito-v10-latin-900.woff2",
+      "PackagePath": "staticwebassets\\lib\\fonts\\nunito-v10-latin-900.woff2"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\nunito-v10-latin-regular.eot",
+      "PackagePath": "staticwebassets\\lib\\fonts\\nunito-v10-latin-regular.eot"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\nunito-v10-latin-regular.svg",
+      "PackagePath": "staticwebassets\\lib\\fonts\\nunito-v10-latin-regular.svg"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\nunito-v10-latin-regular.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\nunito-v10-latin-regular.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\nunito-v10-latin-regular.woff",
+      "PackagePath": "staticwebassets\\lib\\fonts\\nunito-v10-latin-regular.woff"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\nunito-v10-latin-regular.woff2",
+      "PackagePath": "staticwebassets\\lib\\fonts\\nunito-v10-latin-regular.woff2"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\varelaround-regular.eot",
+      "PackagePath": "staticwebassets\\lib\\fonts\\varelaround-regular.eot"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\varelaround-regular.svg",
+      "PackagePath": "staticwebassets\\lib\\fonts\\varelaround-regular.svg"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\varelaround-regular.ttf",
+      "PackagePath": "staticwebassets\\lib\\fonts\\varelaround-regular.ttf"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\varelaround-regular.woff",
+      "PackagePath": "staticwebassets\\lib\\fonts\\varelaround-regular.woff"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\fonts\\varelaround-regular.woff2",
+      "PackagePath": "staticwebassets\\lib\\fonts\\varelaround-regular.woff2"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jqueryui\\images\\ui-bg_diagonals-small_40_db4865_40x40.png",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\images\\ui-bg_diagonals-small_40_db4865_40x40.png"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jqueryui\\images\\ui-bg_diagonals-small_50_93c3cd_40x40.png",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\images\\ui-bg_diagonals-small_50_93c3cd_40x40.png"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jqueryui\\images\\ui-bg_diagonals-small_50_ff3853_40x40.png",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\images\\ui-bg_diagonals-small_50_ff3853_40x40.png"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jqueryui\\images\\ui-bg_diagonals-small_75_ccd232_40x40.png",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\images\\ui-bg_diagonals-small_75_ccd232_40x40.png"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jqueryui\\images\\ui-bg_diagonals-thick_18_b81900_40x40.png",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\images\\ui-bg_diagonals-thick_18_b81900_40x40.png"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jqueryui\\images\\ui-bg_diagonals-thick_20_666666_40x40.png",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\images\\ui-bg_diagonals-thick_20_666666_40x40.png"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jqueryui\\images\\ui-bg_dots-medium_80_ffff38_4x4.png",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\images\\ui-bg_dots-medium_80_ffff38_4x4.png"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jqueryui\\images\\ui-bg_dots-small_35_35414f_2x2.png",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\images\\ui-bg_dots-small_35_35414f_2x2.png"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jqueryui\\images\\ui-bg_glass_100_f6f6f6_1x400.png",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\images\\ui-bg_glass_100_f6f6f6_1x400.png"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jqueryui\\images\\ui-bg_glass_100_fdf5ce_1x400.png",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\images\\ui-bg_glass_100_fdf5ce_1x400.png"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jqueryui\\images\\ui-bg_glass_65_ffffff_1x400.png",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\images\\ui-bg_glass_65_ffffff_1x400.png"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jqueryui\\images\\ui-bg_gloss-wave_35_f6a828_500x100.png",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\images\\ui-bg_gloss-wave_35_f6a828_500x100.png"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jqueryui\\images\\ui-bg_highlight-soft_100_eeeeee_1x100.png",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\images\\ui-bg_highlight-soft_100_eeeeee_1x100.png"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jqueryui\\images\\ui-bg_highlight-soft_75_ffe45c_1x100.png",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\images\\ui-bg_highlight-soft_75_ffe45c_1x100.png"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jqueryui\\images\\ui-bg_white-lines_85_f7f7ba_40x100.png",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\images\\ui-bg_white-lines_85_f7f7ba_40x100.png"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jqueryui\\images\\ui-icons_222222_256x240.png",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\images\\ui-icons_222222_256x240.png"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jqueryui\\images\\ui-icons_228ef1_256x240.png",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\images\\ui-icons_228ef1_256x240.png"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jqueryui\\images\\ui-icons_444444_256x240.png",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\images\\ui-icons_444444_256x240.png"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jqueryui\\images\\ui-icons_454545_256x240.png",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\images\\ui-icons_454545_256x240.png"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jqueryui\\images\\ui-icons_555555_256x240.png",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\images\\ui-icons_555555_256x240.png"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jqueryui\\images\\ui-icons_777620_256x240.png",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\images\\ui-icons_777620_256x240.png"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jqueryui\\images\\ui-icons_777777_256x240.png",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\images\\ui-icons_777777_256x240.png"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jqueryui\\images\\ui-icons_88a206_256x240.png",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\images\\ui-icons_88a206_256x240.png"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jqueryui\\images\\ui-icons_c02669_256x240.png",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\images\\ui-icons_c02669_256x240.png"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jqueryui\\images\\ui-icons_cc0000_256x240.png",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\images\\ui-icons_cc0000_256x240.png"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jqueryui\\images\\ui-icons_e1e463_256x240.png",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\images\\ui-icons_e1e463_256x240.png"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jqueryui\\images\\ui-icons_ef8c08_256x240.png",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\images\\ui-icons_ef8c08_256x240.png"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jqueryui\\images\\ui-icons_ffd27a_256x240.png",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\images\\ui-icons_ffd27a_256x240.png"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jqueryui\\images\\ui-icons_ffeb33_256x240.png",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\images\\ui-icons_ffeb33_256x240.png"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jqueryui\\images\\ui-icons_ffffff_256x240.png",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\images\\ui-icons_ffffff_256x240.png"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jqueryui\\jquery-ui.min.css",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\jquery-ui.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jqueryui\\jquery-ui.min.js",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\jquery-ui.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jqueryui\\jquery-ui.structure.css",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\jquery-ui.structure.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jqueryui\\jquery-ui.structure.min.css",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\jquery-ui.structure.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jqueryui\\jquery-ui.theme.css",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\jquery-ui.theme.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\jqueryui\\jquery-ui.theme.min.css",
+      "PackagePath": "staticwebassets\\lib\\jqueryui\\jquery-ui.theme.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\loader\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\loader\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\loader\\README.md",
+      "PackagePath": "staticwebassets\\lib\\loader\\README.md"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\loader\\img.svg",
+      "PackagePath": "staticwebassets\\lib\\loader\\img.svg"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\loader\\index.html",
+      "PackagePath": "staticwebassets\\lib\\loader\\index.html"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\loader\\waitMe.css",
+      "PackagePath": "staticwebassets\\lib\\loader\\waitMe.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\loader\\waitMe.js",
+      "PackagePath": "staticwebassets\\lib\\loader\\waitMe.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\loader\\waitMe.min.css",
+      "PackagePath": "staticwebassets\\lib\\loader\\waitMe.min.css"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\loader\\waitMe.min.js",
+      "PackagePath": "staticwebassets\\lib\\loader\\waitMe.min.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\moment\\ellipsis.js",
+      "PackagePath": "staticwebassets\\lib\\moment\\ellipsis.js"
+    },
+    {
+      "Id": "C:\\NET Projects\\CEA\\CEA.MRE.App\\CEAApp.Web\\wwwroot\\lib\\moment\\moment.js",
+      "PackagePath": "staticwebassets\\lib\\moment\\moment.js"
+    },
+    {
+      "Id": "C:\\Users\\ervin\\.nuget\\packages\\bootstrap\\5.2.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\ervin\\.nuget\\packages\\bootstrap\\5.2.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ervin\\.nuget\\packages\\bootstrap\\5.2.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ervin\\.nuget\\packages\\bootstrap\\5.2.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ervin\\.nuget\\packages\\bootstrap\\5.2.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\ervin\\.nuget\\packages\\bootstrap\\5.2.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ervin\\.nuget\\packages\\bootstrap\\5.2.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ervin\\.nuget\\packages\\bootstrap\\5.2.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ervin\\.nuget\\packages\\bootstrap\\5.2.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\ervin\\.nuget\\packages\\bootstrap\\5.2.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ervin\\.nuget\\packages\\bootstrap\\5.2.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ervin\\.nuget\\packages\\bootstrap\\5.2.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ervin\\.nuget\\packages\\bootstrap\\5.2.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\ervin\\.nuget\\packages\\bootstrap\\5.2.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ervin\\.nuget\\packages\\bootstrap\\5.2.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ervin\\.nuget\\packages\\bootstrap\\5.2.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ervin\\.nuget\\packages\\bootstrap\\5.2.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\ervin\\.nuget\\packages\\bootstrap\\5.2.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ervin\\.nuget\\packages\\bootstrap\\5.2.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ervin\\.nuget\\packages\\bootstrap\\5.2.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ervin\\.nuget\\packages\\bootstrap\\5.2.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\ervin\\.nuget\\packages\\bootstrap\\5.2.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ervin\\.nuget\\packages\\bootstrap\\5.2.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ervin\\.nuget\\packages\\bootstrap\\5.2.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ervin\\.nuget\\packages\\bootstrap\\5.2.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\ervin\\.nuget\\packages\\bootstrap\\5.2.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ervin\\.nuget\\packages\\bootstrap\\5.2.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ervin\\.nuget\\packages\\bootstrap\\5.2.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ervin\\.nuget\\packages\\bootstrap\\5.2.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\ervin\\.nuget\\packages\\bootstrap\\5.2.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ervin\\.nuget\\packages\\bootstrap\\5.2.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ervin\\.nuget\\packages\\bootstrap\\5.2.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ervin\\.nuget\\packages\\bootstrap\\5.2.3\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\ervin\\.nuget\\packages\\bootstrap\\5.2.3\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\ervin\\.nuget\\packages\\bootstrap\\5.2.3\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ervin\\.nuget\\packages\\bootstrap\\5.2.3\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\ervin\\.nuget\\packages\\bootstrap\\5.2.3\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\ervin\\.nuget\\packages\\bootstrap\\5.2.3\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\ervin\\.nuget\\packages\\bootstrap\\5.2.3\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ervin\\.nuget\\packages\\bootstrap\\5.2.3\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\ervin\\.nuget\\packages\\bootstrap\\5.2.3\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\ervin\\.nuget\\packages\\bootstrap\\5.2.3\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\ervin\\.nuget\\packages\\bootstrap\\5.2.3\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ervin\\.nuget\\packages\\bootstrap\\5.2.3\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.CEAApp.Web.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.CEAApp.Web.props",
+      "PackagePath": "build\\CEAApp.Web.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.CEAApp.Web.props",
+      "PackagePath": "buildMultiTargeting\\CEAApp.Web.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.CEAApp.Web.props",
+      "PackagePath": "buildTransitive\\CEAApp.Web.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

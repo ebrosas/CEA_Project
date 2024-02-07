@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .formHeader {
+            margin: 0px;
+            padding: 0px;
+            height: 37px;
+            line-height: 37px;
+            font-family: 'Courier New';
+            font-size: 18px;
+            letter-spacing: 1px;
+            text-transform: capitalize;
+            color: white;
+            text-align: center;
+            background-color: #746C70;
+            border-radius: 5px 5px 0px 0px;
+            vertical-align: central;
+        }
+
+        .requestHeader {
+            margin: 0px;
+            background-color: #f5f5f5;
+            padding: 10px 0px;
+            box-shadow: inset 0 0 7px 5px #ddd;
+        }
+
+        .messageBody {
+            font-family: 'Courier New';
+            font-size: 16px;
+        }
+    </style>
+
+    <link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap.min.css" />
+    <script src="../lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/fontawesome/all.min.js"></script>
+</head>
+<body>
+
+    <div class="container-fluid p-0 m-0">
+        <div class="row no-gutters">
+            <div class="col-12 mt-2">
+                <div class="formHeader text-center">
+                    <span><i class="fas fa-cloud-download-alt fa-fw fa-lg"></i></span>
+                    <span class="fw-bold">Assigned CEA/MRE Requisition #@6</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="requestHeader" style="background-color: white;">
+        <div class="container-fluid px-4 pt-2">
+            <div class="col-12 alert alert-danger">
+                <strong>Note:</strong> This is an auto-generated email, please do not reply.
+            </div>
+            <div class="col-12 messageBody">
+                <br />
+                Dear @1,
+                <br />
+                <br />
+                CEA/MRE Requisition No. @2 has been assigned to you for approval. Please take necessary action and update the system.
+                <br />
+                For more information about the assigned request, please click the below button.
+                <br />
+                <br />
+            </div>
+            <div class="col-12">
+                <button id="btnView" type="button" class="btn btn-success border-0">
+                    <a href="@3" target="_blank" class="text-white">
+                        <span><i class="fas fa-eye fa-fw fa-lg"></i></span>
+                        View Request
+                    </a>
+                </button>
+            </div>
+            <div class="col-12 messageBody">
+                <br />
+                Regards,
+                <br />
+                <p class="fw-bold">CEA System Administrator</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

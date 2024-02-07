@@ -1,0 +1,132 @@
+﻿@using Microsoft.Extensions.Configuration
+@using CEAApp.Web.Models
+
+@model ErrorViewModel
+
+@inject IConfiguration Configuration
+
+@{
+    ViewData["Title"] = "Unhandled  Error";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="formWrapper container-fluid">
+    <form asp-area="UserFunctions" asp-controller="Project" method="get">
+        <div class="container-fluid p-0 m-0">
+            <div class="row no-gutters">
+                <div class="col-12 mt-2">
+                    <div class="formHeader">
+                        <span><i class="fas fa-exclamation-triangle fa-lg fa-fw"></i></span>&nbsp;
+                        @ViewData["Title"]
+                    </div>
+                </div>
+            </div>
+            <div class="requestHeader" style="background-color: white;">
+                <div class="container-fluid ps-2 pe-0 me-0 pt-3 pb-2">  
+                    <div class="row">
+                        <div class="col">                            
+                            <img class="mx-auto d-block" src="~/images/errorpic.png" alt="Unhandled error"style="height: 250px; width: 300px;" />
+                        </div>
+                    </div>
+                     <div class="row my-1">
+                        <div class="col-sm-2 fieldLabel ps-0 ms-0">                                                    
+                            
+                        </div>
+                        <div class="col-sm-9">
+                            <h6 class="text-danger" style="font-family:'Poppins-SemiBold';">Oops! An error has occured while processing your request. Below are the details:</h6>
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+                    <div class="row my-1">
+                        <div class="col-sm-2 fieldLabel ps-0 ms-0">                                                    
+                            <label asp-for="ActionName" class="col-form-label"></label>
+                        </div>
+                        <div class="col-sm-9">
+                            <input asp-for="ActionName" class="form-control form-control-sm fieldValue" name="ActionName" readonly />  
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+                    <div class="row my-1">
+                        <div class="col-sm-2 fieldLabel ps-0 ms-0">                                                    
+                            <label asp-for="OffendingURL" class="col-form-label"></label>
+                        </div>
+                        <div class="col-sm-9">
+                            <input asp-for="OffendingURL" class="form-control form-control-sm fieldValue" maxlength="12" name="OffendingURL" readonly />  
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+                    <div class="row my-1">
+                        <div class="col-sm-2 fieldLabel">
+                            <label asp-for="Source" class="col-form-label"></label>
+                        </div>
+                        <div class="col-sm-9">
+                            <input asp-for="Source" class="form-control form-control-sm fieldValue" name="Source" readonly />  
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+                    <div class="row my-1">
+                        <div class="col-sm-2 fieldLabel">
+                            <label asp-for="Message" class="col-form-label"></label>
+                        </div>
+                        <div class="col-sm-9">
+                            <textarea asp-for="Message" name="Message" rows="3" class="form-control form-control-sm fieldValue" disabled>
+                            </textarea>
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+                    <div class="row my-1">
+                        <div class="col-sm-2 fieldLabel">
+                            <label asp-for="InnerMessage" class="col-form-label"></label>
+                        </div>
+                        <div class="col-sm-9">
+                            <textarea asp-for="InnerMessage" name="InnerMessage" rows="3" class="form-control form-control-sm fieldValue" disabled>
+                            </textarea>
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+                    <div class="row my-1">
+                        <div class="col-sm-2 fieldLabel">
+                            <label asp-for="StackTrace" class="col-form-label"></label>
+                        </div>
+                        <div class="col-sm-9">
+                            <textarea asp-for="StackTrace" name="StackTrace" rows="4" class="form-control form-control-sm fieldValue" disabled>
+                            </textarea>
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>       
+                    <br />
+                    <div class="row mt-2">
+                        <div class="d-grid ps-2 pe-3 gap-1 pb-0 mb-0">      
+                            <button id="btnBack" type="button" class="btn btn-secondary opacity-75 btn-block border-0 securityButton"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="Go back to previous page">
+                                <span class="normalicon"><i class="fas fa-arrow-circle-left fa-fw fa-lg"></i></span>
+                                Go Back
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <input type="hidden" id="hidCallerForm" asp-for="CallerForm" name="callerForm" />
+        </div>
+    </form>
+</div>
+
+@section Scripts{
+    <script>
+        // Initialize tooltips
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
+
+    <script src="~/lib/jqueryui/jquery-ui.min.js"></script>    
+    <script src="~/js/securityHandler.js?v=@Configuration["AppSettings:JavaScriptFileVersion"]"></script>
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

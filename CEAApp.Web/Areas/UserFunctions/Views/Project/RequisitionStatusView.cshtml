@@ -1,0 +1,224 @@
+﻿@using Microsoft.Extensions.Configuration
+@using CEAApp.Web.DIServices
+@using CEAApp.Web.Models
+
+@model RequisitionStatusVM
+
+@inject IConfiguration Configuration
+@inject IConverterService ConverterService
+@inject ILookupService LookupService
+
+@{
+    ViewData["Title"] = "Requisition Status";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var userName = ConverterService.ConvertObjectToString(TempData.Peek("UserID"));
+}
+
+<div class="formWrapper container-fluid">
+    <form asp-area="UserFunctions" asp-controller="Project" method="get">
+        <div class="alert alert-danger alert-dismissible fade show errorPanel" style='display: @(!string.IsNullOrWhiteSpace(Model.ErrorMessage) ? "block" : "none")'>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <strong>Error! </strong>&nbsp;<span class="errorText">@Model.ErrorMessage</span>
+        </div>
+        <div class="alert alert-success alert-dismissible fade show successPanel" style='display: @(!string.IsNullOrWhiteSpace(Model.NotificationMessage) ? "block" : "none")'>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <strong>Success!</strong>&nbsp;<span class="successText">@Model.NotificationMessage</span>
+        </div>
+
+        <div class="container-fluid p-0 m-0">
+            <div class="row no-gutters">
+                <div class="col-12 mt-2">
+                    <div class="formHeader">
+                        <span><i class="fas fa-calendar-alt fa-1x fa-fw"></i></span>
+                        @ViewData["Title"]
+                    </div>
+                </div>
+            </div>
+
+            <div class="requestHeader">
+                <div class="form-row">
+                    <div class="col-12 mx-auto px-5">
+                        <div class="alert alert-danger alert-dismissible fade show errorMsgBox" hidden>
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong>Error! </strong>&nbsp;<span class="errorMsg">Test error!</span>
+                        </div>
+                        <div class="alert alert-success alert-dismissible fade show successMsgBox" hidden>
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong>Success!</strong>&nbsp;<span class="successMsg">Test success!</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid ps-2 pe-0 me-0 pt-3 pb-2">  
+                    <div class="row pt-0 mt-0 pe-4" hidden>
+                        <div class="col-sm-12 text-danger clearfix">
+                            <span class="font-italic float-end">- indicates a required field</span>
+                            <span class="float-end me-1"><i class="fas fa-asterisk fa-fw fa-xs"></i></span>
+                        </div>
+                    </div>
+                    <div class="row pt-2">
+                        <div class="col-sm-2 fieldLabel">                            
+                            <label asp-for="ProjectNo" class="col-form-label"></label>    
+                        </div>
+                        <div class="col-sm-4">
+                            <input asp-for="ProjectNo" class="form-control form-control-sm fieldValue" disabled />  
+                        </div>
+                        <div class="col-sm-2 fieldLabel">
+                            <label asp-for="CreatedBy" class="col-form-label"></label>  
+                        </div>
+                        <div class="col-sm-3 pe-4">
+                            <input asp-for="CreatedBy" class="form-control form-control-sm fieldValue" disabled />  
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+                    <div class="row pt-2">
+                        <div class="col-sm-2 fieldLabel">                            
+                            <label asp-for="RequisitionNo" class="col-form-label"></label>    
+                        </div>
+                        <div class="col-sm-4">
+                            <input asp-for="RequisitionNo" class="form-control form-control-sm fieldValue" disabled />  
+                        </div>
+                        <div class="col-sm-2 fieldLabel">
+                            <label asp-for="SubmittedDate" class="col-form-label"></label>  
+                        </div>
+                        <div class="col-sm-3 pe-4">
+                            <input asp-for="SubmittedDate" class="form-control form-control-sm fieldValue" disabled />  
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>    
+                    <div class="row pt-2">
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-10">
+                            <button type="button" id="btnReset" class="btn btn-sm btn-warning text-white rounded-3 actionButton"
+                                onclick="searchButtonStatus()" style="width: 120px;" tabindex="22">
+                                <span><i class="fas fa-sync-alt fa-fw fa-lg"></i></span>
+                                Refresh
+                            </button>
+                            <a asp-area="UserFunctions" asp-controller="Project" asp-action="RequisitionInquiry" 
+                                class="btn btn-sm btn-outline-secondary rounded-3 actionButton ps-0 ms-0 backButton"                                 
+                                style="width: 120px;">
+                                <span><i class="fas fa-arrow-circle-left fa-fw fa-lg"></i></span>
+                                Go Back
+                            </a>
+                            <input type="reset" id="btnHiddenReset" value="Reset Form" hidden />
+                        </div>
+                    </div>
+
+                    <div class="row mt-2 mb-1 groupTitle">
+                        <div class="col-sm-12 clearfix">
+                            <span class="ps-3 recordCount" style="text-transform: none;">No records found.</span> &nbsp;
+                        </div>
+                    </div>
+
+                    <div id="divRequestStatus" class="row mt-0 pt-0 mx-2 mb-2">
+                        <div class="col-sm-12 ps-2 pe-3">
+                            <div class="container-fluid tablePanel gridWrapper">
+                                <div class="table-responsive py-3" style="-ms-overflow-style: auto;">
+                                    <table id="statusTable" class="generalTable display nowrap stripe row-border  table-bordered" style="width: 100%;">
+                                        <thead>
+                                            <tr>
+                                                <th class="centeredColumn doNotOrder">
+                                                    <label asp-for="ApprovalList.FirstOrDefault().approvalGroup"></label>    
+                                                </th>
+                                                <th class="centeredColumn doNotOrder">
+                                                    <label asp-for="ApprovalList.FirstOrDefault().approverNameTitle"></label>    
+                                                </th>
+                                                <th class="centeredColumn">
+                                                    <label asp-for="ApprovalList.FirstOrDefault().currentStatus"></label>    
+                                                </th>
+                                                <th class="centeredColumn">
+                                                    <label asp-for="ApprovalList.FirstOrDefault().approvedDate"></label>    
+                                                </th>
+                                                <th class="centeredColumn doNotOrder">
+                                                    <label asp-for="ApprovalList.FirstOrDefault().approverComment"></label>    
+                                                </th>
+                                                <th class="hiddenColumn">
+                                                    <label asp-for="ApprovalList.FirstOrDefault().leaveStatus"></label>    
+                                                </th>
+                                                <th class="hiddenColumn">
+                                                    <label asp-for="ApprovalList.FirstOrDefault().substituteFullName"></label>    
+                                                </th>
+                                                <th class="hiddenColumn">
+                                                    <label asp-for="ApprovalList.FirstOrDefault().groupRountingSequence"></label>    
+                                                </th>
+                                                <th class="hiddenColumn">
+                                                    <label asp-for="ApprovalList.FirstOrDefault().routingSequence"></label>  
+                                                </th>
+                                                @*<th class="hiddenColumn">
+                                                    <label asp-for="ApprovalList.FirstOrDefault().statusHandlingCode"></label>  
+                                                </th>*@
+                                               @* <th class="hiddenColumn">
+                                                    <label asp-for="ApprovalList.FirstOrDefault().statusHandlingDesc"></label>  
+                                                </th>*@
+                                                <th class="hiddenColumn">
+                                                    <label asp-for="ApprovalList.FirstOrDefault().requisitionID"></label>  
+                                                </th>                                                
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="divWorkflowStatus" class="row mt-0 pt-0 mx-2 mb-2" hidden>
+                        <div class="col-sm-12 ps-2 pe-3">
+                            <div class="container-fluid tablePanel gridWrapper">
+                                <div class="table-responsive py-3" style="-ms-overflow-style: auto;">
+                                    <table id="wfStatusTable" class="generalTable display nowrap stripe row-border  table-bordered" style="width: 100%;">
+                                        <thead>
+                                            <tr>
+                                                <th class="centeredColumn doNotOrder">
+                                                    Approval Role
+                                                </th>
+                                                <th class="centeredColumn doNotOrder">
+                                                    Approver
+                                                </th>
+                                                <th class="centeredColumn">
+                                                    Current Status
+                                                </th>
+                                                <th class="centeredColumn">
+                                                    Approved Date
+                                                </th>
+                                                <th class="centeredColumn doNotOrder">
+                                                    Approver Comments
+                                                </th>
+                                                <th class="hiddenColumn">
+                                                </th>
+                                                <th class="hiddenColumn">
+                                                </th>
+                                                <th class="hiddenColumn">
+                                                </th>                                                
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <input type="hidden" id="hidRequisitionID" asp-for="@Model.RequisitionID" name="RequisitionID" />
+                    <input type="hidden" id="hidCallerForm" asp-for="@Model.CallerForm" name="callerForm" />
+                    <input type="hidden" id="hidQueryString" asp-for="@Model.QueryString" name="callerForm" />
+                    <input type="hidden" id="hidCEANo" asp-for="RequisitionNo" name="RequisitionNo" />
+                    <input type="hidden" id="hidUseNewWF" asp-for="UseNewWF" name="UseNewWF" />
+                </div>                
+            </div>
+        </div>
+    </form>
+</div>  
+
+@section Scripts{
+    <script>
+        // Initialize tooltips
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
+
+    <script src="~/js/requisitionStatus.js?v=@Configuration["AppSettings:JavaScriptFileVersion"]"></script>
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

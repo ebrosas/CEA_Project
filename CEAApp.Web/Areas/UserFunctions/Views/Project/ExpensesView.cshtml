@@ -1,0 +1,227 @@
+﻿@using Microsoft.Extensions.Configuration
+@using CEAApp.Web.DIServices
+@using CEAApp.Web.Models
+
+@model ExpenseVM
+
+@inject IConfiguration Configuration
+@inject IConverterService ConverterService
+@inject ILookupService LookupService
+
+@{
+    ViewData["Title"] = "Expenses View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var userName = ConverterService.ConvertObjectToString(TempData.Peek("UserID"));
+}
+
+<div class="formWrapper container-fluid">
+    <form asp-area="UserFunctions" asp-controller="Project" method="get">
+        <div class="alert alert-danger alert-dismissible fade show errorPanel" style='display: @(!string.IsNullOrWhiteSpace(Model.ErrorMessage) ? "block" : "none")'>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <strong>Error! </strong>&nbsp;<span class="errorText">@Model.ErrorMessage</span>
+        </div>
+        <div class="alert alert-success alert-dismissible fade show successPanel" style='display: @(!string.IsNullOrWhiteSpace(Model.NotificationMessage) ? "block" : "none")'>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <strong>Success!</strong>&nbsp;<span class="successText">@Model.NotificationMessage</span>
+        </div>
+
+        <div class="container-fluid p-0 m-0">
+            <div class="row no-gutters">
+                <div class="col-12 mt-2">
+                    <div class="formHeader">
+                        <span><i class="far fa-credit-card fa-1x fa-fw"></i></span>&nbsp;
+                        @ViewData["Title"]
+                    </div>
+                </div>
+            </div>
+
+            <div class="requestHeader">
+                <div class="form-row">
+                    <div class="col-12 mx-auto px-5">
+                        <div class="alert alert-danger alert-dismissible fade show errorMsgBox" hidden>
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong>Error! </strong>&nbsp;<span class="errorMsg">Test error!</span>
+                        </div>
+                        <div class="alert alert-success alert-dismissible fade show successMsgBox" hidden>
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong>Success!</strong>&nbsp;<span class="successMsg">Test success!</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid ps-2 pe-0 me-0 pt-3 pb-2">  
+                    <div class="row pt-0 mt-0 pe-4" hidden>
+                        <div class="col-sm-12 text-danger clearfix">
+                            <span class="font-italic float-end">- indicates a required field</span>
+                            <span class="float-end me-1"><i class="fas fa-asterisk fa-fw fa-xs"></i></span>
+                        </div>
+                    </div>
+                    <div class="row pt-2">
+                        <div class="col-sm-7">
+                            <div class="row pt-2">
+                                <div class="col-sm-3 fieldLabel">                            
+                                    <label asp-for="ProjectNo" class="col-form-label"></label>    
+                                </div>
+                                <div class="col-sm-4">
+                                    <input asp-for="ProjectNo" class="form-control form-control-sm fieldValue" readonly />  
+                                </div>
+                                <div class="col-sm-auto"></div>
+                            </div>
+                            <div class="row pt-2">
+                                <div class="col-sm-3 fieldLabel">                            
+                                    <label asp-for="RequisitionNo" class="col-form-label"></label>  
+                                </div>
+                                <div class="col-sm-4">
+                                    <input asp-for="RequisitionNo" class="form-control form-control-sm fieldValue" readonly />  
+                                </div>
+                                <div class="col-sm-auto"></div>
+                            </div>
+                            <div class="row pt-2">
+                                <div class="col-sm-3"></div>
+                                <div class="col-sm-auto ps-2">
+                                    <button type="button" id="btnReset" class="btn btn-sm btn-warning text-white rounded-3 actionButton"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Refresh the form and reload all information"
+                                            onclick="searchButtonExpense()" style="width: 120px;" tabindex="22">
+                                        <span><i class="fas fa-sync-alt fa-fw fa-lg"></i></span>
+                                        Refresh
+                                    </button>
+                                    <a asp-area="UserFunctions" asp-controller="Project" asp-action="RequisitionInquiry" class="btn btn-sm btn-outline-secondary rounded-3 actionButton ps-0 ms-0 backButton" 
+                                        data-bs-toggle="tooltip" data-bs-placement="top" title="Go back to previous page"
+                                        style="width: 120px;">
+                                        <span><i class="fas fa-arrow-circle-left fa-fw fa-lg"></i></span>
+                                        Go Back
+                                    </a>
+                                    <input type="reset" id="btnHiddenReset" value="Reset Form" hidden />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="row pt-1">
+                                <div class="col-sm-5 text-end fieldLabel">
+                                    <label class="col-form-label">Requisition Amount (BD)</label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <input id="txtAmount" class="form-control form-control-sm fieldValue text-end" readonly />
+                                </div>
+                                <div class="col-sm-3"></div>
+                            </div>
+                            <div class="row pt-1">
+                                <div class="col-sm-5 text-end fieldLabel">
+                                    <label class="col-form-label">PO Total (BD)</label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <input id="txtPOTotal" class="form-control form-control-sm fieldValue text-end" readonly />
+                                </div>
+                                <div class="col-sm-3"></div>
+                            </div>
+                            <div class="row pt-1">
+                                <div class="col-sm-5 text-end fieldLabel">
+                                    <label class="col-form-label">GL Total (BD)</label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <input id="txtGLTotal" class="form-control form-control-sm fieldValue text-end" readonly />
+                                </div>
+                                <div class="col-sm-3"></div>
+                            </div>
+                            <div class="row pt-1">
+                                <div class="col-sm-5 text-end fieldLabel">
+                                    <label class="col-form-label">Requisition Balance (BD)</label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <input id="txtBalance" class="form-control form-control-sm fieldValue text-end" readonly />
+                                </div>
+                                <div class="col-sm-3">
+                                    <label id="lblPercentage" class="text-center badge bg-success rounded-pill px-2 py-1 fw-bold text-white"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2 mb-1 groupTitle">
+                        <div class="col-sm-12 clearfix">
+                            <span class="ps-3 recordCount" style="text-transform: none;">No records found.</span> &nbsp;
+                            <span class="float-sm-end">
+                                <button type="button" class="btn btn-link pe-4 me-4 linkTitle" hidden>Add New Contractor</button>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="row mt-0 pt-0 mx-2 mb-2">
+                        <div class="col-sm-12 ps-2 pe-3">
+                            <div class="container-fluid tablePanel gridWrapper">
+                                <div class="table-responsive py-3" style="-ms-overflow-style: auto;">
+                                    <table id="expenseTable" class="generalTable display nowrap stripe row-border  table-bordered" style="width: 100%;">
+                                        <thead>
+                                            <tr>
+                                                <th class="centeredColumn">
+                                                    <label asp-for="ExpenseList.FirstOrDefault().costCenter"></label>    
+                                                </th>
+                                                <th class="centeredColumn">
+                                                    <label asp-for="ExpenseList.FirstOrDefault().orderNumber"></label>    
+                                                </th>
+                                                <th class="centeredColumn">
+                                                    <label asp-for="ExpenseList.FirstOrDefault().orderDate"></label>    
+                                                </th>
+                                                <th class="centeredColumn">
+                                                    <label asp-for="ExpenseList.FirstOrDefault().lineNo"></label>    
+                                                </th>
+                                                <th class="centeredColumn">
+                                                    <label asp-for="ExpenseList.FirstOrDefault().description1"></label>    
+                                                </th>
+                                                <th class="centeredColumn">
+                                                    <label asp-for="ExpenseList.FirstOrDefault().description2"></label>    
+                                                </th>
+                                                <th class="centeredColumn">
+                                                    <label asp-for="ExpenseList.FirstOrDefault().vendor"></label>    
+                                                </th>
+                                                <th class="centeredColumn">
+                                                    <label asp-for="ExpenseList.FirstOrDefault().quantity"></label>    
+                                                </th>
+                                                <th class="centeredColumn">
+                                                    <label asp-for="ExpenseList.FirstOrDefault().currencyCode"></label>  
+                                                </th>
+                                                <th class="centeredColumn">
+                                                    <label asp-for="ExpenseList.FirstOrDefault().currencyAmount"></label>  
+                                                </th>                                                
+                                                <th class="centeredColumn">
+                                                    <label asp-for="ExpenseList.FirstOrDefault().poAmount"></label>  
+                                                </th> 
+                                                <th class="centeredColumn">
+                                                    <label asp-for="ExpenseList.FirstOrDefault().glAmount"></label>  
+                                                </th> 
+                                                <th class="centeredColumn">
+                                                    <label asp-for="ExpenseList.FirstOrDefault().lineTotal"></label>  
+                                                </th> 
+                                                <th class="hiddenColumn">
+                                                    <label asp-for="ExpenseList.FirstOrDefault().ceaNumber"></label>  
+                                                </th> 
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <input type="hidden" id="hidRequisitionNo" asp-for="@Model.RequisitionNo" name="RequisitionNo" />
+                    <input type="hidden" id="hidCallerForm" asp-for="@Model.CallerForm" name="callerForm" />
+                    <input type="hidden" id="hidQueryString" asp-for="@Model.QueryString" name="callerForm" />
+                </div>                
+            </div>
+        </div>
+    </form>
+</div>  
+
+@section Scripts{
+    <script>
+        // Initialize tooltips
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
+
+    <script src="~/js/expenseDetail.js?v=@Configuration["AppSettings:JavaScriptFileVersion"]"></script>
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

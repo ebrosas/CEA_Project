@@ -1,0 +1,212 @@
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\DIL-UIDesign.exe
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\DIL-UIDesign.pdb
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\Microsoft.Expression.Interactions.dll
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\Microsoft.Expression.Prototyping.Interactivity.dll
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\Microsoft.Expression.Prototyping.Runtime.dll
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\Microsoft.Expression.Prototyping.SketchControls.dll
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\System.Windows.Interactivity.dll
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\DIL-UIDesign.Screens.pdb
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\System.Windows.Interactivity.xml
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\Microsoft.Expression.Interactions.xml
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\de\Microsoft.Expression.Interactions.resources.dll
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\en\Microsoft.Expression.Interactions.resources.dll
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\es\Microsoft.Expression.Interactions.resources.dll
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\fr\Microsoft.Expression.Interactions.resources.dll
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\it\Microsoft.Expression.Interactions.resources.dll
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\ja\Microsoft.Expression.Interactions.resources.dll
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\ko\Microsoft.Expression.Interactions.resources.dll
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\zh-Hans\Microsoft.Expression.Interactions.resources.dll
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\zh-Hant\Microsoft.Expression.Interactions.resources.dll
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\de\Microsoft.Expression.Prototyping.Interactivity.resources.dll
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\en\Microsoft.Expression.Prototyping.Interactivity.resources.dll
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\es\Microsoft.Expression.Prototyping.Interactivity.resources.dll
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\fr\Microsoft.Expression.Prototyping.Interactivity.resources.dll
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\it\Microsoft.Expression.Prototyping.Interactivity.resources.dll
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\ja\Microsoft.Expression.Prototyping.Interactivity.resources.dll
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\ko\Microsoft.Expression.Prototyping.Interactivity.resources.dll
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\zh-Hans\Microsoft.Expression.Prototyping.Interactivity.resources.dll
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\zh-Hant\Microsoft.Expression.Prototyping.Interactivity.resources.dll
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\de\Microsoft.Expression.Prototyping.Runtime.resources.dll
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\en\Microsoft.Expression.Prototyping.Runtime.resources.dll
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\es\Microsoft.Expression.Prototyping.Runtime.resources.dll
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\fr\Microsoft.Expression.Prototyping.Runtime.resources.dll
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\it\Microsoft.Expression.Prototyping.Runtime.resources.dll
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\ja\Microsoft.Expression.Prototyping.Runtime.resources.dll
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\ko\Microsoft.Expression.Prototyping.Runtime.resources.dll
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\zh-Hans\Microsoft.Expression.Prototyping.Runtime.resources.dll
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\zh-Hant\Microsoft.Expression.Prototyping.Runtime.resources.dll
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\obj\Debug\ResolveAssemblyReference.cache
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\obj\Debug\App.baml
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\obj\Debug\App.g.cs
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\obj\Debug\DIL-UIDesign_MarkupCompile.cache
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\obj\Debug\DIL-UIDesign.g.resources
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\obj\Debug\DIL-UIDesign.exe
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\obj\Debug\DIL-UIDesign.pdb
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\DIL-UIDesign.exe
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\DIL-UIDesign.pdb
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\Microsoft.Expression.Interactions.dll
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\Microsoft.Expression.Prototyping.Interactivity.dll
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\Microsoft.Expression.Prototyping.Runtime.dll
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\Microsoft.Expression.Prototyping.SketchControls.dll
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\System.Windows.Interactivity.dll
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\DIL-UIDesign.Screens.pdb
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\System.Windows.Interactivity.xml
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\Microsoft.Expression.Interactions.xml
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\de\Microsoft.Expression.Interactions.resources.dll
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\en\Microsoft.Expression.Interactions.resources.dll
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\es\Microsoft.Expression.Interactions.resources.dll
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\fr\Microsoft.Expression.Interactions.resources.dll
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\it\Microsoft.Expression.Interactions.resources.dll
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\ja\Microsoft.Expression.Interactions.resources.dll
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\ko\Microsoft.Expression.Interactions.resources.dll
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\zh-Hans\Microsoft.Expression.Interactions.resources.dll
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\zh-Hant\Microsoft.Expression.Interactions.resources.dll
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\de\Microsoft.Expression.Prototyping.Interactivity.resources.dll
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\en\Microsoft.Expression.Prototyping.Interactivity.resources.dll
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\es\Microsoft.Expression.Prototyping.Interactivity.resources.dll
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\fr\Microsoft.Expression.Prototyping.Interactivity.resources.dll
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\it\Microsoft.Expression.Prototyping.Interactivity.resources.dll
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\ja\Microsoft.Expression.Prototyping.Interactivity.resources.dll
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\ko\Microsoft.Expression.Prototyping.Interactivity.resources.dll
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\zh-Hans\Microsoft.Expression.Prototyping.Interactivity.resources.dll
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\zh-Hant\Microsoft.Expression.Prototyping.Interactivity.resources.dll
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\de\Microsoft.Expression.Prototyping.Runtime.resources.dll
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\en\Microsoft.Expression.Prototyping.Runtime.resources.dll
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\es\Microsoft.Expression.Prototyping.Runtime.resources.dll
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\fr\Microsoft.Expression.Prototyping.Runtime.resources.dll
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\it\Microsoft.Expression.Prototyping.Runtime.resources.dll
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\ja\Microsoft.Expression.Prototyping.Runtime.resources.dll
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\ko\Microsoft.Expression.Prototyping.Runtime.resources.dll
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\zh-Hans\Microsoft.Expression.Prototyping.Runtime.resources.dll
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\zh-Hant\Microsoft.Expression.Prototyping.Runtime.resources.dll
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\obj\Debug\ResolveAssemblyReference.cache
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\obj\Debug\App.baml
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\obj\Debug\App.g.cs
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\obj\Debug\DIL-UIDesign_MarkupCompile.cache
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\obj\Debug\DIL-UIDesign.g.resources
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\obj\Debug\DIL-UIDesign.exe
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\obj\Debug\DIL-UIDesign.pdb
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\DIL-UIDesign.exe
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\DIL-UIDesign.pdb
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\Microsoft.Expression.Interactions.dll
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\Microsoft.Expression.Prototyping.Interactivity.dll
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\Microsoft.Expression.Prototyping.Runtime.dll
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\Microsoft.Expression.Prototyping.SketchControls.dll
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\System.Windows.Interactivity.dll
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\DIL-UIDesign.Screens.pdb
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\System.Windows.Interactivity.xml
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\Microsoft.Expression.Interactions.xml
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\de\Microsoft.Expression.Interactions.resources.dll
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\en\Microsoft.Expression.Interactions.resources.dll
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\es\Microsoft.Expression.Interactions.resources.dll
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\fr\Microsoft.Expression.Interactions.resources.dll
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\it\Microsoft.Expression.Interactions.resources.dll
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\ja\Microsoft.Expression.Interactions.resources.dll
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\ko\Microsoft.Expression.Interactions.resources.dll
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\zh-Hans\Microsoft.Expression.Interactions.resources.dll
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\zh-Hant\Microsoft.Expression.Interactions.resources.dll
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\de\Microsoft.Expression.Prototyping.Interactivity.resources.dll
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\en\Microsoft.Expression.Prototyping.Interactivity.resources.dll
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\es\Microsoft.Expression.Prototyping.Interactivity.resources.dll
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\fr\Microsoft.Expression.Prototyping.Interactivity.resources.dll
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\it\Microsoft.Expression.Prototyping.Interactivity.resources.dll
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\ja\Microsoft.Expression.Prototyping.Interactivity.resources.dll
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\ko\Microsoft.Expression.Prototyping.Interactivity.resources.dll
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\zh-Hans\Microsoft.Expression.Prototyping.Interactivity.resources.dll
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\zh-Hant\Microsoft.Expression.Prototyping.Interactivity.resources.dll
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\de\Microsoft.Expression.Prototyping.Runtime.resources.dll
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\en\Microsoft.Expression.Prototyping.Runtime.resources.dll
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\es\Microsoft.Expression.Prototyping.Runtime.resources.dll
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\fr\Microsoft.Expression.Prototyping.Runtime.resources.dll
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\it\Microsoft.Expression.Prototyping.Runtime.resources.dll
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\ja\Microsoft.Expression.Prototyping.Runtime.resources.dll
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\ko\Microsoft.Expression.Prototyping.Runtime.resources.dll
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\zh-Hans\Microsoft.Expression.Prototyping.Runtime.resources.dll
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\zh-Hant\Microsoft.Expression.Prototyping.Runtime.resources.dll
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\obj\Debug\DIL-UIDesign.csprojResolveAssemblyReference.cache
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\obj\Debug\App.baml
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\obj\Debug\App.g.cs
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\obj\Debug\DIL-UIDesign_MarkupCompile.cache
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\obj\Debug\DIL-UIDesign.g.resources
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\obj\Debug\DIL-UIDesign.exe
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\obj\Debug\DIL-UIDesign.pdb
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\obj\Debug\DIL-UIDesign.exe
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\obj\Debug\DIL-UIDesign.pdb
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\DIL-UIDesign.exe
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\DIL-UIDesign.pdb
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\Microsoft.Expression.Interactions.dll
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\Microsoft.Expression.Prototyping.Interactivity.dll
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\Microsoft.Expression.Prototyping.Runtime.dll
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\Microsoft.Expression.Prototyping.SketchControls.dll
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\System.Windows.Interactivity.dll
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\DIL-UIDesign.Screens.pdb
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\System.Windows.Interactivity.xml
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\Microsoft.Expression.Interactions.xml
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\de\Microsoft.Expression.Interactions.resources.dll
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\en\Microsoft.Expression.Interactions.resources.dll
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\es\Microsoft.Expression.Interactions.resources.dll
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\fr\Microsoft.Expression.Interactions.resources.dll
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\it\Microsoft.Expression.Interactions.resources.dll
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\ja\Microsoft.Expression.Interactions.resources.dll
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\ko\Microsoft.Expression.Interactions.resources.dll
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\zh-Hans\Microsoft.Expression.Interactions.resources.dll
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\zh-Hant\Microsoft.Expression.Interactions.resources.dll
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\de\Microsoft.Expression.Prototyping.Interactivity.resources.dll
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\en\Microsoft.Expression.Prototyping.Interactivity.resources.dll
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\es\Microsoft.Expression.Prototyping.Interactivity.resources.dll
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\fr\Microsoft.Expression.Prototyping.Interactivity.resources.dll
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\it\Microsoft.Expression.Prototyping.Interactivity.resources.dll
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\ja\Microsoft.Expression.Prototyping.Interactivity.resources.dll
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\ko\Microsoft.Expression.Prototyping.Interactivity.resources.dll
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\zh-Hans\Microsoft.Expression.Prototyping.Interactivity.resources.dll
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\zh-Hant\Microsoft.Expression.Prototyping.Interactivity.resources.dll
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\de\Microsoft.Expression.Prototyping.Runtime.resources.dll
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\en\Microsoft.Expression.Prototyping.Runtime.resources.dll
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\es\Microsoft.Expression.Prototyping.Runtime.resources.dll
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\fr\Microsoft.Expression.Prototyping.Runtime.resources.dll
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\it\Microsoft.Expression.Prototyping.Runtime.resources.dll
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\ja\Microsoft.Expression.Prototyping.Runtime.resources.dll
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\ko\Microsoft.Expression.Prototyping.Runtime.resources.dll
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\zh-Hans\Microsoft.Expression.Prototyping.Runtime.resources.dll
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\zh-Hant\Microsoft.Expression.Prototyping.Runtime.resources.dll
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\obj\Debug\App.baml
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\obj\Debug\App.g.cs
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\obj\Debug\DIL-UIDesign_MarkupCompile.cache
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\obj\Debug\DIL-UIDesign.g.resources
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\obj\Debug\DIL-UIDesign.csprojResolveAssemblyReference.cache

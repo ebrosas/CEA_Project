@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.33027.314
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CEAApp.Web", "CEAApp.Web\CEAApp.Web.csproj", "{20DD5C77-0226-4F58-A629-95F2EC894F7F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{20DD5C77-0226-4F58-A629-95F2EC894F7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20DD5C77-0226-4F58-A629-95F2EC894F7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20DD5C77-0226-4F58-A629-95F2EC894F7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20DD5C77-0226-4F58-A629-95F2EC894F7F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8ACF4CDA-7AE1-4E93-89E2-7244A5675459}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://grmdevops/ams
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CEAApp.Web\\CEAApp.Web.csproj
+		SccProjectName1 = CEAApp.Web
+		SccLocalPath1 = CEAApp.Web
+	EndGlobalSection
+EndGlobal

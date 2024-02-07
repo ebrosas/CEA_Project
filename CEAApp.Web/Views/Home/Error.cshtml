@@ -1,0 +1,70 @@
+﻿@model ErrorViewModel
+
+@{
+    ViewData["Title"] = "Error Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="formWrapper container-fluid">
+    <form asp-area="UserFunctions" asp-controller="Project" method="get">
+        <div class="container-fluid p-0 m-0">
+            <div class="row no-gutters">
+                <div class="col-12 mt-2">
+                    <div class="formHeader">
+                        <span><i class="fas  fa-user-shield fa-1x fa-fw"></i></span>&nbsp;
+                        @ViewData["Title"]
+                    </div>
+                </div>
+            </div>
+            <div class="requestHeader" style="background-color: white;">
+                <div class="container-fluid ps-2 pe-0 me-0 pt-3 pb-2">  
+                    <br />
+                    <div class="row">
+                        <div class="col">                            
+                            <img class="mx-auto d-block" src="~/images/access_denied_icon.png" alt="Access denied"style="height: 250px; width: 300px;" />
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <div class="row ">
+                        <div class="text-center securityMsgTitle text-danger" style="font-size: 14pt;">
+                            The following error has occured while processing the request: 
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-center securityMsgTitle text-danger" style="font-size: 14pt;">
+                            <span>Please contact ICT for assistance or create a Helpdesk Grant Access request.</span>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <div class="row">
+                        <div class="d-grid ps-2 pe-3 gap-1 pb-0 mb-0">      
+                            <button id="btnOpenHomepage" type="button" class="btn btn-primary btn-block border-0 securityButton"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="Click here to open the Homepage"
+                                onclick="location.href = '/UserFunctions/Project'">
+                                <span class="normalicon"><i class="fas fa-home fa-fw fa-lg"></i></span>
+                                Open Homepage
+                            </button>
+                            <button id="btnHelpdesk" type="button" class="btn btn-link btn-block border-0 securityButton" hidden 
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="Click here to open the Helpdesk System"
+                                onclick="window.open('http://helpdesk/ServiceRequest.aspx?scCode=ICT', '_blank');">                                
+                                Create Helpdesk Ticket
+                                <span><i class="fas fa-arrow-alt-circle-right fa-fw fa-1x"></i></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

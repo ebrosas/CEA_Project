@@ -1,0 +1,1589 @@
+﻿@using Microsoft.Extensions.Configuration
+@using CEAApp.Web.DIServices
+@using CEAApp.Web.Models
+
+@model CEARequisitionVM
+
+@inject IConfiguration Configuration
+@inject IConverterService ConverterService
+@inject ILookupService LookupService
+@inject IHttpContextAccessor HttpContextAccessor;
+
+@{
+    ViewData["Title"] = "CEA Requisition";    
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    var userName = ConverterService.ConvertObjectToString(TempData.Peek("UserID"));
+    int userEmpNo = ConverterService.ConvertObjectToInt(TempData.Peek("UserEmpNo"));
+    var selectedOrigName = ConverterService.ConvertObjectToString(TempData.Peek("SelectedOrigName"));
+
+    var expenseCount = 0;
+    var attachmentCount = 0;
+    var expenseJSON = "";
+    var attachmentJSON = "";
+    var ceaAdminJSON = "";
+
+    if (Model.CEARequestDetail != null && Model.CEARequestDetail.ScheduleExpenseList != null)
+    {
+        if (!Model.CEARequestDetail.ScheduleExpenseList.FirstOrDefault().IsDummy)
+        {
+            expenseCount = Model.CEARequestDetail.ScheduleExpenseList.Count;
+
+            // Convert list to JSON
+            expenseJSON = Json.Serialize(Model.CEARequestDetail.ScheduleExpenseList).ToString();
+        }
+    }
+
+    if (Model.CEARequestDetail != null && Model.CEARequestDetail.AttachmentList != null)
+    {
+        if (!Model.CEARequestDetail.AttachmentList.FirstOrDefault().IsDummy)
+        {
+            attachmentCount = Model.CEARequestDetail.AttachmentList.Count;
+
+            // Convert list to JSON
+            attachmentJSON = Json.Serialize(Model.CEARequestDetail.AttachmentList).ToString();
+        }
+    }
+
+    if (Model.CEAAdminList != null)
+    {
+        ceaAdminJSON = Json.Serialize(Model.CEAAdminList).ToString();
+    }
+}
+
+@functions {
+
+    public string DisplayPageTitle()
+    {
+        if (Model.CEARequestDetail != null && !Model.CEARequestDetail.IsDummy)
+            return string.Format("CEA Requisition #{0}", Model.CEARequestDetail.RequisitionNo);        
+        else
+            return string.Format("CEA requisition for Project #{0}", Model.ProjectNo);        
+    }
+
+    public string DisplayAttachmentCount()
+    {
+        string countTitle = "No file attachments found.";
+
+        if (Model.CEARequestDetail != null && Model.CEARequestDetail.AttachmentList != null)
+        {
+            if (Model.CEARequestDetail.AttachmentList.Count > 0)
+            {
+                if (!Model.CEARequestDetail.AttachmentList.FirstOrDefault().IsDummy)
+                {
+                    countTitle = string.Format("Found {0} records.", Model.CEARequestDetail.AttachmentList.Count);                                        
+                }
+            }
+        }
+        
+        return countTitle;
+    }   
+
+    public string FormatGridLink(GlobalSettings.ButtonType btnType)
+    {
+        string classToUse = "";
+
+        if (Model.ActionType == GlobalSettings.ActionTypeOption.ReadOnly.ToString())
+            classToUse = "btn btn-sm visible disabled";
+        else if (Model.ActionType == GlobalSettings.ActionTypeOption.EditMode.ToString())
+            classToUse = "btn btn-sm visible";
+        else if (Model.ActionType == GlobalSettings.ActionTypeOption.CreateNew.ToString())
+            classToUse = "btn btn-sm visible";
+
+        if (btnType == GlobalSettings.ButtonType.Edit)
+        {
+            classToUse += " btn-success";
+        }
+        else if (btnType == GlobalSettings.ButtonType.Delete)
+        {
+            classToUse += " btn-danger";
+        }
+        else
+        {
+            classToUse += " btn-success";
+        }
+        
+        return classToUse;
+    }
+}
+
+<div class="formWrapper container-fluid">
+    <form id="ceaForm" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="alert alert-danger alert-dismissible fade show errorPanel" style='display: @(!string.IsNullOrWhiteSpace(Model.ErrorMessage) ? "block" : "none")'>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <strong>Error: </strong>&nbsp;<span class="errorText">@Model.ErrorMessage</span>
+        </div>
+        <div class="alert alert-success alert-dismissible fade show successPanel" style='display: @(!string.IsNullOrWhiteSpace(Model.NotificationMessage) ? "block" : "none")'>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <strong>Success!</strong>&nbsp;<span class="successText">@Model.NotificationMessage</span>
+        </div>
+        <div class="container-fluid p-0 m-0">
+            <div class="row no-gutters">
+                <div class="col-12 mt-2">
+                    <div class="formHeader">
+                        <span><i class="fas fa-database fa-1x fa-fw"></i></span>  
+                        @DisplayPageTitle()
+                    </div>
+                </div>
+            </div>
+            <div class="requestHeader">
+                <div class="form-row">
+                    <div class="col-12 mx-auto px-2">
+                        <div class="alert alert-danger fade show errorMsgBox" hidden>
+                           @* <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>*@
+                            <strong>Error: </strong>&nbsp;<span class="errorMsg">Test error!</span>
+                        </div>
+                        <div class="alert alert-success alert-dismissible fade show successMsgBox" hidden>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            <strong>Success!</strong>&nbsp;<span class="successMsg">Test success!</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="modConfirmation" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <!-- Modal Header -->
+                            <div class="modal-header bg-info">
+                                <span class="text-white"><i id="modConfirmationIcon" class='fas fa-times-circle fa-2x fa-fw'></i></span>
+                                <span class="modal-title text-white modalHeader">&nbsp;Confirmation</span>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <p class="my-2 text-start align-top"></p>
+                            </div>
+
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger modalButton" data-button-value="modalNo" data-bs-dismiss="modal">
+                                    <span><i class="fas fa-thumbs-down fa-fw fa-1x"></i></span>&nbsp;No
+                                </button>
+                                <button type="button" class="btn btn-success modalButton" data-button-value="modalYes" data-bs-dismiss="modal">
+                                    <span><i class="fas fa-thumbs-up fa-fw fa-1x"></i></span>&nbsp;Yes
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="modChangeStatus" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content">
+                            <!-- Modal Header -->
+                            <div class="modal-header bg-danger bg-opacity-75">
+                                <span class="text-white"><i id="modChangeStatusIcon" class='fas fa-edit fa-2x fa-fw'></i></span>
+                                <span class="modal-title text-white modalHeader">&nbsp;Change Requisition Status</span>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <div class="row pt-2">
+                                    <div class="col-sm-4 fieldLabel">
+                                        <label asp-for="CEARequestDetail.RequisitionNo" class="col-form-label"></label>                            
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <input asp-for="CEARequestDetail.RequisitionNo" class="form-control form-control-sm fieldValue w-50" readonly />  
+                                    </div>
+                                    <dvi class="col"></dvi>
+                                </div>
+                                <div class="row pt-2">
+                                    <div class="col-sm-4 fieldLabel">
+                                        <label asp-for="CEARequestDetail.RequisitionDescription" class="col-form-label"></label>                            
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <input asp-for="CEARequestDetail.RequisitionDescription" class="form-control form-control-sm fieldValue" readonly />  
+                                    </div>
+                                    <dvi class="col"></dvi>
+                                </div>
+                                <div class="row pt-2">
+                                    <div class="col-sm-4 fieldLabel">
+                                        <label asp-for="CEARequestDetail.CEAStatusDesc" class="col-form-label"></label>                                        
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <span class="text-center text-white badge bg-info rounded-pill fs-6">@Model.CEARequestDetail.CEAStatusDesc</span>
+                                    </div>
+                                    <dvi class="col"></dvi>
+                                </div>
+                                <div class="row pt-2">
+                                    <div class="col-sm-4 fieldLabel">
+                                        <span><i class="fas fa-asterisk fa-fw fa-xs text-danger"></i></span>
+                                        <label class="col-form-label" data-field="Justifications">Justifications</label>   
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <textarea rows="4" class="form-control form-control-sm fieldValue" maxlength="500" name="ChangeStatusComment"></textarea>
+                                        <div class="form-row errorPanel mt-1" id="ChangeStatusError" hidden>
+                                            <div class="col-sm-12">
+                                                <div class="alert alert-danger alert-dismissible mt-1 fade show">
+                                                    <span><i class="fas fa-times-circle fa-fw fa-lg"></i></span>
+                                                    <span class="errorText"></span>
+                                                </div>
+                                            </div>
+                                        </div>  
+                                    </div>                                    
+                                </div>
+                                <div class="row mt-2 ps-2">
+                                    <p class="h6 text-decoration-underline text-secondary ps-2" style="font-family:'Poppins-SemiBold';">Notes:</p>
+                                    <p id="lblNotes" class="text-secondary fst-italic">
+                                        The user who has created this request, as well as the Cost Center Manager or the System Administrator are authorized to recall this requisition.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-link modalButton text-secondary text-decoration-none" data-button-value="modalCancel" data-bs-dismiss="modal" style="width: 80px;">
+                                    &nbsp;Cancel
+                                </button>
+                                <button type="button" class="btn btn-success modalButton" data-button-value="modalSave" style="width: 110px;">
+                                    <span><i class="fas fa-save fa-fw fa-1x"></i></span>&nbsp;Submit
+                                </button>                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="modEquipment" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-xl modal-dialog-centered">
+                        <div class="modal-content">
+                            <!-- Modal Header -->
+                            <div class="modal-header bg-info">
+                                &nbsp;&nbsp;
+                                <span class="text-white"><i class='fas fa-dolly-flatbed fa-2x fa-fw'></i></span>
+                                <span class="modal-title text-white modalHeader" style="line-height: 2.6;">&nbsp;Equipments Lookup</span>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <div class="container-fluid formWrapper">
+                                    @*<div class="row mt-2 mb-1 groupTitle">
+                                        <div class="col-sm-12 clearfix">
+                                            <span class="ps-3 recordCount" style="text-transform: none;">No records found.</span> &nbsp;
+                                        </div>
+                                    </div>*@
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="container-fluid tablePanel gridWrapper overflow-hidden my-2"> 
+                                                <div class="table-responsive-sm py-3 overflow-hidden">
+                                                    <table id="equipmentTable" class="generalTable display nowrap stripe row-border table-bordered" style="width: 100%;">
+                                                        <thead>
+                                                            <tr>       
+                                                                <th class="centeredColumn">
+
+                                                                </th>
+                                                                <th class="centeredColumn">
+                                                                    Equipment No.
+                                                                </th>
+                                                                <th class="centeredColumn">
+                                                                    Equipment Description
+                                                                </th>
+                                                                <th class="centeredColumn">
+                                                                    Parent Equipment No.
+                                                                </th>                                                                               
+                                                                <th class="centeredColumn">
+                                                                    Parent Equipment Description
+                                                                </th>      
+                                                            </tr>
+                                                        </thead>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Modal footer -->
+                            <div class="modal-footer me-2">
+                                <button type="button" class="btn btn-secondary font-weight-bold modalButton" data-button-value="modalCancel" data-bs-dismiss="modal" style="width: 100px;">
+                                    @*<span><i class="fas fa-thumbs-down fa-fw fa-1x"></i></span>&nbsp;*@
+                                    Cancel
+                                </button>
+                               @* <button type="button" class="btn btn-primary modalButton" data-button-value="modalOk" style="width: 90px;">
+                                    <span><i class="fas fa-thumbs-up fa-fw fa-1x"></i></span>&nbsp;Ok
+                                </button>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="modReassignment" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content">
+                            <!-- Modal Header -->
+                            <div class="modal-header bg-danger bg-opacity-75">
+                                <span class="text-white"><i id="modChangeStatusIcon" class='fas fa-edit fa-2x fa-fw'></i></span>
+                                <span class="modal-title text-white modalHeader">&nbsp;Reassign Approver</span>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <div class="row pt-2">
+                                    <div class="col-sm-4 fieldLabel">
+                                        <label asp-for="CEARequestDetail.RequisitionNo" class="col-form-label"></label>                            
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <input asp-for="CEARequestDetail.RequisitionNo" class="form-control form-control-sm fieldValue w-50" readonly />  
+                                    </div>
+                                    <dvi class="col"></dvi>
+                                </div>
+                                <div class="row pt-2">
+                                    <div class="col-sm-4 fieldLabel">
+                                        <label asp-for="CEARequestDetail.RequisitionDescription" class="col-form-label"></label>                            
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <input asp-for="CEARequestDetail.RequisitionDescription" class="form-control form-control-sm fieldValue" readonly />  
+                                    </div>
+                                    <dvi class="col"></dvi>
+                                </div>
+                                @*<div class="row pt-2">
+                                    <div class="col-sm-4 fieldLabel">
+                                        <label asp-for="CEARequestDetail.CEAStatusDesc" class="col-form-label"></label>                                        
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <span class="text-center text-white badge bg-info rounded-pill fs-6">@Model.CEARequestDetail.CEAStatusDesc</span>
+                                    </div>
+                                    <dvi class="col"></dvi>
+                                </div>*@
+                                <div class="row pt-2">
+                                    <div class="col-sm-4 fieldLabel">
+                                        <label asp-for="CEARequestDetail.CurrentlyAssignedTo" class="col-form-label"></label>                                        
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <span class="text-center text-white badge bg-danger rounded-pill fs-6">@Model.CEARequestDetail.CurrentlyAssignedTo</span>
+                                    </div>
+                                    <dvi class="col"></dvi>
+                                </div>
+                                <div class="row pt-2">
+                                    <div class="col-sm-4 fieldLabel">
+                                        <span><i class="fas fa-asterisk fa-fw fa-xs text-danger"></i></span>
+                                        <label class="col-form-label" data-field="ReassignTo">Reassign To</label>   
+                                    </div>
+                                    <div class="col-sm-7 ui-front">
+                                        <input id="txtReassignTo" class="form-control form-control-sm fieldValue" 
+                                            maxlength="100" data-readonly-field="false" value="" placeholder="search employee here..."  
+                                            style="font-size: 14px;" />
+                                        <input type="hidden" name="ReassignEmpNo" />
+                                        <input type="hidden" name="ReassignEmpName" />
+                                        <input type="hidden" name="ReassignEmpEmail" />
+                                        <div class="form-row errorPanel" id="ReassignError" hidden>
+			                                <div class="col-sm-12">
+				                                <div class="alert alert-danger alert-dismissible mt-1 fade show">
+					                                <span><i class="fas fa-times-circle fa-fw fa-lg"></i></span>
+					                                <span class="errorText"></span>
+				                                </div>
+			                                </div>
+		                                </div>  
+                                    </div>
+                                    <dvi class="col"></dvi>
+                                </div>
+                                <div class="row pt-2">
+                                    <div class="col-sm-4 fieldLabel">
+                                        <span><i class="fas fa-asterisk fa-fw fa-xs text-danger"></i></span>
+                                        <label class="col-form-label" data-field="ReassignReason">Justification</label>   
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <textarea rows="4" class="form-control form-control-sm fieldValue" maxlength="500" name="ReassignReason"></textarea>
+                                        <div class="form-row errorPanel mt-1" id="ReassignReasonError" hidden>
+                                            <div class="col-sm-12">
+                                                <div class="alert alert-danger alert-dismissible mt-1 fade show">
+                                                    <span><i class="fas fa-times-circle fa-fw fa-lg"></i></span>
+                                                    <span class="errorText"></span>
+                                                </div>
+                                            </div>
+                                        </div>  
+                                    </div>                                    
+                                </div>
+                                <div class="row mt-2 ps-2">
+                                    <p class="h6 text-decoration-underline text-secondary ps-2" style="font-family:'Poppins-SemiBold';">Notes:</p>
+                                    <p id="lblNotes" class="text-secondary fst-italic">
+                                        Only the currently assigned person can reassign this requisition to another approver.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-link modalButton text-secondary text-decoration-none" data-button-value="modalCancel" data-bs-dismiss="modal" style="width: 80px;">
+                                    &nbsp;Cancel
+                                </button>
+                                <button type="button" class="btn btn-primary modalButton" data-button-value="modalReassign" style="width: 130px;">
+                                    <span><i class="fas fa-share fa-fw fa-1x"></i></span>&nbsp;Reassign
+                                </button>                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="mainTabPanel">
+                            <!-- Nav pills -->
+                            <div class="mx-2 mt-3">
+                                <ul class="nav nav-tabs">
+                                  <li id="lnkDetail" class="nav-item active">
+                                    <a class="nav-link" data-bs-toggle="tab" href="#tabDetail">
+                                        <span><i class="fas fa-info-circle fa-fw fa-lg"></i></span>
+                                        Requisition Details
+                                    </a>
+                                  </li>
+                                  <li id="lnkFinancial" class="nav-item">
+                                    <a class="nav-link" data-bs-toggle="tab" href="#tabFinancial">
+                                        <span><i class="fas fa-chart-pie fa-fw fa-lg"></i></span>
+                                        Financial Details
+                                    </a>
+                                  </li>
+                                  <li id="lnkAttachment" class="nav-item">
+                                    <a class="nav-link" data-bs-toggle="tab" href="#tabAttachment">
+                                        <span><i class="fas fa-paperclip fa-fw fa-lg"></i></span>
+                                        Attachments
+                                    </a>
+                                  </li>
+                                </ul>
+                            </div>
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div id="tabDetail" class="container-fluid tab-pane active pt-0 mt-0"><br>
+                                    <div class="container-fluid ps-2 pe-0 me-0 pt-0 mt-0 pb-1">     
+                                        <div class="row pt-1">
+                                            <div class="col-sm-2 fieldLabel">
+                                                <label asp-for="CEARequestDetail.CEAStatusDesc" class="col-form-label"></label>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <span id="lblStatus" class="text-center text-white badge bg-info bg-opacity-75 rounded-pill px-3 py-2">@Model.CEARequestDetail.CEAStatusDesc</span>
+                                                <input type="hidden" asp-for="CEARequestDetail.CEAStatusCode" name="CEAStatusCode" />
+                                                <input type="hidden" asp-for="CEARequestDetail.StatusHandlingCode" name="StatusHandlingCode" />
+                                            </div>
+                                            <div class="col-sm-2 fieldLabel">
+                                                <label asp-for="CEARequestDetail.CreatedByEmpName" class="col-form-label"></label>
+                                            </div>
+                                            <div class="col-sm-4 pe-3">
+                                                <input asp-for="CEARequestDetail.CreatedByEmpName" class="form-control form-control-sm fieldValue w-75" name="CreatedByEmpName" readonly />  
+                                                <input type="hidden" asp-for="CEARequestDetail.CreatedByEmpNo" name="CreatedByEmpNo" />
+                                            </div>
+                                            <div class="col-sm-1"></div>
+                                        </div>
+                                        <div class="row pt-2">
+                                            <div class="col-sm-2 fieldLabel">
+                                                <span><i class="fas fa-asterisk fa-fw fa-xs text-danger"></i></span>
+                                                <label asp-for="CEARequestDetail.CategoryCode1" class="col-form-label" data-field="ItemType"></label>                            
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <select class="form-control form-select form-select-sm fieldValue mandatoryField editable" aria-disabled="true" disabled   
+                                                        title="Tips:" data-toggle="popover" data-content="Select Item Type" data-trigger="hover" data-placement="top"
+                                                        asp-for="CEARequestDetail.CategoryCode1" asp-items="Model.ItemTypeList" name="CategoryCode1" style="padding-left: -5px;">
+                                                    <option value=""></option>
+                                                </select>
+                                                <span asp-validation-for="CEARequestDetail.CategoryCode1" class="text-danger"></span>
+                                                <div class="form-row errorPanel" id="ItemTypeError" hidden>
+                                                    <div class="col-sm-12">
+                                                        <div class="alert alert-danger alert-dismissible mt-1 fade show">
+                                                            <span><i class="fas fa-times-circle fa-fw fa-lg"></i></span>
+                                                            <span class="errorText"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>  
+                                            </div>
+                                            <div class="col-sm-2 fieldLabel">
+                                                <span><i class="fas fa-asterisk fa-fw fa-xs text-danger"></i></span>
+                                                <label asp-for="CEARequestDetail.OriginatorEmpName" class="col-form-label" data-field="Originator"></label>
+                                            </div>
+                                            <div class="col-sm-4 pe-3">
+                                                <div class="input-group groupAssignPerson w-75">
+                                                    <input id="txtOriginator" asp-for="CEARequestDetail.OriginatorEmpName" 
+                                                        class="form-control form-control-sm fieldValue mandatoryField editable" disabled 
+                                                        maxlength="100" data-readonly-field="false"  
+                                                        name="OriginatorEmpName" value="" placeholder="search employee here..."  
+                                                        style="font-size: 14px;" />
+                                                    <input type="hidden" id="hidOriginatorEmpName" asp-for="CEARequestDetail.OriginatorEmpName" />      
+                                                    <button id="btnFindEmp" class="btn btn-sm btn-secondary ms-1 editable" type="button" disabled
+                                                        data-bs-toggle="tooltip" data-bs-placement="top" title="Search for employee">
+                                                        <span><i class="fas fa-binoculars fa-fw fa-lg"></i></span>&nbsp;
+                                                    </button>
+                                                </div>                                    
+                                                <input type="hidden" id="hidOriginator" asp-for="CEARequestDetail.OriginatorEmpNo" name="OriginatorEmpNo" />
+                                                <div class="form-row errorPanel" id="originatorValid" hidden>
+                                                    <div class="col-sm-12">
+                                                        <div class="alert alert-danger alert-dismissible mt-1 fade show">
+                                                            <span><i class="fas fa-times-circle fa-fw fa-lg"></i></span>
+                                                            <span class="errorText"></span>
+                                                        </div>
+                                                    </div>
+                                                </div> 
+                                                <div class="form-row errorPanel" id="OriginatorError" hidden>
+                                                    <div class="col-sm-12">
+                                                        <div class="alert alert-danger alert-dismissible mt-1 fade show">
+                                                            <span><i class="fas fa-times-circle fa-fw fa-lg"></i></span>
+                                                            <span class="errorText"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>  
+                                            </div>
+                                            <div class="col-sm-1"></div>
+                                        </div>
+                                        <div class="row pt-2">
+                                            <div class="col-sm-2 fieldLabel">
+                                                <span><i class="fas fa-asterisk fa-fw fa-xs text-danger"></i></span>
+                                                <label asp-for="CEARequestDetail.RequisitionDescription" class="col-form-label" data-field="RequisitionDescription"></label>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <input asp-for="CEARequestDetail.RequisitionDescription" class="form-control form-control-sm fieldValue mandatoryField editable" maxlength="40" name="RequisitionDescription" disabled />  
+                                                <span asp-validation-for="CEARequestDetail.RequisitionDescription" class="text-danger"></span>
+                                                <div class="form-row errorPanel" id="RequisitionDescError" hidden>
+                                                    <div class="col-sm-12">
+                                                        <div class="alert alert-danger alert-dismissible mt-1 fade show">
+                                                            <span><i class="fas fa-times-circle fa-fw fa-lg"></i></span>
+                                                            <span class="errorText"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>   
+                                            </div>
+                                            <div class="col-sm-2 fieldLabel">
+                                                <label asp-for="CEARequestDetail.ExpenditureTypeCode" class="col-form-label"></label>
+                                            </div>
+                                            <div class="col-sm-4 pe-3">
+                                                <select class="form-control form-select form-select-sm fieldValue w-75" 
+                                                        title="Tips:" data-toggle="popover" data-content="Select cost center" data-trigger="hover" data-placement="top" disabled
+                                                        asp-for="CEARequestDetail.ExpenditureTypeCode" asp-items="Model.ExpenditureTypeList" name="ExpenditureType" style="padding-left: -5px;">
+                                                    <option value=""></option>
+                                                </select>
+                                                <span asp-validation-for="CEARequestDetail.ExpenditureTypeCode" class="text-danger"></span>
+                                                <div class="form-row errorPanel" id="ExpenditureTypeError" hidden>
+                                                    <div class="col-sm-12">
+                                                        <div class="alert alert-danger alert-dismissible mt-1 fade show">
+                                                            <span><i class="fas fa-times-circle fa-fw fa-lg"></i></span>
+                                                            <span class="errorText"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>   
+                                            </div>
+                                            <div class="col-sm-1"></div>
+                                        </div>
+                                        <div class="row pt-1">
+                                            <div class="col-sm-5">
+                                                <div class="row my-1">
+                                                    <div class="col-sm-5 fieldLabel pe-4">
+                                                        <label asp-for="CEARequestDetail.RequestDate" class="col-form-label" data-field="RequestDate"></label>                                    
+                                                    </div>
+                                                    <div class="col p-0 m-0">
+                                                        <div class="input-group p-0 m-0">
+                                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text"><i class="far fa-calendar-alt fa-1x"></i></span>
+                                                            </div>
+                                                            <input asp-for="CEARequestDetail.RequestDate" name="RequestDate" class="borderLess fieldValue editable form-control-sm me-2" type="text" maxlength="10" tabindex="5" data-readonly-field="true" disabled  
+                                                                style="width: 120px; text-align: center; height: 15px;" />
+                                                            <input type="hidden" id="hidRequestDate" />
+                                                            <div class="form-row errorPanel" id="RequestDateError" hidden>
+                                                                <div class="col-sm-12">
+                                                                    <div class="alert alert-danger alert-dismissible mt-1 fade show">
+                                                                        <span><i class="fas fa-times-circle fa-fw fa-lg"></i></span>
+                                                                        <span class="errorText"></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>  
+                                                        </div>  
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-1 mt-2 pe-2">
+                                                    <div class="col-sm-5 pe-4 fieldLabel">                                    
+                                                        <label asp-for="CEARequestDetail.CostCenter" class="col-form-label" data-field="CostCenter"></label>                            
+                                                    </div>
+                                                    <div class="col p-0 m-0">
+                                                        <select class="form-control form-select form-select-sm fieldValue" disabled   
+                                                                title="Tips:" data-toggle="popover" data-content="Select cost center" data-trigger="hover" data-placement="top"
+                                                                asp-for="CEARequestDetail.CostCenter" asp-items="Model.CostCenterList" style="padding-left: -5px;">
+                                                            <option value=""></option>
+                                                        </select>
+                                                        <span asp-validation-for="CEARequestDetail.CostCenter" class="text-danger"></span>
+                                                        <div class="form-row errorPanel" id="CostCenterError" hidden>
+                                                            <div class="col-sm-12">
+                                                                <div class="alert alert-danger alert-dismissible mt-1 fade show">
+                                                                    <span><i class="fas fa-times-circle fa-fw fa-lg"></i></span>
+                                                                    <span class="errorText"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>   
+                                                    </div>                                
+                                                </div>
+                                                <div class="row mb-1 mt-2">
+                                                    <div class="col-sm-5 fieldLabel pe-4">
+                                                        <label asp-for="CEARequestDetail.ProjectNo" class="col-form-label"></label>                            
+                                                    </div>
+                                                    <div class="col p-0 m-0">
+                                                        <div class="row">
+                                                            <div class="col-sm pe-0 me-0 pt-1">
+                                                                <input asp-for="CEARequestDetail.ProjectNo" class="form-control form-control-sm fieldValue" name="ProjectNo" readonly />  
+                                                            </div>
+                                                            <div class="col-sm ps-2 pt-0 mt-0 ms-0">
+                                                                    <button id="btnFindProject" class="btn btn-sm btn-secondary editable" type="button" hidden disabled
+                                                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Search for project number">
+                                                                    <span><i class="fas fa-binoculars fa-fw fa-lg"></i></span>&nbsp;
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <span asp-validation-for="CEARequestDetail.ProjectNo" class="text-danger"></span>
+                                                        <div class="form-row errorPanel" id="ProjectNoError" hidden>
+                                                            <div class="col-sm-12">
+                                                                <div class="alert alert-danger alert-dismissible mt-1 fade show">
+                                                                    <span><i class="fas fa-times-circle fa-fw fa-lg"></i></span>
+                                                                    <span class="errorText"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>   
+                                                    </div>                                
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-2 fieldLabel">
+                                                <span><i class="fas fa-asterisk fa-fw fa-xs text-danger"></i></span>
+                                                <label asp-for="CEARequestDetail.Description" class="col-form-label" data-field="Description"></label>
+                                            </div>
+                                            <div class="col-sm-4 pt-1">
+                                                <textarea asp-for="CEARequestDetail.Description" name="Description" rows="5" disabled  
+                                                    class="form-control form-control-sm fieldValue mandatoryField editable" 
+                                                    maxlength="500" tabindex="14">
+                                                </textarea>
+                                                <span asp-validation-for="CEARequestDetail.Description" class="text-danger"></span>
+                                                <div class="form-row errorPanel" id="DescriptionError" hidden>
+                                                    <div class="col-sm-12">
+                                                        <div class="alert alert-danger alert-dismissible mt-1 fade show">
+                                                            <span><i class="fas fa-times-circle fa-fw fa-lg"></i></span>
+                                                            <span class="errorText"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>   
+                                            </div>
+                                            <div class="col-sm-1"></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-5">
+                                                <div class="row my-1">
+                                                    <div class="col-sm-5 fieldLabel pe-4">
+                                                        <label asp-for="CEARequestDetail.FiscalYear" class="col-form-label" data-field="FiscalYear"></label>                            
+                                                    </div>
+                                                    <div class="col p-0 m-0">
+                                                        <select asp-for="CEARequestDetail.FiscalYear" asp-items="Model.FiscalYearList" disabled
+                                                            class="form-select form-select-sm fieldValue w-50" title="Tips:" data-toggle="popover" data-content="Select Fiscal Year" data-trigger="hover" data-placement="top"  
+                                                            style="padding-left: -5px;">
+                                                            <option value="">All</option>
+                                                        </select>    
+                                                    <div class="form-row errorPanel" id="fiscalYearError" hidden>
+                                                        <div class="col-sm-12">
+                                                            <div class="alert alert-danger alert-dismissible mt-1 fade show">
+                                                                <span><i class="fas fa-times-circle fa-fw fa-lg"></i></span>
+                                                                <span class="errorText"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div> 
+                                                    </div>
+                                                </div>
+                                                <div class="row my-2">
+                                                    <div class="col-sm-5 fieldLabel pe-4">
+                                                        <span><i class="fas fa-asterisk fa-fw fa-xs text-danger"></i></span>
+                                                        <label asp-for="CEARequestDetail.EstimatedLifeSpan" class="col-form-label" data-field="EstimatedLifeSpan"></label>                                                                                                                    
+                                                    </div>
+                                                    <div class="col p-0 m-0">
+                                                        <input asp-for="CEARequestDetail.EstimatedLifeSpan" class="form-control form-control-sm fieldValue w-50 mandatoryField editable" maxlength="4" name="EstimatedLifeSpan" disabled />  
+                                                        <div class="form-row errorPanel" id="EstimatedLifeSpanError" hidden>
+                                                            <div class="col-sm-12">
+                                                                <div class="alert alert-danger alert-dismissible mt-1 fade show">
+                                                                    <span><i class="fas fa-times-circle fa-fw fa-lg"></i></span>
+                                                                    <span class="errorText"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>                                                             
+                                                    </div>
+                                                </div>
+                                                <div class="row my-2 pe-2">
+                                                    <div class="col-sm-5 fieldLabel pe-4">
+                                                        <label asp-for="CEARequestDetail.PlantLocationID" class="col-form-label"></label>
+                                                    </div>
+                                                    <div class="col p-0 m-0">
+                                                        <select asp-for="CEARequestDetail.PlantLocationID" asp-items="Model.PlantLocationList" name="PlantLocationID" disabled  
+                                                            class="form-control form-control-sm form-select form-select-sm fieldValue editable" title="Tips:" 
+                                                            data-toggle="popover" data-content="Select Location" data-trigger="hover" data-placement="top"  
+                                                            style="padding-left: -5px;">
+                                                            <option value="">All</option>
+                                                        </select>    
+                                                        <div class="form-row errorPanel" id="plantLocationError" hidden>
+                                                            <div class="col-sm-12">
+                                                                <div class="alert alert-danger alert-dismissible mt-1 fade show">
+                                                                    <span><i class="fas fa-times-circle fa-fw fa-lg"></i></span>
+                                                                    <span class="errorText"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-2 fieldLabel">
+                                                <span><i class="fas fa-asterisk fa-fw fa-xs text-danger"></i></span>
+                                                <label asp-for="CEARequestDetail.Reason" class="col-form-label" data-field="Reason"></label>
+                                            </div>
+                                            <div class="col-sm-4 pt-1">
+                                                <textarea asp-for="CEARequestDetail.Reason" name="Reason" rows="5" disabled  
+                                                    class="form-control form-control-sm fieldValue mandatoryField editable" 
+                                                    maxlength="500" tabindex="14">
+                                                </textarea>
+                                                <span asp-validation-for="CEARequestDetail.Reason" class="text-danger"></span>
+                                                <div class="form-row errorPanel" id="ReasonError" hidden>
+                                                    <div class="col-sm-12">
+                                                        <div class="alert alert-danger alert-dismissible mt-1 fade show">
+                                                            <span><i class="fas fa-times-circle fa-fw fa-lg"></i></span>
+                                                            <span class="errorText"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>   
+                                            </div>
+                                            <div class="col-sm-1"></div>
+                                        </div>
+                                        <div class="row pt-0">
+                                            <div class="col-sm-2 fieldLabel">
+                                                <span><i class="fas fa-asterisk fa-fw fa-xs text-danger"></i></span>
+                                                <label asp-for="CEARequestDetail.AccountNo" class="col-form-label" data-field="AccountNo"></label>
+                                            </div>
+                                            <div class="col-sm-3 ps-2">
+                                                <input asp-for="CEARequestDetail.AccountNo" class="form-control form-control-sm fieldValue" maxlength="40" name="AccountNo" readonly />  
+                                                <span asp-validation-for="CEARequestDetail.AccountNo" class="text-danger"></span>
+                                                <div class="form-row errorPanel" id="AccountNoError" hidden>
+                                                    <div class="col-sm-12">
+                                                        <div class="alert alert-danger alert-dismissible mt-1 fade show">
+                                                            <span><i class="fas fa-times-circle fa-fw fa-lg"></i></span>
+                                                            <span class="errorText"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>   
+                                            </div>
+                                            <div class="col-sm-2 fieldLabel">
+                                                <span><i class="fas fa-asterisk fa-fw fa-xs text-danger"></i></span>
+                                                <label asp-for="CEARequestDetail.DateofComission" class="col-form-label" data-field="DateofComission"></label>
+                                            </div>
+                                            <div class="col-sm-4 pe-3">
+                                                <div class="input-group input-group-sm">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"><i class="far fa-calendar-alt fa-1x"></i></span>
+                                                    </div>
+                                                    <input asp-for="CEARequestDetail.DateofComission" name="DateofComission" class="borderLess fieldValue mandatoryField editable form-control-sm me-2" type="text" maxlength="10" data-readonly-field="true" disabled  
+                                                        style="width: 120px; text-align: center; height: 15px;" />
+                                                    <input type="hidden" id="hidDateofComission" />
+                                                    <div class="form-row errorPanel" id="DateofComissionError" hidden>
+                                                        <div class="col-sm-12">
+                                                            <div class="alert alert-danger alert-dismissible mt-1 fade show">
+                                                                <span><i class="fas fa-times-circle fa-fw fa-lg"></i></span>
+                                                                <span class="errorText"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>  
+                                                </div>  
+                                            </div>
+                                            <div class="col-sm-1"></div>
+                                        </div>
+                                        <div class="row pt-2">
+                                            <div class="col-sm-2 fieldLabel ps-2">                                                    
+                                                <label asp-for="CEARequestDetail.EquipmentNo" class="col-form-label"></label>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="row">
+                                                    <div class="col-sm pe-0 me-0 pt-1">
+                                                        <input id="txtEquipmentNo" asp-for="CEARequestDetail.EquipmentNo" 
+                                                            class="form-control form-control-sm fieldValue editable" disabled 
+                                                            maxlength="12" data-readonly-field="false"  
+                                                            name="EquipmentNo" value="" placeholder="search equipment here..."  
+                                                            style="font-size: 14px;" />     
+                                                        <input type="hidden" id="hidEquipmentNo" asp-for="CEARequestDetail.EquipmentNo" />      
+                                                    </div>
+                                                    <div class="col-sm ps-2 pt-0 mt-0 ms-0">
+                                                        <button id="btnFindEquipment" class="btn btn-sm btn-secondary editable" type="button" disabled
+                                                            data-bs-toggle="modal" data-bs-target="#modEquipment">
+                                                            <span><i class="fas fa-binoculars fa-fw fa-lg"></i></span>&nbsp;
+                                                        </button>
+                                                    </div>
+                                                    <input type="hidden" id="hidEquipmentNo" />
+                                                    <div class="form-row errorPanel" id="EquipmentNoError" hidden>
+                                                        <div class="col-sm-12">
+                                                            <div class="alert alert-danger alert-dismissible mt-1 fade show">
+                                                                <span><i class="fas fa-times-circle fa-fw fa-lg"></i></span>
+                                                                <span class="errorText"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>   
+                                                </div>                                                    
+                                            </div>
+                                            <div class="col-sm-2 fieldLabel">
+                                                <label asp-for="CEARequestDetail.EquipmentDesc" class="col-form-label"></label>
+                                            </div>
+                                            <div class="col-sm-4 pe-3">
+                                                <input asp-for="CEARequestDetail.EquipmentDesc" class="form-control form-control-sm fieldValue" name="EquipmentDesc" readonly />  
+                                                <span asp-validation-for="CEARequestDetail.EquipmentDesc" class="text-danger"></span>
+                                                <div class="form-row errorPanel" id="EquipmentDescError" hidden>
+                                                    <div class="col-sm-12">
+                                                        <div class="alert alert-danger alert-dismissible mt-1 fade show">
+                                                            <span><i class="fas fa-times-circle fa-fw fa-lg"></i></span>
+                                                            <span class="errorText"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>   
+                                            </div>
+                                            <div class="col-sm-1"></div>
+                                        </div>
+                                        <div class="row pt-2">
+                                            <div class="col-sm-2 fieldLabel ps-0 ms-0">                                                    
+                                                <label asp-for="CEARequestDetail.EquipmentParentNo" class="col-form-label"></label>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <input asp-for="CEARequestDetail.EquipmentParentNo" class="form-control form-control-sm fieldValue" maxlength="12" name="EquipmentParentNo" readonly />  
+                                                <span asp-validation-for="CEARequestDetail.EquipmentParentNo" class="text-danger"></span>
+                                                <div class="form-row errorPanel" id="EquipmentParentNoError" hidden>
+                                                    <div class="col-sm-12">
+                                                        <div class="alert alert-danger alert-dismissible mt-1 fade show">
+                                                            <span><i class="fas fa-times-circle fa-fw fa-lg"></i></span>
+                                                            <span class="errorText"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>   
+                                            </div>
+                                            <div class="col-sm-2 fieldLabel">
+                                                <label asp-for="CEARequestDetail.EquipmentParentDesc" class="col-form-label"></label>
+                                            </div>
+                                            <div class="col-sm-4 pe-3">
+                                                <input asp-for="CEARequestDetail.EquipmentParentDesc" class="form-control form-control-sm fieldValue" name="EquipmentParentDesc" readonly />  
+                                                <span asp-validation-for="CEARequestDetail.EquipmentParentDesc" class="text-danger"></span>
+                                                <div class="form-row errorPanel" id="EquipmentParentDescError" hidden>
+                                                    <div class="col-sm-12">
+                                                        <div class="alert alert-danger alert-dismissible mt-1 fade show">
+                                                            <span><i class="fas fa-times-circle fa-fw fa-lg"></i></span>
+                                                            <span class="errorText"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>   
+                                            </div>
+                                            <div class="col-sm-1"></div>
+                                        </div>
+                                        <div class="row pt-2 viewAssigned" hidden>
+                                            <div class="col-sm-2 fieldLabel ps-0 ms-0">                                                    
+                                                <label asp-for="CEARequestDetail.CurrentlyAssignedTo" class="col-form-label"></label>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <span id="lblAssignee" class="form-control badge bg-danger fw-bold fst-italic fieldValue d-inline-block text-truncate text-start" style="color: yellow;">@Model.CEARequestDetail.CurrentlyAssignedTo</span>
+                                            </div>
+                                            <div class="col-sm-2 fieldLabel">
+                                                <label asp-for="CEARequestDetail.CurrentWFActivity" class="col-form-label"></label>
+                                            </div>
+                                            <div class="col-sm-4 pe-3">
+                                                <span id="lblWFStatus" class="fieldValue d-inline-block text-truncate text-start">@Model.CEARequestDetail.CurrentWFActivity</span>
+                                            </div>
+                                            <div class="col-sm-1"></div>
+                                        </div>
+                                        <div class="row pt-2 approverPanel" hidden>
+                                            <div class="col-sm-2 fieldLabel ps-0 ms-0">      
+                                                <span><i class="fas fa-asterisk fa-fw fa-xs text-danger"></i></span>
+                                                <label asp-for="CEARequestDetail.ApproverComments" class="col-form-label" data-field="ApproverComments"></label>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <textarea asp-for="CEARequestDetail.ApproverComments" name="ApproverComments" rows="4"   
+                                                    class="form-control form-control-sm fieldValue mandatoryField editable" maxlength="500">
+                                                </textarea>
+                                                <span asp-validation-for="CEARequestDetail.ApproverComments" class="text-danger"></span>                                                 
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-row errorPanel" id="ApproverCommentsError" hidden>
+                                                    <div class="col-sm-12">
+                                                        <div class="alert alert-danger alert-dismissible mt-1 fade show">
+                                                            <span><i class="fas fa-times-circle fa-fw fa-lg"></i></span>
+                                                            <span class="errorText"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>  
+                                            </div>
+                                            <div class="col-sm-1"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="tabFinancial" class="container-fluid tab-pane fade"><br>
+                                    <div class="container-fluid">     
+                                        <div class="row">
+                                            <div class="col-sm-5">
+                                                <div class="row my-1">
+                                                    <div class="col-sm-6 fieldLabel pe-4">
+                                                        <label asp-for="CEARequestDetail.ProjectAmount" class="col-form-label" data-field="ProjectAmount"></label>                                    
+                                                    </div>
+                                                    <div class="col p-0 m-0">
+                                                        <input asp-for="CEARequestDetail.ProjectAmount" class="form-control form-control-sm text-end w-75 fieldValue" disabled />  
+                                                    </div>       
+                                                </div>
+                                                <div class="row my-1">
+                                                    <div class="col-sm-6 fieldLabel pe-4">
+                                                        <label asp-for="CEARequestDetail.UsedAmount" class="col-form-label" data-field="UsedAmount"></label>                                    
+                                                    </div>
+                                                    <div class="col p-0 m-0">
+                                                        <input asp-for="CEARequestDetail.UsedAmount" class="form-control form-control-sm text-end w-75 fieldValue" disabled />  
+                                                    </div>       
+                                                </div>
+                                                <div class="row my-1">
+                                                    <div class="col-sm-6 fieldLabel pe-4">
+                                                        <label asp-for="CEARequestDetail.ProjectBalanceAmt" class="col-form-label" data-field="ProjectBalanceAmt"></label>                                    
+                                                    </div>
+                                                    <div class="col p-0 m-0">
+                                                        <input asp-for="CEARequestDetail.ProjectBalanceAmt" class="form-control form-control-sm text-end w-75 fieldValue" name="ProjectBalanceAmt" disabled />  
+                                                    </div>       
+                                                </div>
+                                                <div class="row my-1">
+                                                    <div class="col-sm-6 fieldLabel pe-4">
+                                                        <span><i class="fas fa-asterisk fa-fw fa-xs text-danger"></i></span>
+                                                        <label asp-for="CEARequestDetail.RequestedAmt" class="col-form-label" data-field="RequestedAmt"></label>                                    
+                                                    </div>
+                                                    <div class="col p-0 m-0">
+                                                        <input asp-for="CEARequestDetail.RequestedAmt" class="form-control form-control-sm text-end w-75 fieldValue mandatoryField editable" name="RequestedAmt" disabled />  
+                                                    </div>    
+                                                    <div class="form-row errorPanel" id="RequestedAmtError" hidden>
+                                                        <div class="col-sm-12">
+                                                            <div class="alert alert-danger alert-dismissible mt-1 fade show">
+                                                                <span><i class="fas fa-times-circle fa-fw fa-lg"></i></span>
+                                                                <span class="errorText"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>  
+                                                </div>
+                                                <div class="row my-1">
+                                                    <div class="col-sm-6 fieldLabel pe-4">
+                                                        <label asp-for="CEARequestDetail.AdditionalBudgetAmt" class="col-form-label" data-field="AdditionalBudgetAmt"></label>                                    
+                                                    </div>
+                                                    <div class="col p-0 m-0">
+                                                        <span id="lblAdditionalAmount" class="form-control text-center text-white badge bg-danger rounded-pill w-75" hidden>Additional Amount Requested</span>
+                                                        <input asp-for="CEARequestDetail.AdditionalBudgetAmt" class="form-control form-control-sm text-end w-75 fieldValue" name="AdditionalBudgetAmt" disabled />  
+                                                        <input type="hidden" asp-for="CEARequestDetail.AdditionalBudgetAmtSync" name="AdditionalBudgetAmtSync" />
+                                                    </div>       
+                                                </div>
+                                                <div class="row my-1">
+                                                    <div class="col-sm-6 fieldLabel pe-4">
+                                                        <label asp-for="CEARequestDetail.ReasonForAdditionalAmt" class="col-form-label" data-field="ReasonForAdditionalAmt"></label>                                    
+                                                    </div>
+                                                    <div class="col p-0 m-0">
+                                                        <textarea asp-for="CEARequestDetail.ReasonForAdditionalAmt" name="ReasonForAdditionalAmt" rows="3" 
+                                                            class="form-control form-control-sm fieldValue w-75 mandatoryField" disabled maxlength="100">
+                                                        </textarea>
+                                                    </div>     
+                                                    <div class="form-row errorPanel" id="ReasonAddAmtError" hidden>
+                                                        <div class="col-sm-12">
+                                                            <div class="alert alert-danger alert-dismissible mt-1 fade show">
+                                                                <span><i class="fas fa-times-circle fa-fw fa-lg"></i></span>
+                                                                <span class="errorText"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>   
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                <fieldset>
+                                                    <legend class="h6 text-decoration-underline ps-2" style="font-family:'Poppins-SemiBold';">Schedule of Expenses:</legend>
+                                                    <div id="expenseEntry" class="row ps-2">
+                                                        <div class="col-2 text-center">
+                                                            <label asp-for="CEARequestDetail.ExpenseYear" class="col-form-label fieldCaption" data-field="ExpenseYear"></label>                                    
+                                                            <select class="form-control form-select form-select-sm fieldValue"   
+                                                                asp-for="CEARequestDetail.ExpenseYear" asp-items="Model.ExpenseYearList" name="ExpenseYear">
+                                                                <option value=""></option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-2 text-center">
+                                                            <label asp-for="CEARequestDetail.ExpenseQuarter" class="col-form-label fieldCaption" data-field="ExpenseQuarter" style="margin-left: -10px;"></label>     
+                                                            <select class="form-control form-select form-select-sm fieldValue" style="margin-left: -10px;"   
+                                                                asp-for="CEARequestDetail.ExpenseQuarter" asp-items="Model.ExpenseQuarterList" name="ExpenseQuarter">
+                                                                <option value=""></option>
+                                                            </select>                                                           
+                                                        </div>
+                                                        <div class="col-2 text-center">
+                                                            <label asp-for="CEARequestDetail.ExpenseAmount" class="col-form-label fieldCaption" data-field="ExpenseAmount" style="margin-left: -25px;"></label>     
+                                                            <input asp-for="CEARequestDetail.ExpenseAmount" class="form-control form-control-sm text-start fieldValue" name="ExpenseAmount" style="margin-left: -20px;"   />                                                             
+                                                        </div>
+                                                        <div class="col-6" style="margin-top: 34px; margin-left: -30px;">
+                                                            <div class="btn-group">
+                                                                <button type="button" id="btnAddExpense" 
+                                                                    class="btn btn-primary btnGroupItem border-0 text-white"  
+                                                                    style="width: 40px;" 
+                                                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Add new expense item">
+                                                                    <span class="spinner-border spinner-border-sm" hidden></span>
+                                                                    <span><i class="fas fa-plus-circle fa-fw fa-lg"></i></span>
+                                                                    
+                                                                </button>    
+                                                                <button type="button" id="btnUpdateExpense" 
+                                                                    class="btn btn-primary btn-sm btnGroupItem border-0 text-white ms-0 disabled"  
+                                                                    style="width: 40px;"                                                                     
+                                                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Save changes">
+                                                                    <span class="spinner-border spinner-border-sm" hidden></span>
+                                                                    <span><i class="fas fa-save fa-fw fa-lg"></i></span>
+                                                                    
+                                                                </button>    
+                                                                <button type="button" id="btnCancelUpdate" 
+                                                                    class="btn btn-primary btn-sm btnGroupItem border-0 text-white ms-0 disabled"  
+                                                                    style="width: 40px;"                                                                     
+                                                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Undo changes">
+                                                                    <span class="spinner-border spinner-border-sm" hidden></span>
+                                                                    <span><i class="fas fa-undo-alt fa-fw fa-lg"></i></span>
+                                                                </button>    
+                                                            </div>
+                                                        </div>                                                        
+                                                    </div>
+                                                    <div class="row expenseError mt-2 ps-2">
+                                                        <div class="col-11">
+                                                            <div class="form-row errorPanel" id="SchedExpenseError" hidden>
+                                                                <div class="col-sm-12">
+                                                                    <div class="alert alert-danger alert-dismissible fade show">
+                                                                        <span><i class="fas fa-times-circle fa-fw fa-lg"></i></span>
+                                                                        <span class="errorText"></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>  
+                                                            <div class="form-row errorPanel" id="ExpenseYearError" hidden>
+                                                                <div class="col-sm-12">
+                                                                    <div class="alert alert-danger alert-dismissible fade show">
+                                                                        <span><i class="fas fa-times-circle fa-fw fa-lg"></i></span>
+                                                                        <span class="errorText"></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>  
+                                                            <div class="form-row errorPanel" id="ExpenseQuarterError" hidden>
+                                                                <div class="col-sm-12">
+                                                                    <div class="alert alert-danger alert-dismissible fade show">
+                                                                        <span><i class="fas fa-times-circle fa-fw fa-lg"></i></span>
+                                                                        <span class="errorText"></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>   
+                                                            <div class="form-row errorPanel" id="ExpenseAmountError" hidden>
+                                                                <div class="col-sm-12">
+                                                                    <div class="alert alert-danger alert-dismissible fade show">
+                                                                        <span><i class="fas fa-times-circle fa-fw fa-lg"></i></span>
+                                                                        <span class="errorText"></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>  
+                                                        </div>
+                                                    </div>
+                                                    @*<div id="expenseTableRead" class="row ps-2" hidden>
+                                                        <div class="table-responsive mt-1" style="-ms-overflow-style: auto;">
+                                                            <table class="table table-sm table-light table-striped table-hover w-75 border border-2 border-top-0 rounded-3 shadow mb-4">
+                                                                <thead class="table-dark opacity-75" style="font-size:16px;">
+                                                                    <tr>
+                                                                        <th class="text-center">
+                                                                            @Html.DisplayNameFor(model => model.CEARequestDetail.ScheduleExpenseList[0].FiscalYear)
+                                                                        </th>                                                                
+                                                                        <th class="text-center">
+                                                                            @Html.DisplayNameFor(model => model.CEARequestDetail.ScheduleExpenseList[0].Quarter)
+                                                                        </th>                                                                
+                                                                        <th>
+                                                                            @Html.DisplayNameFor(model => model.CEARequestDetail.ScheduleExpenseList[0].Amount)
+                                                                        </th>    
+                                                                        <th>
+
+                                                                        </th>
+                                                                    </tr>                                                                                                                    
+                                                                </thead>
+                                                                <tbody class="fieldValue">
+                                                                    @if (expenseCount > 0)
+                                                                    {
+                                                                        @foreach (var item in Model.CEARequestDetail.ScheduleExpenseList)
+                                                                        {
+                                                                            <tr>
+                                                                                <td class="text-center" style="width: 130px;">
+                                                                                    @Html.DisplayFor(modelItem => item.FiscalYear)
+                                                                                </td>
+                                                                                <td class="text-center" style="width: 130px;">
+                                                                                    @Html.DisplayFor(modelItem => item.Quarter)
+                                                                                </td>
+                                                                                <td class="text-start" style="width: 150px;">
+                                                                                    @Html.DisplayFor(modelItem => item.Amount)
+                                                                                </td>
+                                                                                <td class="text-start" style="width: auto;">
+                                                                                    <a id="lnkExpenseEdit" class="@FormatGridLink(GlobalSettings.ButtonType.Edit)" 
+                                                                                        title="Edit record"
+                                                                                        style="font-size: 13px;" asp-action="Edit" asp-route-id="@item.RequisitionID">
+                                                                                        <span><i class="far fa-edit fa-fw fa-1x"></i></span>
+                                                                                        Edit
+                                                                                    </a> 
+                                                                                    <a id=lnkExpenseDelete class="@FormatGridLink(GlobalSettings.ButtonType.Delete)" 
+                                                                                        title="Delete record"
+                                                                                        style="font-size: 13px;" asp-action="Delete" asp-route-id="@item.RequisitionID">
+                                                                                        <span><i class="far fa-trash-alt fa-fw fa-1x"></i></span>
+                                                                                        Delete
+                                                                                    </a> 
+                                                                                </td>
+                                                                            </tr>
+                                                                        }
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        if (Model.CEARequestDetail.ScheduleExpenseList != null)
+                                                                        {
+                                                                            @foreach (var item in Model.CEARequestDetail.ScheduleExpenseList)
+                                                                            {
+                                                                                <tr>
+                                                                                    <td class="text-center" style="width: 130px;">
+                                                                                        @Html.DisplayFor(modelItem => item.FiscalYear)
+                                                                                    </td>
+                                                                                    <td class="text-center" style="width: 130px;">
+                                                                                        @Html.DisplayFor(modelItem => item.Quarter)
+                                                                                    </td>
+                                                                                    <td class="text-start" style="width: 150px;">
+                                                                                        @Html.DisplayFor(modelItem => item.Amount)
+                                                                                    </td>
+                                                                                    <td class="text-start" style="width: auto;">
+                                                                                        <a id="lnkExpenseEdit" class="btn btn-sm btn-primary invisible" 
+                                                                                        style="font-size: 13px;" asp-action="Edit" asp-route-id="@item.RequisitionID">
+                                                                                            <span><i class="far fa-edit fa-fw fa-sm"></i></span>
+                                                                                            Edit
+                                                                                        </a> 
+                                                                                        <a id=lnkExpenseDelete class="btn btn-sm btn-primary invisible" 
+                                                                                        style="font-size: 13px;" asp-action="Delete" asp-route-id="@item.RequisitionID">
+                                                                                            <span><i class="far fa-trash-alt fa-fw fa-sm"></i></span>
+                                                                                            Delete
+                                                                                        </a> 
+                                                                                    </td>
+                                                                                </tr>
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>*@
+                                                    <div class="row ps-2 me-2">
+                                                        <div class="col-sm-12 ps-2">
+                                                            <div class="container-fluid tablePanel gridWrapper overflow-hidden"> 
+                                                                <div id="expenseTablePanel" class="table-responsive-sm py-3 overflow-hidden">
+                                                                    <table id="expenseTable" class="generalTable display nowrap stripe row-border table-bordered" style="width: 100%;">
+                                                                        <thead>
+                                                                            <tr>                                                                                
+                                                                                <th class="centeredColumn colYear" style="width: 100px;">
+                                                                                    Year
+                                                                                </th>
+                                                                                <th class="centeredColumn colQuarter" style="width: 100px;">
+                                                                                    Quarter
+                                                                                </th>
+                                                                                <th class="centeredColumn colAmount" style="width: 100px;">
+                                                                                    Amount
+                                                                                </th>                                                                               
+                                                                                <th class="centeredColumn doNotOrder buttonColumn colEditExpense" style="width: 80px;">
+
+                                                                                </th>
+                                                                                <th class="centeredColumn doNotOrder buttonColumn colDeleteExpense" style="width: 80px;">
+
+                                                                                </th>
+                                                                                 <th class="hiddenColumn" hidden>
+                                                                                    Project No.
+                                                                                </th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="tabAttachment" class="container-fluid tab-pane fade"><br>
+                                    <div class="row">        
+                                        <div class="col-sm-12 ms-3">
+                                            <fieldset>
+                                                <legend class="@(attachmentCount > 0 ? "h6 ps-2 text-secondary" : "h6 ps-2 text-danger")" style="font-family:'Poppins-SemiBold';" hidden>@DisplayAttachmentCount()</legend>
+                                                <legend class="h6 text-decoration-underline ps-2" style="font-family:'Poppins-SemiBold';">Upload Files:</legend>
+                                                <div id="attachmentEntry" class="row ps-2 mb-2">
+                                                    <div class="col-sm-4 text-start">
+                                                        <label class="col-form-label fieldCaption" data-field="DisplayName" style="margin-left: 0px;">File Name:</label>     
+                                                        <input type="file" id="uploadFile" name="FileName" onchange="getUploadedFile(this)" hidden />                                                             
+                                                        <input type="text" class="form-control form-control-sm text-start fieldValue" name="DisplayName" style="margin-left: 0px;"   />   
+                                                        <input type="hidden" id="hidFileName" value="" />
+                                                    </div>
+                                                    <div class="col-sm-2 text-start">
+                                                        <label class="col-form-label fieldCaption" style="margin-left: -10px;">File Type:</label>     
+                                                        <input type="text" class="form-control form-control-sm text-start fieldValue" name="FileType" style="margin-left: -10px;" disabled />                                                             
+                                                    </div>
+                                                    <div class="col-sm-2 text-start">
+                                                        <label class="col-form-label fieldCaption" style="margin-left: -20px;">File Size:</label>     
+                                                        <input type="number" class="form-control form-control-sm text-start fieldValue" name="FileSize" style="margin-left: -20px;" disabled />                                                             
+                                                    </div>
+                                                     <div class="col-sm-4" style="margin-top: 30px; margin-left: -30px;">
+                                                        <div class="btn-group attachmentButtons">
+                                                            <button type="button" id="btnAddAttachment" 
+                                                                class="btn btn-primary btnGroupItem border-0 text-white"  
+                                                                style="width: 40px;" 
+                                                                data-bs-toggle="tooltip" data-bs-placement="top" title="Add file attachment">
+                                                                <span class="spinner-border spinner-border-sm" hidden></span>
+                                                                <span><i class="fas fa-plus-circle fa-fw fa-lg"></i></span>
+                                                                    
+                                                            </button>    
+                                                            <button type="button" id="btnUpdateAttachment" 
+                                                                class="btn btn-primary btn-sm btnGroupItem border-0 text-white ms-0 disabled"  
+                                                                style="width: 40px;"                                                                     
+                                                                data-bs-toggle="tooltip" data-bs-placement="top" title="Save changes">
+                                                                <span class="spinner-border spinner-border-sm" hidden></span>
+                                                                <span><i class="fas fa-save fa-fw fa-lg"></i></span>
+                                                                    
+                                                            </button>    
+                                                            <button type="button" id="btnCancelAttachment" 
+                                                                class="btn btn-primary btn-sm btnGroupItem border-0 text-white ms-0 disabled"  
+                                                                style="width: 40px;"                                                                     
+                                                                data-bs-toggle="tooltip" data-bs-placement="top" title="Undo changes">
+                                                                <span class="spinner-border spinner-border-sm" hidden></span>
+                                                                <span><i class="fas fa-undo-alt fa-fw fa-lg"></i></span>
+                                                            </button>    
+                                                        </div>
+                                                    </div>              
+                                                </div>
+                                                <div class="row attachmentError mt-2 ps-2">
+                                                    <div class="col-11">
+                                                        <div class="form-row errorPanel" id="DisplayNameError" hidden>
+                                                            <div class="col-sm-12">
+                                                                <div class="alert alert-danger alert-dismissible fade show">
+                                                                    <span><i class="fas fa-times-circle fa-fw fa-lg"></i></span>
+                                                                    <span class="errorText"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>  
+                                                    </div>
+                                                </div>
+                                                <div class="row ps-2" hidden>
+                                                    <div class="table-responsive mt-0" style="-ms-overflow-style: auto; padding-right: 70px;">
+                                                        <table class="table table-sm table-light table-striped table-hover w-100 border border-2 border-top-0 rounded-3 shadow mb-4">
+                                                            <thead class="table-dark opacity-75" style="font-size:16px;">
+                                                                <tr>
+                                                                    <th class="text-center" style="width: 450px;">
+                                                                        @Html.DisplayNameFor(model => model.CEARequestDetail.AttachmentList[0].AttachmentDisplayName)
+                                                                    </th>                                                                
+                                                                    <th class="text-center" style="width: 170px;">
+                                                                        @Html.DisplayNameFor(model => model.CEARequestDetail.AttachmentList[0].AttachmentSize)
+                                                                    </th>                                                                
+                                                                    <th style="width: 200px;">
+                                                                        @Html.DisplayNameFor(model => model.CEARequestDetail.AttachmentList[0].CreatedBy)
+                                                                    </th>    
+                                                                    <th style="width: 150px;">
+                                                                        @Html.DisplayNameFor(model => model.CEARequestDetail.AttachmentList[0].CreatedDate)
+                                                                    </th>    
+                                                                    <th class="text-start" style="width: 200px;">
+
+                                                                    </th>
+                                                                </tr>                                                                                                                    
+                                                            </thead>
+                                                            <tbody class="fieldValue">
+                                                                @if (attachmentCount > 0)
+                                                                {
+                                                                    @foreach (var item in Model.CEARequestDetail.AttachmentList)
+                                                                    {
+                                                                        <tr>
+                                                                            <td class="text-start ps-2">
+                                                                                @Html.DisplayFor(modelItem => item.AttachmentDisplayName)
+                                                                            </td>
+                                                                            <td  class="text-center">
+                                                                                @Html.DisplayFor(modelItem => item.AttachmentSize)
+                                                                            </td>
+                                                                            <td>
+                                                                                @Html.DisplayFor(modelItem => item.CreatedBy)
+                                                                            </td>
+                                                                            <td>
+                                                                                @Html.DisplayFor(modelItem => item.CreatedDate)
+                                                                            </td>
+                                                                            <td class="text-start" style="width: auto;">
+                                                                                <a class="@FormatGridLink(GlobalSettings.ButtonType.View)" 
+                                                                                    style="font-size: 13px;" asp-action="Edit" asp-route-id="@item.RequisitionAttachmentID">
+                                                                                    <span><i class="far fa-edit fa-fw fa-sm"></i></span>
+                                                                                    View
+                                                                                </a> 
+                                                                                <a class="@FormatGridLink(GlobalSettings.ButtonType.Delete)" 
+                                                                                    style="font-size: 13px;" asp-action="Delete" asp-route-id="@item.RequisitionAttachmentID">
+                                                                                    <span><i class="far fa-trash-alt fa-fw fa-sm"></i></span>
+                                                                                    Delete
+                                                                                </a> 
+                                                                            </td>
+                                                                        </tr>
+                                                                    }
+                                                                }
+                                                                else
+                                                                {
+                                                                    if (Model.CEARequestDetail.AttachmentList != null)
+                                                                    {
+                                                                        @foreach (var item in Model.CEARequestDetail.AttachmentList)
+                                                                        {
+                                                                            <tr>
+                                                                                <td class="text-start ps-2">
+                                                                                    @Html.DisplayFor(modelItem => item.AttachmentDisplayName)
+                                                                                </td>
+                                                                                <td  class="text-center">
+                                                                                    @Html.DisplayFor(modelItem => item.AttachmentSize)
+                                                                                </td>
+                                                                                <td>
+                                                                                    @Html.DisplayFor(modelItem => item.CreatedBy)
+                                                                                </td>
+                                                                                <td>
+                                                                                    @Html.DisplayFor(modelItem => item.CreatedDate)
+                                                                                </td>
+                                                                                <td class="text-start" style="width: auto;">
+                                                                                    <a class="btn btn-sm btn-primary gridLink invisible" 
+                                                                                    style="font-size: 13px;" asp-action="Edit" asp-route-id="@item.RequisitionAttachmentID">
+                                                                                        <span><i class="far fa-edit fa-fw fa-sm"></i></span>
+                                                                                        View
+                                                                                    </a> 
+                                                                                    <a class="btn btn-sm btn-primary gridLink invisible" 
+                                                                                    style="font-size: 13px;" asp-action="Delete" asp-route-id="@item.RequisitionAttachmentID">
+                                                                                        <span><i class="far fa-trash-alt fa-fw fa-sm"></i></span>
+                                                                                        Delete
+                                                                                    </a> 
+                                                                                </td>
+                                                                            </tr>
+                                                                        }
+                                                                    }
+                                                                }
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div class="row ps-2 me-5 pe-4">
+                                                    <div class="col-sm-12 ps-2">
+                                                        <div class="container-fluid tablePanel gridWrapper overflow-hidden"> 
+                                                            <div id="attachmentTablePanel" class="table-responsive-sm py-3 overflow-hidden">
+                                                                <table id="attachmentTable" class="generalTable display nowrap stripe row-border table-bordered" style="width: 100%;">
+                                                                    <thead>
+                                                                        <tr>                                                                                
+                                                                            <th class="centeredColumn colFileName">
+                                                                                File Name
+                                                                            </th>
+                                                                            <th class="centeredColumn colFileSize" style="width: 130px;">
+                                                                                File Size (kb.)
+                                                                            </th>
+                                                                            <th class="centeredColumn colCreatedBy" style="width: 120px;">
+                                                                                Created By
+                                                                            </th>                                                                               
+                                                                                <th class="centeredColumn colCreatedDate" style="width: 120px;">
+                                                                                Created Date
+                                                                            </th>  
+                                                                            <th class="centeredColumn doNotOrder buttonColumn colDownload" style="width: 120px;">
+
+                                                                            </th>
+                                                                            <th class="centeredColumn doNotOrder buttonColumn colDelete" style="width: 100px;">
+
+                                                                            </th>
+                                                                                <th class="hiddenColumn" hidden>
+                                                                                attachmentFileName
+                                                                            </th>
+                                                                            <th class="hiddenColumn" hidden>
+                                                                                requisitionAttachmentID
+                                                                            </th>
+                                                                            <th class="hiddenColumn" hidden>
+                                                                                sequenceNo
+                                                                            </th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                    </div>                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="row p-0 m-0">
+                                <div class="col-sm-12 text-danger fieldCaption clearfix pt-0 pb-0 mt-0">
+                                    <span class="font-italic float-end fw-bold me-2 mt-2">- indicates a required field</span>
+                                    <span class="float-end pe-1 pt-1"><i class="fas fa-asterisk fa-fw fa-xs"></i></span>
+                                </div>
+                            </div>
+                            <div class="row mt-0 pb-3">
+                                <div class="col-sm-12 ps-2 clearfix">
+                                    <button type="button" id="btnDraft" hidden 
+                                        class="btn btn-sm btn-primary float-sm-start actionButton border-0 rounded-3 createBtn" style="width: 150px;"
+                                        data-bs-toggle="tooltip" data-bs-placement="top" title="Save as draft request">
+                                        <span class="spinner-border spinner-border-sm" hidden></span>
+                                        <span><i class="far fa-file-alt fa-fw fa-lg"></i></span>
+                                        Save as Draft
+                                    </button>    
+                                    <button type="button" id="btnSubmit" hidden
+                                        class="btn btn-sm btn-success float-sm-start actionButton border-0 rounded-3 createBtn" style="width: 130px;"
+                                        data-bs-toggle="tooltip" data-bs-placement="top" title="Submit request">
+                                        <span class="spinner-border spinner-border-sm" hidden></span>
+                                        <span><i class="fas fa-sign-in-alt fa-fw fa-lg"></i></span>&nbsp;
+                                        Submit
+                                    </button>
+                                    <button type="button" id="btnDelete" hidden
+                                        class="btn btn-sm btn-danger float-sm-start actionButton border-0 rounded-3 updateBtn" style="width: 130px;" 
+                                        data-bs-toggle="tooltip" data-bs-placement="top" title="Delete draft request">
+                                        <span class="spinner-border spinner-border-sm" hidden></span>
+                                        <span><i class="far fa-trash-alt fa-fw fa-lg"></i></span>&nbsp;
+                                        Delete
+                                    </button>
+                                    <button type="button" id="btnApprove" hidden
+                                        class="btn btn-sm btn-success float-sm-start actionButton border-0 rounded-3 approveBtn" style="width: 130px;" 
+                                        data-bs-toggle="tooltip" data-bs-placement="top" title="Approve request">
+                                        <span class="spinner-border spinner-border-sm" hidden></span>
+                                        <span><i class="far fa-thumbs-up fa-fw fa-lg"></i></span>&nbsp;
+                                        Approve
+                                    </button>
+                                    <button type="button" id="btnReject" hidden
+                                        class="btn btn-sm btn-danger float-sm-start actionButton border-0 rounded-3 approveBtn" style="width: 130px;"                                         
+                                        data-bs-toggle="tooltip" data-bs-placement="top" title="Reject request">
+                                        <span class="spinner-border spinner-border-sm" hidden></span>
+                                        <span><i class="far fa-thumbs-down fa-fw fa-lg"></i></span>&nbsp;
+                                        Reject
+                                    </button>
+                                    <button type="button" id="btnReassign" hidden
+                                        class="btn btn-sm btn-info float-sm-start actionButton approveBtn text-opacity-75 border-0 rounded-3 opacity-100" style="width: 130px;"                                         
+                                        data-bs-toggle="tooltip" data-bs-placement="top" title="Reassign to other approver">
+                                        <span class="spinner-border spinner-border-sm" hidden></span>
+                                        <span><i class="fas fa-share fa-fw fa-lg"></i></span>
+                                        Reassign
+                                    </button>                                    
+                                    <div class="btn-group float-sm-start viewBtn" tabindex="5">
+                                        <button id="btnView" type="button" class="btn btn-sm btn-primary border-0 rounded-3 actionButton dropdown-toggle" data-bs-toggle="dropdown" style="width: 170px;" hidden>
+                                            <span><i class="fas fa-sign-in-alt fa-fw fa-lg"></i></span>&nbsp;
+                                            Other Actions
+                                        </button>
+                                        <div id="actionDiv" class="dropdown-menu bg-primary bg-opacity-85">
+                                            @{
+                                                var approverParam = new Dictionary<string, string>
+                                                {
+                                                    { "requisitionID", Model.CEARequestDetail.RequisitionID.ToString() },
+                                                    { "projectNo", Model.CEARequestDetail.ProjectNo },
+                                                    { "requisitionNo", Model.CEARequestDetail.RequisitionNo },
+                                                    { "createdNo", Model.CEARequestDetail.CreatedByEmpNo.ToString() },
+                                                    { "createdName", Model.CEARequestDetail.CreatedByEmpName },
+                                                    { "submittedDate", Model.CEARequestDetail.CreateDate.Date.ToString("yyyyMMdd") },
+                                                    { "actionType", Model.ActionType },
+                                                    { "callerForm", "RequisitionDetail" }
+                                                };
+
+                                                var expenseParam = new Dictionary<string, string>
+                                                {
+                                                    { "requisitionID", Model.CEARequestDetail.RequisitionID.ToString() },
+                                                    { "projectNo", Model.CEARequestDetail.ProjectNo.Trim() },
+                                                    { "requisitionNo", Model.CEARequestDetail.RequisitionNo.Trim() },    
+                                                    { "actionType", Model.ActionType },
+                                                    { "callerForm", "RequisitionDetail" }
+                                                };
+                                            }
+                                            <a asp-area="UserFunctions" asp-controller="Project" asp-action="RequisitionStatusView" asp-all-route-data="approverParam" name="ViewApprovers" class="dropdown-item text-white" 
+                                                style="font-family: 'Montserrat-SemiBold'; font-size: 14px; line-height: 1.75; letter-spacing: 1px">
+                                                View Approvers
+                                            </a>                                        
+                                            <a asp-area="UserFunctions" asp-controller="Project" asp-action="ExpensesView" asp-all-route-data="expenseParam" name="ViewExpenses" class="dropdown-item text-white" 
+                                                style="font-family: 'Montserrat-SemiBold'; font-size: 14px; line-height: 1.75; letter-spacing: 1px">
+                                                View Expenses
+                                            </a>                                            
+                                            <a name="ActivateRequest" class="dropdown-item text-white" data-button-value="reactivate" 
+                                                style="font-family: 'Montserrat-SemiBold'; font-size: 14px; line-height: 1.75; letter-spacing: 1px">
+                                                Activate this Requisition
+                                            </a>     
+                                            <a name="ReopenRequest" class="dropdown-item text-white" data-button-value="reopen" 
+                                                style="font-family: 'Montserrat-SemiBold'; font-size: 14px; line-height: 1.75; letter-spacing: 1px">
+                                                Re-open this Requisition
+                                            </a> 
+                                            <a name="RecallRequest" class="dropdown-item text-white" data-button-value="recall" 
+                                                style="font-family: 'Montserrat-SemiBold'; font-size: 14px; line-height: 1.75; letter-spacing: 1px">
+                                                Recall this Requisition
+                                            </a> 
+                                        </div>
+                                    </div>    
+                                    <button type="button" id="btnPrint" class="btn btn-sm btn-outline-light border-1 border-secondary text-secondary float-sm-start rounded-3 actionButton viewBtn" hidden
+                                        style="width: 130px;" tabindex="7" 
+                                        data-bs-toggle="tooltip" data-bs-placement="top" title="View and print CEA report">
+                                        <span class="spinner-border spinner-border-sm" hidden></span>
+                                        <span><i class="fas fa-print fa-fw fa-lg"></i></span>&nbsp;
+                                        Print 
+                                    </button>
+                                    <button type="button" id="btnReset" class="btn btn-sm btn-warning float-sm-start text-white border-0 rounded-3 actionButton generalBtn" hidden 
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Clears the form"
+                                            style="width: 130px;" tabindex="6">
+                                        <span><i class="fas fa-sync-alt fa-fw fa-lg"></i></span>&nbsp;
+                                        Reset
+                                    </button>                                    
+                                    <button type="button" id="btnRecall" class="btn btn-sm btn-sm btn-secondary float-sm-start text-white border-0 rounded-3 opacity-75 actionButton viewBtn" hidden
+                                        style="width: 170px;" tabindex="9" 
+                                        data-bs-toggle="tooltip" data-bs-placement="top" title="Cancel this requisition"
+                                        onclick="detailEditButtonClick()">
+                                        <span class="spinner-border spinner-border-sm" hidden></span>
+                                        <span><i class="fas fa-undo-alt fa-fw fa-lg"></i></span>
+                                        Recall Request
+                                    </button>                                                 
+                                    <a id="btnBack" asp-area="UserFunctions" asp-controller="Project" asp-action="Index" class="btn btn-sm btn-outline-light border-1 border-secondary text-secondary rounded-3 actionButton ps-1 generalBtn backButton" 
+                                        data-bs-toggle="tooltip" data-bs-placement="top" title="Go back to previous page"
+                                        style="width: 130px;" tabindex="9"> 
+                                        <span><i class="fas fa-arrow-circle-left fa-fw fa-lg"></i></span>&nbsp; 
+                                        Go Back
+                                    </a>
+                                    <input type="reset" id="btnHiddenReset" value="Reset Form" hidden />
+                                    <input type="submit" name="submit" asp-area="UserFunctions" asp-controller="Project" asp-action="CEARequisition" formmethod="post" id="btnHiddenSubmit" value="Submit Post" hidden  />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <input type="hidden" id="hidUserName" value="@userName" name="UserName" />      
+            <input type="hidden" id="hidUserEmpNo" value="@userEmpNo" name="UserEmpNo" />
+            <input type="hidden" id="hidFormCode" asp-for="FormCode" name="FormCode" />
+            <input type="hidden" id="hidCallerForm" asp-for="CallerForm" name="CallerForm" />
+            <input type="hidden" id="hidActionType" asp-for="ActionType" name="ActionType"  />
+            <input type="hidden" id="hidSearchEmpNo" asp-for="SearchEmpNo" name="SearchEmpNo" />
+            @*<input type="hidden" id="hidSearchEmpName" asp-for="SearchEmpName" name="SearchEmpName" />*@
+            <input type="hidden" id="hidSearchEmpName" value="@selectedOrigName" />
+            <input type="hidden" id="hidExpenseJSON" runat="server" value="@expenseJSON" />
+            <input type="hidden" id="hidAttachmentJSON" value="@attachmentJSON" />
+            <input type="hidden" id="hidCEAAdminJSON" value="@ceaAdminJSON" />
+            <input type="hidden" id="hidBase64File" value="" />
+            <input type="hidden" asp-for="CEARequestDetail.ExpenseJSON" name="ExpenseJSON" />
+            <input type="hidden" asp-for="CEARequestDetail.AttachmentJSON" name="AttachmentJSON" />
+            <input type="hidden" asp-for="CEARequestDetail.RequisitionID" name="RequisitionID" />
+            <input type="hidden" asp-for="CEARequestDetail.RequisitionNo" name="RequisitionNo" />            
+            <input type="hidden" asp-for="CEARequestDetail.IsDraft" name="IsDraft" />     
+            <input type="hidden" asp-for="CEARequestDetail.ButtonActionType" name="ButtonActionType" />            
+            <input type="hidden" asp-for="CEARequestDetail.AssignedEmpNo" name="AssignedEmpNo" />    
+            <input type="hidden" asp-for="CEARequestDetail.WorkflowID" name="WorkflowID" />    
+            <input type="hidden" asp-for="CEARequestDetail.WFActionType" name="WFActionType" />    
+            <input type="hidden" asp-for="CEARequestDetail.WFRoutineSequence" name="WFRoutineSequence" />    
+            <input type="hidden" asp-for="CEARequestDetail.UseNewWF" name="UseNewWF" />   
+            <input type="hidden" asp-for="CEARequestDetail.FiscalYear" name="FiscalYear" />   
+            <input type="hidden" asp-for="CEARequestDetail.CostCenter" name="CostCenter" />   
+        </div>
+    </form>
+</div>
+
+@section Scripts{
+    <script>
+        // Initialize tooltips
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
+
+    <script type="text/javascript">
+         @Model.JavascriptToRun
+
+         function ShowErrorPopup() {
+              alert('Testing javascript call from Controller action.');
+         }
+
+         function viewHideLoadingPanel(container) {
+            if (container != null && container != undefined)
+                HideWaitMe(container);
+        }
+    </script>
+
+    <script src="~/lib/jqueryui/jquery-ui.min.js"></script>    
+    <script src="~/js/ceaRequest.js?v=@Configuration["AppSettings:JavaScriptFileVersion"]"></script>
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

@@ -1,0 +1,167 @@
+﻿@using CEAApp.Web.DIServices
+@inject IConverterService ConverterService;
+@inject IConfiguration Configuration;
+
+@{
+    ViewData["Title"] = "Upload Project";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    string userName = ConverterService.ConvertObjectToString(TempData.Peek("UserEmpName")!);
+    var FormCode = ViewBag.FormCode;
+}
+
+<form asp-area="AdminFunctions" asp-controller="Admin" asp-action="MapUploadProject" enctype="multipart/form-data" method="post">
+
+    <div class="container-fluid p-0 m-0">
+        <div class="row no-gutters">
+            <div class="col-12 mt-2">
+                <div class="formHeader">
+                    <span><i class="fas fa-file-upload"></i></span>
+                  
+                    @ViewData["Title"]
+                </div>
+            </div>
+        </div>
+
+        <div class="requestHeader">
+            <div class="form-row">
+                <div class="col-12 mx-auto px-5">
+                    <div class="alert alert-danger alert-dismissible fade show errorMsgBox" hidden>
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <strong>Error! </strong>&nbsp;<span class="errorMsg">Test error!</span>
+                    </div>
+                    <div class="alert alert-success alert-dismissible fade show successMsgBox" hidden>
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <strong>Success!</strong>&nbsp;<span class="successMsg">Test success!</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid ps-2 pe-0 me-0 pt-3 pb-2">
+                <div class="row pt-2">
+                    <div class="col-sm-4 "> </div>
+                    <div class="col-sm-4 ">
+                        <input type="file" id="uploadPhoto" name="imagePath" accept="application/vnd.ms-excel" onchange="ValidateFileInput(this);" />
+                            <div class="form-row errorPanel" id="UploadError" hidden>
+                                <div class="col-sm-12">
+                                    <div class="alert alert-danger alert-dismissible mt-1 fade show">
+                                        <span><i class="fas fa-times-circle fa-fw fa-lg"></i></span>
+                                        <span class="errorText"></span>
+                                    </div>
+                                </div>
+                            </div>  
+                    </div>                   
+                </div>
+                <div class="row pt-3">
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-8"> 
+                         <button type="button" id="btnViewProject"  class="btn btn-sm btn-primary float-sm-start text-white actionButton rounded-3" 
+                                style="width: 140px;" tabindsex="2" data-bs-toggle="tooltip" data-bs-placement="top" title="Search for excel records">
+                            <span class="spinner-border spinner-border-sm" hidden></span>
+                            <span><i class="fas fa-file-upload"></i></span>&nbsp;
+                            View Projects
+                        </button>
+                        <button type="button" id="btnSaveProject" class="btn btn-sm btn-outline-success float-sm-start actionButton rounded-3"
+                                style="width: 140px;" tabindex="3" data-bs-toggle="tooltip" data-bs-placement="top" title="Save the records">
+                            <span class="spinner-border spinner-border-sm" hidden></span>
+                            <span><i class="fas fa-save"></i></span>&nbsp;
+                            Save Projects
+                        </button>
+                        <button id="btnReset" type="reset" class="btn btn-sm btn-warning text-white border-0 actionButton" tabindex="3"
+                                onclick="ResetButtonClick()"
+                                data-bs-toggle="tooltip" data-bs-placement="top" title="Clears the form" style="width: 130px;" >
+                                <span><i class="fas fa-sync fa-fw fa-lg"></i></span>&nbsp;
+                            Reset
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-2 mb-1 groupTitle pl-2">
+                <div class="col-sm-12 clearfix">
+                    <span class="ps-3">Upload Results:</span> &nbsp;
+                    <span class="float-sm-end">
+
+                    </span>
+                </div>
+            </div>
+
+
+            <div class="container-fluid ps-2 pe-0 me-0 pt-3 pb-2">
+
+                <div class="row mt-0 pt-0 mx-2 mb-2">
+                    <div class="col-sm-12 ps-2 pe-3">
+                        <div class="container-fluid tablePanel gridWrapper">
+                            <div class="table-responsive py-3" style="-ms-overflow-style: auto;">
+                                <table id="exportTable" class="generalTable display nowrap stripe row-border table-bordered" style="width: 100%;">
+                                    <thead>
+
+                                        <tr>
+                                          
+                                            <th style="width: 80px;">
+                                                Fiscal Year
+                                            </th>
+                                            <th style="width: 90px;">
+                                                Cost Center
+                                            </th>
+                                            <th style="width: 100px;">
+                                                Project No
+                                            </th>
+                                            <th style="width: 100px;">
+                                                Project Date
+                                            </th>
+                                            <th style="width: 80px;">
+                                                Expense Type
+                                            </th>
+                                            <th style="width: 80px;">
+                                                Expense Category
+                                            </th>                                            
+                                            <th style="width: 150px;">
+                                                Description
+                                            </th>
+                                            <th style="width: 150px;">
+                                                Detailed Description
+                                            </th>
+                                            <th style="width: 100px;">
+                                                Amount
+                                            </th>
+                                            <th style="width: 100px;">
+                                                Account Cost Center
+                                            </th>
+                                            <th style="width: 100px;">
+                                                Object
+                                            </th>
+                                            <th style="width: 100px;">
+                                                Subject
+                                            </th>
+
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div>
+            <input type="hidden" id="hidUserName" value="@userName" name="UserName" />
+            <input type="hidden" id="hidFormCode" asp-for="@FormCode" />
+            @*<input type="hidden" id="hidCallerForm" asp-for="@Model.CallerForm" name="callerForm" />*@
+              <input type="hidden" id="hidUserEmpNo" name="UserEmpNo" />    
+        </div>
+    </div>
+</form>
+
+@section Scripts{
+
+    <script src="~/js/FileUploaderHelper.js?v=@Configuration["AppSettings:JavaScriptFileVersion"]"></script>
+    <script src="~/js/UploadProject.js?v=@Configuration["AppSettings:JavaScriptFileVersion"]"></script>
+    <script src="~/js/common.js"></script>
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+}

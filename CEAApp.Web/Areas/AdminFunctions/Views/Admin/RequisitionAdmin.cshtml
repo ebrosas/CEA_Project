@@ -1,0 +1,262 @@
+﻿@model CEAApp.Web.ViewModels.RequisitionVM
+@using CEAApp.Web.DIServices;
+@inject IConverterService ConverterService;
+
+@inject IConfiguration Configuration;
+@{
+    ViewData["Title"] = "Requisition Administration";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+    string userName = ConverterService.ConvertObjectToString(TempData.Peek("UserID"));
+    var FormCode = ViewBag.FormCode;
+}
+
+<div class="formWrapper container-fluid">
+    <form asp-area="ReportFunctions" asp-controller="Report" asp-action="Index" method="get">
+
+        <div class="alert alert-danger alert-dismissible fade show errorPanel" style='display: @(!string.IsNullOrWhiteSpace(Model.ErrorMessage) ? "block" : "none")'>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <strong>Error! </strong>&nbsp;<span class="errorText">@Model.ErrorMessage</span>
+        </div>
+        <div class="alert alert-success alert-dismissible fade show successPanel" style='display: @(!string.IsNullOrWhiteSpace(Model.NotificationMessage) ? "block" : "none")'>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <strong>Success!</strong>&nbsp;<span class="successText">@Model.NotificationMessage</span>
+        </div>
+
+        <div class="container-fluid p-0 m-0">
+            <div class="row no-gutters">
+                <div class="col-12 mt-2">
+                    <div class="formHeader">
+                        <span><i class="fas fa-user-cog fa-lg fa-fw"></i></span>
+                        @* <span><i class="fas fa-file-pdf fa-lg fa-fw"></i></span>*@
+                        @ViewData["Title"]
+                    </div>
+                </div>
+            </div>
+
+            <div class="requestHeader">
+                <div class="form-row">
+                    <div class="col-12 mx-auto px-5">
+                        <div class="alert alert-danger alert-dismissible fade show errorMsgBox" hidden>
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong>Error! </strong>&nbsp;<span class="errorMsg">Test error!</span>
+                        </div>
+                        <div class="alert alert-success alert-dismissible fade show successMsgBox" hidden>
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong>Success!</strong>&nbsp;<span class="successMsg">Test success!</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid ps-2 pe-0 me-0 pt-3 pb-2">
+                    <div class="row pt-0 mt-0 pe-4">
+                        <div class="col-sm-12 text-danger clearfix">
+                            <span class="font-italic float-end">- indicates a required field</span>
+                            <span class="float-end me-1"><i class="fas fa-asterisk fa-fw fa-xs"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="row pt-2">
+                        <div class="col-sm-2 fieldLabel">
+                            <label class="col-form-label">Cost Center</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <select id="cmbCostCenter" class="form-control form-select fieldValue w-50"
+                                    title="Tips:" data-toggle="popover" data-content="Select Fiscal Year" data-trigger="hover" data-placement="top"
+                                    asp-for="CostCenter" asp-items="Model.CostCenterArray" name="CostCenter" style="padding-left: -5px;">
+                                 <option value="">All</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-2 fieldLabel">
+                            <label class="col-form-label">Project No</label>
+                        </div>
+                        <div class="col-sm-3 pe-4">
+                            <input id="txtProjectNo" class="form-control form-control-sm fieldValue" maxlength="12"
+                                   data-bs-toggle="tooltip" data-bs-placement="top" title="Enter numeric values only!" onkeypress="return onlyNumberKey(event)" />
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+
+                    <div class="row pt-2">
+                        <div class="col-sm-2 fieldLabel">
+                            <label class="col-form-label">Expenditure Type </label>
+                        </div>
+                        <div class="col-sm-4">
+                            <select id="cmbExpenditureType" class="form-control form-select fieldValue w-50"
+                                    title="Tips:" data-toggle="popover" data-content="Select Expenditure Type" data-trigger="hover" data-placement="top"
+                                    asp-for="ExpenditureType" asp-items="Model.ExpenditureTypeArray" name="ExpenditureType" style="padding-left: -5px;">
+                                <option value=""> </option>
+                            </select>
+                            @*@Html.DropDownListFor(Model => Model.ExpenditureType,@Model.ExpenditureTypeArray, new { @class = "form-control fieldValue w-50", @Id="cmbExpenditureType" })*@
+                        </div>
+                        <div class="col-sm-2 fieldLabel">
+                            <label class="col-form-label">Requisition Status </label>
+                        </div>
+                        <div class="col-sm-4">
+                            <select id="cmbRequisitionStatus" class="form-control form-select fieldValue w-50"
+                                    title="Tips:" data-toggle="popover" data-content="Select Requisition Status" data-trigger="hover" data-placement="top"
+                                    asp-for="RequisitionStatus" asp-items="Model.RequisitionStatusArray" name="fiscalYear" style="padding-left: -5px;">
+                                <option value=""> </option>                                                                                                                                                                                                             
+                               
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row pt-2">
+                        <div class="col-sm-2 fieldLabel">
+                            <label class="col-form-label">Fiscal Year</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="input-group input-group-sm"  style="width: 245px;">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="far fa-calendar-alt fa-fw"></i></span>
+                                </div>
+                                <select id="cmbFiscalYear" class="form-select fieldValue w-50"
+                                    title="Tips:" data-toggle="popover" data-content="Select Fiscal Year" data-trigger="hover" data-placement="top"
+                                    asp-for="FiscalYear" asp-items="Model.FiscalYearArray" name="fiscalYear" style="padding-left: -5px;">
+                                    <option value="0">  All</option>
+                                </select>
+                            </div>  
+                        </div>
+
+                        <div class="col-sm-2 fieldLabel">
+                            <label class="col-form-label">Requisition No</label>
+                        </div>
+                        <div class="col-sm-3 pe-4">
+                            <input id="txtRequisitionNo" class="form-control form-control-sm fieldValue"
+                                   placeholder="" maxlength="50" />
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+
+                    <div class="row pt-2">
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-4">
+                            <button type="button" id="btnSearch" class="btn btn-sm btn-success float-sm-start text-white border-0 actionButton"
+                                    style="width: 130px;" tabindex="18"
+                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Search for database records">
+                                <span class="spinner-border spinner-border-sm spinicon" hidden></span>
+                                <span class="normalicon"><i class="fas fa-search fa-fw fa-lg"></i></span>&nbsp;
+                                Search
+                            </button>
+                            <button id="btnReset" type="reset" class="btn btn-sm btn-warning text-white border-0 actionButton"
+                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Clears the form" style="width: 130px;" tabindex="12">
+                                  <span><i class="fas fa-sync fa-fw fa-lg"></i></span>&nbsp;
+                                Reset
+                            </button>
+                        </div>
+                        <div class="col-sm-2 fieldLabel">
+                            <label class="col-form-label">Keywords</label>
+                        </div>
+                        <div class="col-sm-3 pe-4">
+                            <input id="txtKeyword" class="form-control form-control-sm fieldValue"
+                                   placeholder="enter search string here..." maxlength="50" />
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+
+                    <div class="row mt-2 mb-1 groupTitle">
+                        <div class="col-sm-12 clearfix">
+                            <span class="ps-3">Search Results:</span> &nbsp;
+                            <span class="float-sm-end">
+
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="row mt-0 pt-0 mx-2 mb-2">
+                        <div class="col-sm-12 ps-2 pe-3">
+                            <div class="container-fluid tablePanel gridWrapper">
+                                <div class="table-responsive py-3" style="-ms-overflow-style: auto;">
+                                    <table id="requisitionTable" class="generalTable display nowrap stripe row-border table-bordered" style="width: 100%;">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 80px;">
+                                                    Requisition No.
+                                                </th>
+                                                <th style="width: 90px;">
+                                                    Requisition Date
+                                                </th>
+                                                <th style="width: 225px;">
+                                                    Description
+                                                </th>
+                                                <th style="width: 150px;">
+                                                    Status
+                                                </th>
+                                                <th style="width: 100px;">
+                                                    Amount
+                                                </th>
+
+                                                <th style="width: 160px;">
+                                                    Action
+                                                </th>
+                                                <th style="width: 100px;">
+                                                    Used Amount
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div>
+                <input type="hidden" id="hidUserName" value="@userName" name="UserName" />
+                <input type="hidden" id="hidFormCode" asp-for="FormCode" />
+                <input type="hidden" id="hidCallerForm" asp-for="@Model.CallerForm" name="callerForm" />
+                <input type="hidden" id="hidUserId" name="UserId" />
+                <input type="reset" id="btnHiddenReset" value="Reset Form" hidden />
+            </div>
+
+        </div>
+
+    </form>
+</div>
+
+
+@section Styles{
+    <style type="text/css">
+        .ui-tooltip-content::after, .ui-tooltip-content::before {
+            content: "";
+            position: absolute;
+            border-style: solid;
+            display: block;
+            left: 90px;
+        }
+
+        .ui-tooltip-content::before {
+            bottom: -10px;
+            border-color: #AAA transparent;
+            border-width: 10px 10px 0;
+        }
+
+        .ui-tooltip-content::after {
+            bottom: -7px;
+            border-color: white transparent;
+            border-width: 10px 10px 0;
+        }
+    </style>
+
+}
+
+@section Scripts{
+
+    <script>
+        // Initialize tooltips
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
+
+    @*<script src="~/js/RequisitionAdmin.js"></script>*@
+    <script src="~/js/RequisitionAdmin.js?v=@Configuration["AppSettings:JavaScriptFileVersion"]"></script>
+    <script src="~/js/common.js"></script>
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

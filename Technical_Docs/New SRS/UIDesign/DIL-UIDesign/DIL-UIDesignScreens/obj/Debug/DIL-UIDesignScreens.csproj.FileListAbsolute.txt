@@ -1,0 +1,126 @@
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\DIL-UIDesign.Screens.dll
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\DIL-UIDesign.Screens.pdb
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\ResolveAssemblyReference.cache
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Screen_1.baml
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\SketchStyles.baml
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Screen_1.g.cs
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\DIL-UIDesign.Screens_MarkupCompile.cache
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\DIL-UIDesign.Screens.g.resources
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\DIL-UIDesign.Screens.dll
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\DIL-UIDesign.Screens.pdb
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Copy_of_Day_in_Lieu_Inquiry.baml
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Copy_of_Day_in_Lieu_Inquiry.g.cs
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu_Request_Search.baml
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu_Request_Search.g.cs
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu_Requisition___Pre_approve.baml
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu_Requisition___Pre_approve.g.cs
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu_Approval.baml
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu_Approval.g.cs
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu___Entitled___acquire_usage.baml
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu___Entitled___acquire_usage.g.cs
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu___Detail.baml
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu___Detail.g.cs
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu_Appoval_Search.baml
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu_Approval_1.baml
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu_Approval___Consume.baml
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu_Appoval_Search.g.cs
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu_Approval_1.g.cs
+C:\.NET Projects\GARMCO.AMS.DayInLieu\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu_Approval___Consume.g.cs
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\DIL-UIDesign.Screens.dll
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\bin\Debug\DIL-UIDesign.Screens.pdb
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\ResolveAssemblyReference.cache
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Copy_of_Day_in_Lieu_Inquiry.baml
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu_Appoval_Search.baml
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu_Approval.baml
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu_Approval_1.baml
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu_Approval___Consume.baml
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu_Request_Search.baml
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu_Requisition___Pre_approve.baml
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu___Detail.baml
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu___Entitled___acquire_usage.baml
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Screen_1.baml
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\SketchStyles.baml
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Copy_of_Day_in_Lieu_Inquiry.g.cs
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu_Appoval_Search.g.cs
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu_Approval.g.cs
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu_Approval_1.g.cs
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu_Approval___Consume.g.cs
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu_Request_Search.g.cs
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu_Requisition___Pre_approve.g.cs
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu___Detail.g.cs
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu___Entitled___acquire_usage.g.cs
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Screen_1.g.cs
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\DIL-UIDesign.Screens_MarkupCompile.cache
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\DIL-UIDesign.Screens.g.resources
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\DIL-UIDesign.Screens.dll
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\DIL-UIDesign.Screens.pdb
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Bulk_Approval_.baml
+C:\.NET Projects\Time and Attendance System\Documentation\DIL-UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Bulk_Approval_.g.cs
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\DIL-UIDesign.Screens.dll
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\bin\Debug\DIL-UIDesign.Screens.pdb
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Bulk_Approval_.baml
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Copy_of_Day_in_Lieu_Inquiry.baml
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu_Appoval_Search.baml
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu_Approval.baml
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu_Approval_1.baml
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu_Approval___Consume.baml
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu_Requisition___Pre_approve.baml
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu___Detail.baml
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu___Entitled___acquire_usage.baml
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Screen_1.baml
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\SketchStyles.baml
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Bulk_Approval_.g.cs
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Copy_of_Day_in_Lieu_Inquiry.g.cs
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu_Appoval_Search.g.cs
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu_Approval.g.cs
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu_Approval_1.g.cs
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu_Approval___Consume.g.cs
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu_Requisition___Pre_approve.g.cs
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu___Detail.g.cs
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu___Entitled___acquire_usage.g.cs
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Screen_1.g.cs
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\DIL-UIDesign.Screens_MarkupCompile.cache
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\DIL-UIDesign.Screens.g.resources
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\DIL-UIDesign.Screens.dll
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\DIL-UIDesign.Screens.pdb
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Copy_of_Contractor_Registration.baml
+C:\NET Projects\GARMCO TAS Ver. 3.0\GARMCO.AMS.TAS.UI\Documentation\Change Management\System Enhancements\HD #0000 - Contractor Management System\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Copy_of_Contractor_Registration.g.cs
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\DIL-UIDesign.Screens.dll
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\bin\Debug\DIL-UIDesign.Screens.pdb
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Bulk_Approval_.baml
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Copy_of_Contractor_Registration.baml
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Copy_of_Day_in_Lieu_Inquiry.baml
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\ProjectInquiry.baml
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu_Approval.baml
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu_Approval_1.baml
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu_Approval___Consume.baml
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu_Requisition___Pre_approve.baml
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu___Detail.baml
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu___Entitled___acquire_usage.baml
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Screen_1.baml
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\SketchStyles.baml
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Bulk_Approval_.g.cs
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Copy_of_Contractor_Registration.g.cs
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Copy_of_Day_in_Lieu_Inquiry.g.cs
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\ProjectInquiry.g.cs
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu_Approval.g.cs
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu_Approval_1.g.cs
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu_Approval___Consume.g.cs
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu_Requisition___Pre_approve.g.cs
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu___Detail.g.cs
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Day_in_Lieu___Entitled___acquire_usage.g.cs
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\Screen_1.g.cs
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\DIL-UIDesign.Screens_MarkupCompile.cache
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\DIL-UIDesign.Screens.g.resources
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\DIL-UIDesign.Screens.dll
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\DIL-UIDesign.Screens.pdb
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\ProjectDetailView.g.cs
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\DIL-UIDesign.Screens_MarkupCompile.lref
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\ProjectDetailView.baml
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\DIL-UIDesignScreens.csprojResolveAssemblyReference.cache
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\DIL-UIDesignScreens.csproj.AssemblyReference.cache
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\DIL-UIDesignScreens.csproj.CoreCompileInputs.cache
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\ProjectDetailView - Copy.baml
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\RequisitionInquiry.baml
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\ProjectDetailView - Copy.g.cs
+C:\NET Projects\CEA\CEA.MRE.App\Technical Documentations\New SRS\UIDesign\DIL-UIDesign\DIL-UIDesignScreens\obj\Debug\RequisitionInquiry.g.cs

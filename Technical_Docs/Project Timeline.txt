@@ -1,0 +1,71 @@
+CEA Enhancements Project
+
+UI Forms
+
+For Users 
+1. Project Inquiry (4 days)
+   Links / Buttons:
+   - New Requisition => Opens the "CEA/MRE Requisition" form
+   - Project No. => Opens the "Project Details View" form
+   - Merge Projects button => Opens the "Merge Projects" form  (Currently not used)
+
+2. Project Details View (3 days)
+   Buttons:
+   - Close the Project => Opens a pop-up form asking form confirmation to close the project
+   - Edit Project => Opens the "Create\Edit Project" form
+   - Create New Requisition => Opens the "CEA/MRE Requisition" form 
+
+3. Requisition Inquiry (4 days)
+   Links:
+   - Project No. => Opens the "Project Details View" form
+   - Requisition No. => Opens the "CEA/MRE Requisition" form 
+   - Status => Opens the "CEA/MRE Requisition Status View" form
+   - View Expenses => Opens the "Expenses View" form
+
+5. CEA/MRE Requisition (8 days)
+   Linked Forms:
+   - Print Requisition => Opens the "Item Non-Capitalized Report"
+   - View Approvers => Opens the "CEA/MRE Requisition Status View" form 
+   - View Expenses => Opens the "Expenses View" form
+   - Recall this Requisition => Opens the "Change Requisition Status" pop-up form
+   Lookup buttons:   
+   - Project No. => not required cause it's not functioning 
+   - Originator => Opens the "Search Employees" pop-up form
+   - Equipment No. => Opens the "Search Equipment Number" pop-up form
+   - Attachment => Opens the "Upload Files" pop-up form
+
+5. CEA / MRE Administration - used by Marian for posting CEA requisition to JDE and for closing CEA request (5 days)
+   Links / Buttons:
+   - Requisition No. => Opens the "CEA/MRE Requisition Form"
+   - Close Requisition button => use to close the CEA request
+
+6. Equipment Number Assignment (7 days)
+   Links:
+   - Equipment No. => Opens the "Search Equipment Number" pop-up form
+
+7. Merge Project (not required)
+
+Administration Forms
+1. Upload Project Setup (5 days)
+2. Page Security Setup (5 days) => used to assign page-level access to specific database user's groups
+3. Groups Administration (not required)
+   - Assign User to Group
+   - Manage Group 
+
+Report Forms:
+1. Detailed Expense Report (5 days) => opens the "CEA/MRE/INC Report" form
+   Buttons:
+   - View Report => fetches report data from DB
+   - View Report in Excel => used to export the grid data into Excel sheet file
+
+2. Expenses Report (5 days) => opens the "CEA/MRE/INC Report" form but shows different info in the grid
+   Buttons:
+   - View Report => fetches report data from DB
+   - View Report in Excel => used to export the grid data into Excel sheet file
+   
+3. Requisition Report (3 days) => opens the expense report form
+   Buttons:
+   - View Report => Fetch report data from DB to be displayed on the grid
+
+4. Item Non-Capitalized Report (3 days)
+

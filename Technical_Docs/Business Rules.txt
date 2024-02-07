@@ -1,0 +1,114 @@
+1. Loading data to "Requisition Status" combobox in "View Requisitions" form
+	Stored Procedure Used: EXEC Projectuser.spGetReferenceData 3, ''
+	Data:
+		StatusCode		ApprovalStatus
+		Draft			Draft
+		Submitted		Submitted for Approval
+		Rejected		Rejected
+		Closed			Closed
+		DraftAndSubmitted	All Open Statuses
+2. Stored procedure used to load search projects requisitions based on status: Projectuser.spGetRequisitions
+
+3. Stored procedure used to populate the workflow approvers: Projectuser.spConfigureRequisitionApprovers
+   - If project type is budgeted and amount > BD 20,000 the workflow will extend to the General Manager and CRO
+   - If project type is budgeted and amount > BD 100,000 the workflow will extend to the Chairman
+
+4. The maximum size of file attachment is 5 MB per file
+
+5. When submitting CEA, the creator should select the Originator from the charged cost center because the security and workflow approval process depends on the cost center of the Originator
+
+6. If there is an item category approver, the workflow will be extended to the assigned approver using the "60 - Manager" group type.
+   The system checks the value of the field called "CategoryCode1" in "dbo.Requisition" table.
+   If the specified category exists in "dbo.ApplicationUserRequisitionCategory" table, it will fetch the value of "EmployeeNo" field as the approver.
+   Item Category Approvers can be found in the following table: dbo.ApplicationUserRequisitionCategory
+
+7. Stored procedure used to upload CEA projects from Excel sheet into JDE: Projectuser.spUploadCEADataToOneWorld 
+8. Stored procedure used to recall, reactivate, or reopen a CEA requisition: Projectuser.spChangeRequisitionStatus
+9. Stored procedures used when uploading CEA request to JDE which is handled by Secretary of CEO role.
+	a) Projectuser.spUploadCEADataToOneWorld
+	b) Projectuser.spUpdateRequisitionStatus
+
+10. Stored procedures used when closing a CEA request which is handled by Secretary of CEO role.
+	a) Projectuser.spCloseRequisitionUpdationToOneWorld	
+	b) Projectuser.spUpdateRequisitionStatus
+
+Workflow Approval Process:
+
+1. Originator
+2. Superintendent
+3. a) Cost Center Manager
+   b) Item Category Approver
+4. Executive Manager – Operation (if cost center is: 3250, 5200, 5300, 5400)
+5. Executive Manager – Finance
+
+If Budgeted:
+6. General Manager (if amount > BD 20,000)
+7. Chief Executive Officer (if amount > BD 20,000)
+8. Chairman (if amount > BD 100,000)
+
+If Not Budgeted:
+6. General Manager (if amount > BD 5,000)
+7. Chief Executive Officer (if amount > BD 5,000)
+8. Chairman (if amount > BD 50,000)
+
+
+Business Rules:
+
+1. Expenses View Form
+   - Requisition Amount => Equals to the value of "RequestedAmt" field in "dbo.Requisition" table. (Query: Select RequestedAmt from Requisition Where RequisitionNo = @RequisitionNo)
+   - PO Total (BD) => Fetch the value of "PDAOPN" field from "PRODDTA.F4311" table in JDE wherein PO status is not closed. (Query Used: select sum(OpnAmtInPO) from Projectuser.ExpenceDetails_JDE where ceanumber = @CEANumber)
+   - GL Total (BD) => Fetch the value of "GLAA" field in "F0911" JDE table. (Query Used: SELECT @GLTotal = SUM(GLAmount) FROM Projectuser.ExpenceDetails_JDE WHERE ceanumber = @CEANumber)
+   - Requisition Balance (BD) => Project Amount - (PO Total + GL Total)  (Query Used: SELECT @ReqBalance = @RequestedAmt -(@POTotal + @GLTotal))
+
+2. Create Requisition Form
+   a). The "I would like to" drop-down box will have dynamic list items which will be visible to the creator depending on the status of the CEA request
+       	- If the CEA status is Rejected, a new item called "Activate this Requisition..." will added in the combobox. This will enable the creator to reactivate the rejected CEA request.
+       	- If the CEA status is Cancelled, the list item called "Recall this Requisition..." will be removed in the combobox. 
+       	- If the CEA status is Closed, a new item called "Re-open this Requisition..." will added in the combobox. This will allow the creator to reopen the CEA request. The option "Recall this Requisition..." will be hidden in the list.
+       	- If the CEA status is any of the following: Submitted for Approval, Awaiting Chairman Approval, Approved, Reassigned, Draft, ChairmanApproved, and Uploaded to OneWorld Closed, a option "Recall this Requisition..." will be visible in the combobox. This will allow the creator to cancel the CEA request. 
+   b). The "Change Status" pop-up form will show if any of the following option is selected: Recall this Requisition, Activate this Requisition, and Re-open this Requisition
+       Rules:
+        - Only Rejector is allowed to Re-activate this Requisition.
+	- Cannot recall or cancel CEA request if it has PO already
+	- Only the creator, secretary, cost center manager, and system admin are allowed to recall a requisition
+	- Only a system admin is allowed to open a closed requisition
+    
+3. Correct sequence of entering data when creating CEA requisition
+   a. Enter data in the header section
+   b. Specify the Schedule of Expenses
+   c. Attach documents if required		(Notes: Any pop-up form called wil disable the controls in the main page)
+   d. Specify the Originator
+
+4. If the CEA request has been recalled, the status will change to "Cancelled" but it will not create a log record in the workflow history table to reflect that it's been cancelled. 
+   The last workflow status will still remain as "Uploaded to OneWorld".
+
+5. When a CEA request is recalled, the stored procedure used is the following: Projectuser.spChangeRequisitionStatus. The procedure sets the value of the field "ABAT1" from "PRODDTA.F0101" table to 'JR'.
+
+6. CEA/MRE Requisition Status View form
+ 	- The Refresh button calls the following stored procedure: Projectuser.spGetRequisitionStatusDetail
+
+7. If the CEA requisition has been cancelled by the End-user and no approval has done yet, there will be no cancellation record in the approval history.
+   Otherwise, the last record in the approval history will show the Cancelled status.
+
+8. CEA status codes on JDE_PRODUCTION.PRODDTA.F0101
+	a). Reactivate a rejected request
+	    SP Parameter Code: ActivateRequisition
+	    Target CEA Status:  26 - Reactivated
+	    ABAT1 = 'JA'
+	b). Cancel CEA request
+	    SP Parameter Code: RecallRequisition
+	    Target CEA Status:  10 - Cancelled
+	    ABAT1 = 'JR'
+	c). Reopen a closed CEA request
+	    SP Parameter Code: OpenRequisition
+	    Target CEA Status:  15 - Uploaded to OneWorld
+	    ABAT1 = 'J'
+
+   JDE_PRODUCTION.PRODDTA.F0101 Status Categories:
+  	a) ABAT1 = 'JA' => Reactivated
+  	a) ABAT1 = 'JR' => Cancelled
+  	a) ABAT1 = 'J' => Uploaded to OneWorld
+  	d) ABAT1 = 'JC' => Closed
+
+
+	

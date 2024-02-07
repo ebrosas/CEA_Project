@@ -1,0 +1,135 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = CEAApp.Web
+build_property.RootNamespace = CEAApp.Web
+build_property.ProjectDir = C:\Users\ervin.GARMCO\OneDrive\Ervin Laptop Documents\MyProjects\CEAApp\CEAApp.Web\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\ervin.GARMCO\OneDrive\Ervin Laptop Documents\MyProjects\CEAApp\CEAApp.Web
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/ervin.GARMCO/OneDrive/Ervin Laptop Documents/MyProjects/CEAApp/CEAApp.Web/Areas/AdminFunctions/Views/Admin/ManageEquipmentNo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5GdW5jdGlvbnNcVmlld3NcQWRtaW5cTWFuYWdlRXF1aXBtZW50Tm8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ervin.GARMCO/OneDrive/Ervin Laptop Documents/MyProjects/CEAApp/CEAApp.Web/Areas/AdminFunctions/Views/Admin/ManageEquipmentNoEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5GdW5jdGlvbnNcVmlld3NcQWRtaW5cTWFuYWdlRXF1aXBtZW50Tm9FZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ervin.GARMCO/OneDrive/Ervin Laptop Documents/MyProjects/CEAApp/CEAApp.Web/Areas/AdminFunctions/Views/Admin/Reassignment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5GdW5jdGlvbnNcVmlld3NcQWRtaW5cUmVhc3NpZ25tZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ervin.GARMCO/OneDrive/Ervin Laptop Documents/MyProjects/CEAApp/CEAApp.Web/Areas/AdminFunctions/Views/Admin/RequisitionAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5GdW5jdGlvbnNcVmlld3NcQWRtaW5cUmVxdWlzaXRpb25BZG1pbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ervin.GARMCO/OneDrive/Ervin Laptop Documents/MyProjects/CEAApp/CEAApp.Web/Areas/AdminFunctions/Views/Admin/UploadProject.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5GdW5jdGlvbnNcVmlld3NcQWRtaW5cVXBsb2FkUHJvamVjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ervin.GARMCO/OneDrive/Ervin Laptop Documents/MyProjects/CEAApp/CEAApp.Web/Areas/AdminFunctions/Views/Admin/UploadProjectNew.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5GdW5jdGlvbnNcVmlld3NcQWRtaW5cVXBsb2FkUHJvamVjdE5ldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ervin.GARMCO/OneDrive/Ervin Laptop Documents/MyProjects/CEAApp/CEAApp.Web/Areas/ReportFunctions/Views/Report/DetailedExpenseReport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUmVwb3J0RnVuY3Rpb25zXFZpZXdzXFJlcG9ydFxEZXRhaWxlZEV4cGVuc2VSZXBvcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ervin.GARMCO/OneDrive/Ervin Laptop Documents/MyProjects/CEAApp/CEAApp.Web/Areas/ReportFunctions/Views/Report/ExpenseReport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUmVwb3J0RnVuY3Rpb25zXFZpZXdzXFJlcG9ydFxFeHBlbnNlUmVwb3J0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ervin.GARMCO/OneDrive/Ervin Laptop Documents/MyProjects/CEAApp/CEAApp.Web/Areas/ReportFunctions/Views/Report/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUmVwb3J0RnVuY3Rpb25zXFZpZXdzXFJlcG9ydFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ervin.GARMCO/OneDrive/Ervin Laptop Documents/MyProjects/CEAApp/CEAApp.Web/Areas/ReportFunctions/Views/Report/RequisitionPrint.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUmVwb3J0RnVuY3Rpb25zXFZpZXdzXFJlcG9ydFxSZXF1aXNpdGlvblByaW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ervin.GARMCO/OneDrive/Ervin Laptop Documents/MyProjects/CEAApp/CEAApp.Web/Areas/ReportFunctions/Views/Report/RequisitionReport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUmVwb3J0RnVuY3Rpb25zXFZpZXdzXFJlcG9ydFxSZXF1aXNpdGlvblJlcG9ydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ervin.GARMCO/OneDrive/Ervin Laptop Documents/MyProjects/CEAApp/CEAApp.Web/Areas/UserFunctions/Views/Project/CEARequisition.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlckZ1bmN0aW9uc1xWaWV3c1xQcm9qZWN0XENFQVJlcXVpc2l0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ervin.GARMCO/OneDrive/Ervin Laptop Documents/MyProjects/CEAApp/CEAApp.Web/Areas/UserFunctions/Views/Project/EmployeeLookupView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlckZ1bmN0aW9uc1xWaWV3c1xQcm9qZWN0XEVtcGxveWVlTG9va3VwVmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ervin.GARMCO/OneDrive/Ervin Laptop Documents/MyProjects/CEAApp/CEAApp.Web/Areas/UserFunctions/Views/Project/ExpensesView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlckZ1bmN0aW9uc1xWaWV3c1xQcm9qZWN0XEV4cGVuc2VzVmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ervin.GARMCO/OneDrive/Ervin Laptop Documents/MyProjects/CEAApp/CEAApp.Web/Areas/UserFunctions/Views/Project/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlckZ1bmN0aW9uc1xWaWV3c1xQcm9qZWN0XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ervin.GARMCO/OneDrive/Ervin Laptop Documents/MyProjects/CEAApp/CEAApp.Web/Areas/UserFunctions/Views/Project/ProjectDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlckZ1bmN0aW9uc1xWaWV3c1xQcm9qZWN0XFByb2plY3REZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ervin.GARMCO/OneDrive/Ervin Laptop Documents/MyProjects/CEAApp/CEAApp.Web/Areas/UserFunctions/Views/Project/RequisitionInquiry.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlckZ1bmN0aW9uc1xWaWV3c1xQcm9qZWN0XFJlcXVpc2l0aW9uSW5xdWlyeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ervin.GARMCO/OneDrive/Ervin Laptop Documents/MyProjects/CEAApp/CEAApp.Web/Areas/UserFunctions/Views/Project/RequisitionStatusView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlckZ1bmN0aW9uc1xWaWV3c1xQcm9qZWN0XFJlcXVpc2l0aW9uU3RhdHVzVmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ervin.GARMCO/OneDrive/Ervin Laptop Documents/MyProjects/CEAApp/CEAApp.Web/Areas/UserFunctions/Views/Security/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlckZ1bmN0aW9uc1xWaWV3c1xTZWN1cml0eVxFcnJvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ervin.GARMCO/OneDrive/Ervin Laptop Documents/MyProjects/CEAApp/CEAApp.Web/Areas/UserFunctions/Views/Security/NoAccessPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlckZ1bmN0aW9uc1xWaWV3c1xTZWN1cml0eVxOb0FjY2Vzc1BhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ervin.GARMCO/OneDrive/Ervin Laptop Documents/MyProjects/CEAApp/CEAApp.Web/Areas/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ervin.GARMCO/OneDrive/Ervin Laptop Documents/MyProjects/CEAApp/CEAApp.Web/Views/Home/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFcnJvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ervin.GARMCO/OneDrive/Ervin Laptop Documents/MyProjects/CEAApp/CEAApp.Web/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ervin.GARMCO/OneDrive/Ervin Laptop Documents/MyProjects/CEAApp/CEAApp.Web/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ervin.GARMCO/OneDrive/Ervin Laptop Documents/MyProjects/CEAApp/CEAApp.Web/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ervin.GARMCO/OneDrive/Ervin Laptop Documents/MyProjects/CEAApp/CEAApp.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ervin.GARMCO/OneDrive/Ervin Laptop Documents/MyProjects/CEAApp/CEAApp.Web/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ervin.GARMCO/OneDrive/Ervin Laptop Documents/MyProjects/CEAApp/CEAApp.Web/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ervin.GARMCO/OneDrive/Ervin Laptop Documents/MyProjects/CEAApp/CEAApp.Web/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-0s17jlfsud

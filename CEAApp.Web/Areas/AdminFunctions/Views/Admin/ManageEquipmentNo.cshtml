@@ -1,0 +1,225 @@
+﻿@model CEAApp.Web.ViewModels.RequisitionVM
+@using CEAApp.Web.DIServices
+@inject IConverterService ConverterService;
+
+@inject IConfiguration Configuration;
+
+@{
+    ViewData["Title"] = "Equipment Number Assignment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+
+    string userName = ConverterService.ConvertObjectToString(TempData.Peek("UserID"));
+    var FormCode = ViewBag.FormCode;
+}
+
+<div class="formWrapper container-fluid">
+    <form asp-area="ReportFunctions" asp-controller="Report" asp-action="Index" method="get">
+
+        <div class="alert alert-danger alert-dismissible fade show errorPanel" style='display: @(!string.IsNullOrWhiteSpace(Model.ErrorMessage) ? "block" : "none")'>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <strong>Error! </strong>&nbsp;<span class="errorText">@Model.ErrorMessage</span>
+        </div>
+        <div class="alert alert-success alert-dismissible fade show successPanel" style='display: @(!string.IsNullOrWhiteSpace(Model.NotificationMessage) ? "block" : "none")'>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <strong>Success!</strong>&nbsp;<span class="successText">@Model.NotificationMessage</span>
+        </div>
+
+        <div class="container-fluid p-0 m-0">
+            <div class="row no-gutters">
+                <div class="col-12 mt-2">
+                    <div class="formHeader">
+                        <span><i class="fas fa-cog"></i></span>
+                        @* <span><i class="fas fa-file-pdf fa-lg fa-fw"></i></span>*@
+                        @ViewData["Title"]
+                    </div>
+                </div>
+            </div>
+
+            <div class="requestHeader">
+                <div class="form-row">
+                    <div class="col-12 mx-auto px-5">
+                        <div class="alert alert-danger alert-dismissible fade show errorMsgBox" hidden>
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong>Error! </strong>&nbsp;<span class="errorMsg">Test error!</span>
+                        </div>
+                        <div class="alert alert-success alert-dismissible fade show successMsgBox" hidden>
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong>Success!</strong>&nbsp;<span class="successMsg">Test success!</span>
+                        </div>
+                    </div>
+                </div>
+                  
+                
+                <div class="container-fluid ps-2 pe-0 me-0 pt-3 pb-2">
+
+
+                    <div class="row pt-2">
+                        <div class="col-sm-2 fieldLabel">
+                            <label asp-for="requisition.FiscalYear" class="col-form-label d-inline-block text-truncate ps-2 text-start" data-field="FiscalYear"></label>
+                        </div>
+                        <div class="col-sm-4">
+                            <select id="cboFiscalYear" asp-for="FiscalYear" asp-items="Model.FiscalYearArray" name="FiscalYear"
+                                    class="form-select fieldValue w-75" title="Tips:" data-toggle="popover" data-content="Select Fiscal Year" data-trigger="hover" data-placement="top"
+                                    style="padding-left: -5px;">
+                                <option value="">All</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-2 fieldLabel">
+                            <label class="col-form-label">Requisition No. </label>
+                        </div>
+                        <div class="col-sm-3 pe-4">
+                            @Html.TextBoxFor(Model => Model.requisition.RequisitionNo, new { @class = "form-control", @Id="txtRequisitionNo" })
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+
+                    <div class="row pt-2">
+                        <div class="col-sm-2 fieldLabel">
+                            <label class="col-form-label">Cost Center</label>
+                        </div>
+                        <div class="col-sm-4">
+                            @*@Html.DropDownListFor(Model => Model.requisition.CostCenter,@Model.CostCenterArray, new { @class = "form-control form-select" , @Id="CostCenterId"})*@
+                            <select id="CostCenterId" class="form-control form-select fieldValue w-75"
+                                    title="Tips:" data-toggle="popover" data-content="Select Fiscal Year" data-trigger="hover" data-placement="top"
+                                    asp-for="requisition.CostCenter" asp-items="Model.CostCenterArray" name="CostCenter" style="padding-left: -5px;">
+                                <option value="">All</option>
+                            </select>                       
+                       </div>
+                        <div class="col-sm-2 fieldLabel">
+                            <label class="col-form-label">Project No. </label>
+                        </div>
+                        <div class="col-sm-3 pe-4">
+                            @Html.TextBoxFor(Model => Model.requisition.ProjectNo, new { @class = "form-control", @Id="txtProjectNo" })
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+
+                    <div class="row pt-2">
+                        <div class="col-sm-2 fieldLabel">
+                            <label class="col-form-label">Expenditure Type </label>
+                        </div>
+                        <div class="col-sm-4">
+                            @* @Html.DropDownListFor(Model => Model.requisition.ExpenditureType,@Model.ExpenditureTypeArray, new { @class = "form-control form-select fieldValue w-50", @Id="ExpenditureTypeId" })*@
+                            <select id="ExpenditureTypeId" class="form-control form-select fieldValue w-75"
+                                    title="Tips:" data-toggle="popover" data-content="Select Fiscal Year" data-trigger="hover" data-placement="top"
+                                    asp-for="requisition.ExpenditureType" asp-items="Model.ExpenditureTypeArray" name="ExpenditureTypeId" style="padding-left: -5px;">
+                                <option value="">All</option>
+                            </select>
+                        </div>
+                       @* <div class="col-sm-2 fieldLabel">
+                            <label class="col-form-label">Fiscal Year</label>
+                        </div>
+                        <div class="col-sm-3 pe-2">
+                            <div class="input-group input-group-sm mt-1">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text inputGroupTitle" style="height: 31px;">
+                                        <i class="far fa-calendar-alt fa-xs fa-fw"></i>
+                                        From
+                                    </span>
+                                </div>
+                                @Html.DropDownListFor(Model => Model.FiscalYear,@Model.FiscalYearArray, "All",new { @class = "borderLess fieldValue form-control-sm", @Id="FormFiscalYearId", @style="width: 120px; text-align: center;" })
+
+                                <div class="input-group-prepend ml-2 ps-2">
+                                    <span class="input-group-text inputGroupTitle" style="height: 31px;">
+                                        <i class="far fa-calendar-alt fa-xs fa-fw"></i>
+                                        To
+                                    </span>
+                                </div>
+                                @Html.DropDownListFor(Model => Model.FiscalYear,@Model.FiscalYearArray, "All",new { @class = "borderLess fieldValue form-control-sm", @Id="ToFiscalYearId", @style="width: 100px; text-align: center;"})
+
+                            </div>
+                        </div>*@
+                        
+                    </div>
+
+                    <div class="row pt-2">
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-10">
+                            <button type="button" id="btnSearch" class="btn btn-sm btn-success float-sm-start text-white border-0 actionButton"
+                                    style="width: 130px;" tabindex="18"
+                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Search for database records"
+                                    onclick="searchButtonClick()">
+                                <span class="spinner-border spinner-border-sm spinicon" hidden></span>
+                                <span class="normalicon"><i class="fas fa-search fa-fw fa-lg"></i></span>&nbsp;
+                                Search
+                            </button>
+                            <button id="btnReset" type="reset" class="btn btn-sm btn-warning text-white border-0 actionButton"
+                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Clears the form" style="width: 130px;" tabindex="12">
+                                   <span><i class="fas fa-sync fa-fw fa-lg"></i></span>&nbsp;
+                                Reset
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid ps-2 pe-0 me-0 pt-3 pb-2">
+
+                    <div class="row mt-0 pt-0 mx-2 mb-2">
+                        <div class="col-sm-12 ps-2 pe-3">
+                            <div class="container-fluid tablePanel gridWrapper">
+                                <div class="table-responsive py-3" style="-ms-overflow-style: auto;">
+                                    <table id="requisitionPendingTable" class="generalTable display nowrap stripe row-border table-bordered" style="width: 100%;">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 80px;">
+
+                                                </th>
+                                                <th style="width: 80px;">
+                                                    Project No.
+                                                </th>
+                                                <th style="width: 80px;">
+                                                    Requisition No.
+                                                </th>
+                                                <th style="width: 100px;">
+                                                    Expenditure Type
+                                                </th>
+                                                <th style="width: 150px;">
+                                                    Equipment No.
+                                                </th>
+                                                <th style="width: 250px;">
+                                                    Description
+                                                </th>
+                                                <th style="width: 150px;">
+                                                    Requested Amount
+                                                </th>
+
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <input type="hidden" id="hidUserName" value="@userName" name="UserName" />
+                <input type="hidden" id="hidFormCode" asp-for="FormCode" />
+                <input type="hidden" id="hidCallerForm" asp-for="@Model.CallerForm" name="callerForm" />
+                <input type="hidden" id="hidToastNotification" asp-for="ToastNotification" name="ToastNotification" />
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    // Initialize tooltips
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+</script>
+
+@section Scripts{
+
+    <script src="~/js/ManageEquipmentNo.js?v=@Configuration["AppSettings:JavaScriptFileVersion"]"></script>
+    <script src="~/js/common.js"></script>
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+}
+
+

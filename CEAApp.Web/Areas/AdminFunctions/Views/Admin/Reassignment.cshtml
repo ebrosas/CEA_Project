@@ -1,0 +1,348 @@
+﻿@using Microsoft.Extensions.Configuration
+@model CEAApp.Web.ViewModels.ReassignmentVM
+@using CEAApp.Web.DIServices
+@inject IConverterService ConverterService;
+
+@inject IConfiguration Configuration
+
+@{
+    ViewData["Title"] = "Reassignment Requisition";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    string userName = TempData.Peek("UserID")!.ToString()!;
+    string UserEmpNo = TempData.Peek("UserEmpNo")!.ToString()!;
+    var FormCode = ViewBag.FormCode;
+}
+
+<link type="text/css" href="https://cdn.datatables.net/select/1.7.0/css/select.dataTables.min.css" rel="stylesheet" />@*
+<link type="text/css" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" rel="stylesheet" />*@
+
+<div class="formWrapper container-fluid">
+    <form asp-area="AdminFunctions" asp-controller="Admin" asp-action="Index" method="get" id="ReassigmentForm">
+
+        <div class="container-fluid p-0 m-0">
+            <div class="row no-gutters">
+                <div class="col-12 mt-2">
+                    <div class="formHeader">
+                        <span><i class="fas fa-exchange-alt fa-fw"></i></span>
+                        @ViewData["Title"]
+                    </div>
+                </div>
+            </div>
+
+            <div class="requestHeader">
+                <div class="form-row">
+                    <div class="col-12 mx-auto px-5">
+                        <div class="alert alert-danger alert-dismissible fade show errorMsgBox" hidden>
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong>Error! </strong>&nbsp;<span class="errorMsg">Test error!</span>
+                        </div>
+                        <div class="alert alert-success alert-dismissible fade show successMsgBox" hidden>
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong>Success!</strong>&nbsp;<span class="successMsg">Test success!</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row pt-2">
+                    <div class="col-sm-2 fieldLabel">
+                        <label class="col-form-label">Cost Center</label>
+                    </div>
+                    <div class="col-sm-4">
+                        @Html.DropDownListFor(Model => Model.Reassignment.CostCenter,@Model.CostCenterList,"All", new { @class = "form-control form-select" , @Id="CostCenterId"})
+                    </div>
+                    <div class="col-sm-2 fieldLabel">
+                        <label class="col-form-label">Requisition No.</label>
+                    </div>
+                    <div class="col-sm-3 pe-4">
+                        <input asp-for="@Model.Reassignment.RequisitionNo" name="RequisitionNo" class="form-control form-control-sm fieldValue" maxlength="12"
+                               data-bs-toggle="tooltip" data-bs-placement="top" title="Enter numeric values only!"
+                               onkeypress="return onlyNumberKeyInq(event)" />
+                    </div>
+                    <div class="col-sm-1"></div>
+                </div>
+
+                <div class="row pt-2">
+                    <div class="col-sm-2 fieldLabel">
+                        <label class="col-form-label">Expenditure Type </label>
+                    </div>
+                    <div class="col-sm-4">
+                        @Html.DropDownListFor(Model => Model.Reassignment.ExpenditureType,@Model.ExpenditureTypeList,"All", new { @class = "form-control form-select", @Id="ExpenditureTypeId" })
+                    </div>
+                    <div class="col-sm-2 fieldLabel">
+                        <label class="col-form-label">Fiscal Year</label>
+                    </div>
+                    <div class="col-sm-4 pe-4">
+                        <div class="input-group input-group-sm mt-1">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text inputGroupTitle" style="height: 31px;">
+                                    <i class="far fa-calendar-alt fa-xs fa-fw"></i>
+                                    From
+                                </span>
+                            </div>
+                           @* @Html.DropDownListFor(Model => Model.Reassignment.FiscalYear,@Model.FiscalYearList, "All",new { @class = "borderLess fieldValue form-control-sm",@name ="FromFiscalYearId" , @Id="FromFiscalYearId", @style="width: 120px; text-align: center;" })*@
+                            <select id="FromFiscalYearId" class="borderLess fieldValue form-control-sm"
+                                    title="Tips:" data-toggle="popover" data-content="Select Fiscal Year" data-trigger="hover" data-placement="top"
+                                    asp-for="FiscalYear" asp-items="Model.FiscalYearList" name="FromFiscalYearId" style="padding-left: -5px;">
+                                <option value="0">  All</option>
+                            </select>
+                            <div class="input-group-prepend ml-2 ps-4">
+                                <span class="input-group-text inputGroupTitle" style="height: 31px;">
+                                    <i class="far fa-calendar-alt fa-xs fa-fw"></i>
+                                    To
+                                </span>
+                            </div>
+                            @*@Html.DropDownListFor(Model => Model.Reassignment.FiscalYear,@Model.FiscalYearList, "All",new { @class = "borderLess fieldValue form-control-sm",@name="ToFiscalYearId", @Id="ToFiscalYearId", @style="width: 120px; text-align: center;"})*@
+                            <select id="ToFiscalYearId" class="borderLess fieldValue form-control-sm"
+                                    title="Tips:" data-toggle="popover" data-content="Select Fiscal Year" data-trigger="hover" data-placement="top"
+                                    asp-for="FiscalYear" asp-items="Model.FiscalYearList" name="ToFiscalYearId" style="padding-left: -5px;">
+                                <option value="0">  All</option>
+                            </select>
+                        </div>
+                        <div class="form-row errorPanel" id="durationValid" hidden>
+                            <div class="col-sm-12">
+                                <div class="alert alert-danger alert-dismissible mt-1 fade show">
+                                    <strong>Error!</strong>&nbsp;<span class="errorText"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row pt-2">
+                    <div class="col-sm-2 fieldLabel">
+                        <label class="col-form-label">Currently Assigned To</label>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="input-group groupAssignPerson">
+                            <input id="txtOtherEmpNo" class="form-control form-control-sm fieldValue" type="text" maxlength="100" tabindex="15" data-readonly-field="false"
+                                   title="Notes:" data-toggle="popover" data-content="Please enter the employee no. or type the name to filter the list." data-trigger="hover" data-placement="top"
+                                   name="OtherEmpNo" value="" placeholder="search employee here..." required style="font-size: 14px;" />
+                            <button id="btnFindEmp" class="btn btn-sm btn-secondary" type="button"
+                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Search for specific employee">
+                                <span><i class="fas fa-binoculars fa-fw fa-lg"></i></span>&nbsp;
+                            </button>
+                        </div>
+                        <input type="hidden" id="hidOtherEmpNo" />
+                        <div class="form-row errorPanel" id="otherEmpValid" hidden>
+                            <div class="col-sm-12">
+                                <div class="alert alert-danger alert-dismissible mt-1 fade show">
+                                    <span><i class="fas fa-times-circle fa-fw fa-lg"></i></span>
+                                    <span class="errorText"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2 fieldLabel">
+                    </div>
+                    <div class="col-sm-4 pe-4">
+                    </div>
+                </div>
+
+                <div class="row pt-2">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-10">
+                        <button type="button" id="btnSearch" class="btn btn-sm btn-success float-sm-start text-white border-0 actionButton"
+                                style="width: 130px;" tabindex="18"
+                                data-bs-toggle="tooltip" data-bs-placement="top" title="Search for database records"
+                                onclick="searchButtonClick()">
+                            <span class="spinner-border spinner-border-sm spinicon" hidden></span>
+                            <span class="normalicon"><i class="fas fa-search fa-fw fa-lg"></i></span>&nbsp;
+                            Search
+                        </button>
+                        <button id="btnReset" type="reset" class="btn btn-sm btn-warning text-white border-0 actionButton"
+                                data-bs-toggle="tooltip" data-bs-placement="top" title="Clears the form" style="width: 130px;" tabindex="12">
+                            <span><i class="fas fa-sync fa-fw fa-lg"></i></span>&nbsp;
+                            Reset
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row mt-2 mb-1 groupTitle">
+                    <div class="col-sm-12 clearfix">
+                        <span class="ps-3">Search Results:</span> &nbsp;
+                        <span class="float-sm-end">
+
+                        </span>
+                    </div>
+                </div>
+
+                <div class="row mt-0 pt-0 mx-2 mb-2">
+                    <div class="col-sm-12 ps-2 pe-3">
+                        <div class="container-fluid tablePanel gridWrapper">
+                            <div class="table-responsive py-3" style="-ms-overflow-style: auto;">
+                                <table id="ReassignTable" class="generalTable display nowrap stripe row-border table-bordered" style="width: 100%;">
+                                    <thead>
+                                        <tr>
+                                            <th class="centeredColumn">
+                                                
+                                            </th>
+                                            <th class="centeredColumn">
+                                                Project No
+                                            </th>
+                                            <th class="centeredColumn">
+                                                Requisition No
+                                            </th>
+                                            <th class="centeredColumn">
+                                                Status
+                                            </th>
+                                            <th class="centeredColumn">
+                                                Currently Assigned To
+                                            </th>
+                                            <th class="centeredColumn">
+                                                Requisition Date
+                                            </th>
+                                            <th class="centeredColumn">
+                                                Cost Center
+                                            </th>
+                                            <th class="centeredColumn">
+                                                Fiscal Year
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row"><div class="col-sm-12"></div></div>
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="mainTabPanel">
+                            <!-- Nav pills -->
+                            <div class="mx-2 mt-3">
+                                <ul class="nav nav-tabs">
+                                    <li id="lnkApprover" class="nav-item active">
+                                        <a class="nav-link" data-bs-toggle="tab" href="#tabNewApprover">
+                                            <span><i class="fas fa-paperclip fa-fw fa-lg"></i></span>
+                                            Reassign Requisition
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Tab panes -->
+                        @*    <div class="tab-content">*@
+                            <div id="tabNewApprover" class="container-fluid tab-pane active">
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-sm-12 ms-3">
+                                            <fieldset>
+                                                <div id="NewApproverEntry" class="row ps-2 mb-2">
+                                                    <div class="row pt-2">
+                                                        <div class="col-sm-2 fieldLabel">
+                                                            <label class="col-form-label">New Approver</label>
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <div class="input-group groupAssignPerson">
+                                                                <input id="txtNewApproverEmpNo" class="form-control form-control-sm fieldValue" type="text" maxlength="100" tabindex="15" data-readonly-field="false"
+                                                                       title="Notes:" data-toggle="popover" data-content="Please enter the employee no. or type the name to filter the list." data-trigger="hover" data-placement="top"
+                                                                       name="txtNewApproverEmpNo" value="" placeholder="search employee here..." required style="font-size: 14px;" />
+                                                                <button id="btnFindEmp" class="btn btn-sm btn-secondary" type="button"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top" title="Search for specific employee">
+                                                                    <span><i class="fas fa-binoculars fa-fw fa-lg"></i></span>&nbsp;
+                                                                </button>
+                                                            </div>
+                                                        <input type="hidden" id="hidReassignEmpNo" />
+                                                            <input type="hidden" id="hidReassignEmpName" />
+                                                            <input type="hidden" id="hidReassignEmpEmail" />
+
+                                                            <div class="form-row errorPanel" id="othertxtNewApproverEmpValid" hidden>
+                                                                <div class="col-sm-12">
+                                                                    <div class="alert alert-danger alert-dismissible mt-1 fade show">
+                                                                        <span><i class="fas fa-times-circle fa-fw fa-lg"></i></span>
+                                                                        <span class="errorText"></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-1 fieldLabel">
+                                                            <label class="col-form-label">Remarks</label>
+                                                        </div>
+                                                        <div class="col-sm-3 pe-4">
+                                                           @* <input asp-for="@Model.Reassignment.Remarks" name="Remarks" class="form-control form-control-sm fieldValue" 
+                                                                  type="text" data-bs-toggle="tooltip" data-bs-placement="top" />*@
+                                                        <textarea asp-for="@Model.Reassignment.Remarks" id="txtRemarks" name="txtRemarks" class="form-control form-control-sm fieldValue"
+                                                                      type="text" data-bs-toggle="tooltip" data-bs-placement="top" style="height:100px;"></textarea>
+
+                                                        <div class="form-row errorPanel" id="remarksValid" hidden>
+                                                            <div class="col-sm-12">
+                                                                <div class="alert alert-danger alert-dismissible mt-1 fade show">
+                                                                    <span><i class="fas fa-times-circle fa-fw fa-lg"></i></span>
+                                                                    <span class="errorText"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        </div>
+
+                                                        <div class="col-sm-3">
+                                                            <div class="btn-group attachmentButtons">
+                                                                <button type="button" id="btnSave" class="btn btn-sm btn-success float-sm-start text-white border-0 actionButton"
+                                                                        style="width: 130px;" tabindex="18"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top" title="reassign requisition"
+                                                                        onclick="saveButtonClick()">
+                                                                    <span class="spinner-border spinner-border-sm " hidden></span>
+                                                                    <span class="normalicon"><i class="fas fa-save fa-fw fa-lg"></i></span>&nbsp;
+                                                                    Reassign 
+                                                                </button>
+                                                                <button id="btnReset" type="reset" class="btn btn-sm btn-warning text-white border-0 actionButton" onclick="ResetClick()"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top" title="Clears the form" style="width: 130px;" tabindex="12">
+                                                                    <span><i class="fas fa-sync fa-fw fa-lg"></i></span>&nbsp;
+                                                                    Reset
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    @*<div class="row mt-2 ps-2">
+                                                        <p class="h6 text-decoration-underline text-secondary ps-2" style="font-family:'Poppins-SemiBold';">Notes:</p>
+                                                        <p id="lblNotes" class="text-secondary fst-italic">
+                                                            Only the currently assigned person can reassign this requisition to another approver.
+                                                        </p>
+                                                    </div>*@
+
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                </div>
+                            @*</div>*@
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </form>
+    <div>
+        <input type="hidden" id="hidUserName" value="@userName" name="UserName" />
+        <input type="hidden" id="hidFormCode" asp-for="FormCode" />
+        <input type="reset" id="btnHiddenReset" value="Reset Form" hidden />        
+        <input type="hidden" id="hidUserEmpNo" value="@UserEmpNo" name="UserEmpNo" />
+    </div>
+</div>
+
+
+@section Scripts{
+    <script>
+        // Initialize tooltips
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
+
+    <script src="~/lib/jqueryui/jquery-ui.min.js"></script>
+    <script src="~/js/reassignment.js?v=@Configuration["AppSettings:JavaScriptFileVersion"]"></script>
+   
+    @*<script type="text/javascript" src="//gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/js/dataTables.checkboxes.min.js"></script>*@
+    <script src="~/lib/datatables/DataTables-1.13.2/js/dataTables.checkboxes.min.js"></script>
+
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

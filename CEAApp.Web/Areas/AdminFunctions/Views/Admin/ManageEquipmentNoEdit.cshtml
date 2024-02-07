@@ -1,0 +1,329 @@
+﻿@model CEAApp.Web.ViewModels.RequisitionVM
+@inject IConfiguration Configuration
+
+@{
+    ViewData["Title"] = "Equipment Number Assignment Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="formWrapper container-fluid">
+    <form method="post">
+    @*<form asp-area="ReportFunctions" asp-controller="Report" asp-action="Index" method="get">*@
+
+        <div class="alert alert-danger alert-dismissible fade show errorPanel" style='display: @(!string.IsNullOrWhiteSpace(Model.ErrorMessage) ? "block" : "none")'>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <strong>Error! </strong>&nbsp;<span class="errorText">@Model.ErrorMessage</span>
+        </div>
+        <div class="alert alert-success alert-dismissible fade show successPanel" style='display: @(!string.IsNullOrWhiteSpace(Model.NotificationMessage) ? "block" : "none")'>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <strong>Success!</strong>&nbsp;<span class="successText">@Model.NotificationMessage</span>
+        </div>
+
+        <div class="container-fluid p-0 m-0">
+            <div class="row no-gutters">
+                <div class="col-12 mt-2">
+                    <div class="formHeader">
+                        <span><i class="fas fa-gavel"></i></span>
+                        @* <span><i class="fas fa-file-pdf fa-lg fa-fw"></i></span>*@
+                        @ViewData["Title"]
+                    </div>
+                </div>
+            </div>
+
+            <div class="requestHeader">
+                <div class="form-row">
+                    <div class="col-12 mx-auto px-5">
+                        <div class="alert alert-danger alert-dismissible fade show errorMsgBox" hidden>
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong>Error! </strong>&nbsp;<span class="errorMsg">Test error!</span>
+                        </div>
+                        <div class="alert alert-success alert-dismissible fade show successMsgBox" hidden>
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong>Success!</strong>&nbsp;<span class="successMsg">Test success!</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="col-12 mx-auto px-5">
+                        <div class="alert alert-danger alert-dismissible fade show errorMsgBox" hidden>
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong>Error! </strong>&nbsp;<span class="errorMsg">Test error!</span>
+                        </div>
+                        <div class="alert alert-success alert-dismissible fade show successMsgBox" hidden>
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong>Success!</strong>&nbsp;<span class="successMsg">Test success!</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid ps-2 pe-0 me-0 pt-3 pb-2 Manage-equip">
+
+                    <div class="row pt-0 mt-0 pe-4">
+                        <div class="col-sm-12 text-danger clearfix">
+                            @*  <span class="font-italic float-end">- indicates a required field</span>
+                            <span class="float-end me-1"><i class="fas fa-asterisk fa-fw fa-xs"></i></span>*@
+                        </div>
+                    </div>
+
+                    <div class="row pt-2">
+                        <div class="col-sm-2 fieldLabel">
+                            <label class="col-form-label">Requisition No</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input id="txtRequisitionNo" class="form-control form-control-sm fieldValue" value="@Model.requisition.RequisitionNo" placeholder="" maxlength="50"
+                                   disabled="@Model.disableElements" />
+                        </div>
+                        <div class="col-sm-2 fieldLabel">
+                            <label class="col-form-label"> Estimated Cost </label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input id="txtEstimatedCost" class="form-control form-control-sm fieldValue" maxlength="12" value="@Model.requisition.RequestedAmt"
+                                   data-bs-toggle="tooltip" data-bs-placement="top" disabled="@Model.disableElements" />
+                        </div>
+                        <div class="col-sm-2"></div>
+                    </div>
+
+                    <div class="row pt-2">
+                        <div class="col-sm-2 fieldLabel">
+                            <label class="col-form-label">Account No  </label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input id="txtAccountNo" class="form-control form-control-sm fieldValue" maxlength="12" value="@Model.requisition.AccountNo"
+                                   data-bs-toggle="tooltip" data-bs-placement="top" disabled="@Model.disableElements" />
+                        </div>
+                        <div class="col-sm-2 fieldLabel">
+                            <label class="col-form-label"> Est. Life Span</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input id="txtLifeSpan" class="form-control form-control-sm fieldValue" maxlength="12" value="@Model.requisition.EstimatedLifeSpan"
+                                   data-bs-toggle="tooltip" data-bs-placement="top" disabled="@Model.disableElements" />
+                        </div>
+                        <div class="col-sm-2 pt-1 p-0">Year/s.</div>
+                    </div>
+                    <div class="row pt-2">
+                        <div class="col-sm-2 fieldLabel">
+                            <label class="col-form-label">Item Required  </label>
+                        </div>
+                        <div class="col-sm-3">
+                            @*  <input id="txtItemRequired" class="form-control form-control-lg fieldValue"
+                            value ="@Model.requisition.Description"  data-bs-toggle="tooltip" data-bs-placement="top" />*@
+                            <textarea class="form-control form-control-lg fieldValue" id="txtItemRequired" rows="3" style="resize: none;"
+                                      disabled="@Model.disableElements">@Model.requisition.Description</textarea>
+                        </div>
+                        <div class="col-sm-2 fieldLabel">
+                            <label class="col-form-label">Reason for Requisition </label>
+                        </div>
+                        <div class="col-sm-3">
+                            <textarea class="form-control form-control-lg fieldValue" id="txtReasonRequisition" rows="3" style="resize: none;"
+                                      disabled="@Model.disableElements">@Model.requisition.Reason</textarea>
+                        </div>
+                        <div class="col-sm-2"></div>
+                    </div>
+
+                    <div class="row pt-12">
+                        <div class="col-sm-12">
+                            <hr />
+                        </div>
+                    </div>
+
+                   @* <div class="row pt-2">
+                        <div class="col-sm-2 fieldLabel">
+                            <label class="col-form-label">Equipment No. Required </label>
+                        </div>
+                        <div class="col-sm-2">
+                              <input type="checkbox" id="chkEquipmentNoRequired" name="horns">
+                        </div>
+                    </div>*@
+
+                    <div class="row pt-2">
+                  @*      <div class="form-check form-switch col-form-label">
+                            <label class="form-check-label text-danger" for="approvalSwitch">Equipment No. Required</label>
+                            <input class="form-check-input" type="checkbox" id="chkEquipmentNoRequired" name="ShowAssigned" value="no">
+                        </div>*@
+
+                        <div class="col-sm-2 fieldLabel">
+                            <label class="col-form-label text-danger" for="approvalSwitch">Equipment No. Required</label>
+                        </div>
+                        <div class="col-sm-2 form-check form-switch col-form-label">
+                            <input class="form-check-input" type="checkbox" id="chkEquipmentNoRequired" name="ShowAssigned" value="no" checked="true">
+                        </div>
+                    </div>
+
+                    <div class="row pt-2">
+                        <div class="col-sm-2 fieldLabel">
+                            <label class="col-form-label">Equipment No. </label>
+                        </div>
+                        <div class="col-sm-2">
+                            <input id="txtEquipmentNo" class="form-control form-control-sm fieldValue" maxlength="12" value="@Model.requisition.EquipmentNo"
+                                   data-bs-toggle="tooltip" data-bs-placement="top" disabled="@Model.disableElements" />
+                        </div>
+                        <div class="col-sm-1">
+                            <button id="btnChoose" type="button" class="btn btn-sm btn-outline-info text-black border-1 actionButton open-EquipmentNoDialog"
+                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Choose Equipment Number" style="width: 95px;" tabindex="12">
+                                <span><i class="fa fa-link" aria-hidden="true"></i></span>&nbsp;
+                                Select..
+                            </button>
+                        </div>
+                        <div class="col-sm-2 fieldLabel">
+                            <label class="col-form-label">Equipment Parent No.  </label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input id="txtEquipmentParentNo" class="form-control form-control-sm fieldValue" maxlength="12" value="@Model.requisition.EquipmentParentNo"
+                                   data-bs-toggle="tooltip" data-bs-placement="top" disabled="@Model.disableElements" />
+                        </div>
+                        <div class="col-sm-2"></div>
+                    </div>
+                    <div class="row pt-2">
+                        <div class="col-sm-2 fieldLabel">
+                            <label class="col-form-label">Equipment Description </label>
+                        </div>
+                        <div class="col-sm-3">
+                            <textarea class="form-control form-control-lg fieldValue" id="txtEquipmentDescription" rows="3" style="resize: none;"
+                                      disabled="@Model.disableElements">@Model.requisition.EquipmentDescription</textarea>
+                        </div>
+                        <div class="col-sm-2 fieldLabel">
+                            <label class="col-form-label">Equipment Parent Description </label>
+                        </div>
+                        <div class="col-sm-3">
+                            <textarea class="form-control form-control-lg fieldValue" id="txtEquipmentParentDesc" rows="3" style="resize: none;"
+                                      disabled="@Model.disableElements">@Model.requisition.EquipmentParentDescription</textarea>
+                        </div>
+                        <div class="col-sm-2"></div>
+                    </div>
+
+                    <div class="row pt-2">
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-3">
+                            <button type="button" id="btnSave" class="btn btn-sm btn-success float-sm-start text-white border-0 actionButton"
+                                    style="width: 130px;" tabindex="18" onclick="getPageReload();"
+                                    data-bs-toggle="tooltip" data-bs-placement="top" title="save database records">
+                                <span class="spinner-border spinner-border-sm" hidden></span>
+                                <span><i class="fas fa-save fa-fw fa-lg"></i></span>&nbsp;
+                                Save
+                            </button>
+                            @*<button id="btnBack" class="btn btn-sm btn-danger text-white border-0 actionButton" onclick="history.back()"
+                                    data-bs-toggle="tooltip" data-bs-placement="top" title="back to previous page" style="width: 130px;" tabindex="19">
+                                <span><i class="fa fa-reply-all" aria-hidden="true"></i></span>&nbsp;
+                                Go Back
+                            </button>*@
+
+                            <a asp-area="AdminFunctions" asp-controller="Admin" asp-action="ManageEquipmentNo" class="btn btn-sm btn-outline-secondary rounded-3 actionButton ps-0 ms-0 backButton" 
+                                data-bs-toggle="tooltip" data-bs-placement="top" title="Go back to previous page"
+                                style="width: 130px;">
+                                <span><i class="fas fa-arrow-circle-left fa-fw fa-lg"></i></span>&nbsp; 
+                                Go Back
+                            </a>
+                        </div>
+                        <div class="col-sm-2"></div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+       
+        @*--------- Model popup ------------*@
+
+        <div id="addEquipmentNoDialog" class="modal fade" tabindex="-1" role="dialog" >
+            <div class="modal-dialog" role="document">
+                <div class="modal-content" style="width:980px">
+
+                     <div class="modal-header bg-info">
+                        <div class="col-sm-4"></div>
+                        <div class="col-sm-6">
+                            <span class="text-white"><i class="fa fa-link" aria-hidden="true"></i></span>
+                            <span class="modal-title text-white modalHeader" style="line-height: 1;">&nbsp;&nbsp;Equipments Number</span>
+                        </div>
+                        <div class="col-sm-2 text-end">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>  </div>
+                     </div>
+
+                    <div class="modal-body">
+
+                        <div class="container-fluid formWrapper">
+                            <div class="container-fluid tablePanel gridWrapper overflow-hidden my-2">
+                                <div class="table-responsive py-3 overflow-hidden">
+                                    <table id="EquipmentNoAssignTable" class="generalTable display nowrap stripe row-border table-bordered" style="width: 100%;">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 80px!important">
+
+                                                </th>
+                                                <th style="width: 100px;">
+                                                    Equipment No.
+                                                </th>
+                                                <th style="width: 150px;">
+                                                     Description
+                                                </th>
+                                                <th style="width: 100px;">
+                                                    Parent No.
+                                                </th>
+                                                <th style="width: 150px;">
+                                                    Parent Description
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer me-2">
+                        <button type="button" class="btn btn-secondary font-weight-bold modalButton" data-button-value="modalCancel" data-bs-dismiss="modal" style="width: 100px;">
+                            Cancel
+                        </button>
+                    </div>
+
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+    </form>
+</div>
+
+@section Scripts{
+
+    <script>
+        // Initialize tooltips
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
+
+    <script src="~/js/ManageEquipmentNo.js?v=@Configuration["AppSettings:JavaScriptFileVersion"]"></script>
+    <script src="~/js/common.js"></script>
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+  @*  <script src="~/lib/jqueryui/jquery-ui.min.js"></script*@    
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+
+        $(function() {
+
+            $(".open-EquipmentNoDialog").click(function() {
+                $("#addEquipmentNoDialog").modal("show");
+            });
+            $('#addEquipmentNoDialog').modal({ backdrop: 'static', keyboard: false });
+        });
+
+        function disableBackground() {
+
+            $("#EquipmentNoAssignTable").modal({
+                backdrop: "static",     // Cannot close the modal when clicking outside of it
+                keyboard: true          // The modal can be closed with Esc
+            });
+        }
+
+    </script>
+
+
+

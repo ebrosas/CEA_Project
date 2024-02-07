@@ -1,0 +1,91 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:pi="http://schemas.microsoft.com/prototyping/2010/interactivity" x:Name="Screen_1_Name"
+	mc:Ignorable="d"
+	x:Class="DIL_UIDesignScreens.Day_in_Lieu_Appoval_Search"
+	Width="1024" Height="800">
+
+    <Grid x:Name="LayoutRoot" Background="White" Height="800" Width="1024" Margin="0,0,0,-13">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup"/>
+        </VisualStateManager.VisualStateGroups>
+        <Label Content="Fiscal Year" HorizontalAlignment="Left" Margin="53,159,0,0" VerticalAlignment="Top" Width="148.672" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+        <Label Content="Requisition Status" HorizontalAlignment="Left" Margin="28,200,0,0" VerticalAlignment="Top" Width="174.217" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+        <Label Content="Requisition Closure" HorizontalAlignment="Left" Margin="28.898,107.08,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Background="{x:Null}" Foreground="#FF291BC0">
+            <Label.Effect>
+                <DropShadowEffect Opacity="0.5" Color="#FFB6AAAA" ShadowDepth="3"/>
+            </Label.Effect>
+        </Label>
+        <GroupBox Header="       Requisitions List" Margin="28.898,0,41.906,109.557" FontWeight="Bold" FontSize="15" BorderThickness="2" Height="354.666" VerticalAlignment="Bottom" Foreground="#FF9E2361">
+            <DataGrid Margin="12,5,19,0" RenderTransformOrigin="0.5,0.5" AutoGenerateColumns="False" FontSize="12" FontWeight="Normal" FontFamily="Tahoma" Height="305" VerticalAlignment="Top" RowHeight="30">
+                <DataGrid.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleY="0.18"/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="0.552"/>
+                    </TransformGroup>
+                </DataGrid.RenderTransform>
+                <DataGrid.Columns>
+                    <DataGridHyperlinkColumn Binding="{x:Null}" ContentBinding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Project No." Width="100"/>
+                    <DataGridTextColumn Header="Requisition Date" Width="120"/>
+                    <DataGridTextColumn Header="Description" Width="150"/>
+                    <DataGridTextColumn Header="Status" Width="120"/>
+                    <DataGridTextColumn Header="Amount" Width="100" CanUserResize="False"/>
+                    <DataGridTextColumn Header="Used Amount" Width="120"/>
+                    <DataGridHyperlinkColumn Header="          Action                             "/>
+                </DataGrid.Columns>
+                <ListBoxItem Content="Project No." Height="20"/>
+                <ListBoxItem Content="Requisition Date"/>
+                <ListBoxItem Content="Description"/>
+                <ListBoxItem/>
+                <ListBoxItem/>
+                <ListBoxItem/>
+            </DataGrid>
+        </GroupBox>
+        <Label Content="Expenditure Type" HorizontalAlignment="Right" Margin="0,161,362,0" VerticalAlignment="Top" Width="128.07" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="34.333" Margin="28.898,0,0,437.664" VerticalAlignment="Bottom" Width="33.666">
+            <Border.Background>
+                <ImageBrush ImageSource="search.png"/>
+            </Border.Background>
+        </Border>
+        <Image Margin="0,0,0,709" Source="CEA Banner.PNG" Stretch="Fill"/>
+        <Label Content="Cost Center" HorizontalAlignment="Left" Margin="28,239,0,0" VerticalAlignment="Top" Width="174.217" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Right"/>
+        <Label Content="Project No." HorizontalAlignment="Left" Margin="584,198,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontWeight="Bold"/>
+        <Label Content="Requisition No." HorizontalAlignment="Left" Margin="534,238,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontWeight="Bold" Width="128.07" HorizontalContentAlignment="Right"/>
+        <Button Content="Search" HorizontalAlignment="Left" Margin="207,0,0,493" VerticalAlignment="Bottom" Width="92" Height="26">
+            <Button.Effect>
+                <DropShadowEffect Opacity="0.5" BlurRadius="3"/>
+            </Button.Effect>
+        </Button>
+        <ComboBox Margin="207,162,0,0" VerticalAlignment="Top" SelectedIndex="0" HorizontalAlignment="Left" Width="121.828">
+            <ComboBoxItem Content="2023"/>
+        </ComboBox>
+        <ComboBox Margin="207,203,0,0" VerticalAlignment="Top" SelectedIndex="0" HorizontalAlignment="Left" Width="121.828">
+            <ComboBoxItem Content="All Open Status"/>
+        </ComboBox>
+        <ComboBox HorizontalAlignment="Left" Margin="207,241,0,0" VerticalAlignment="Top" Width="281" SelectedIndex="0">
+            <ComboBoxItem/>
+            <ComboBoxItem Content="ABC Company"/>
+        </ComboBox>
+        <ComboBox HorizontalAlignment="Right" Margin="0,161,90,0" VerticalAlignment="Top" Width="262.77" SelectedIndex="0">
+            <ComboBoxItem/>
+            <ComboBoxItem Content="ABC Company"/>
+        </ComboBox>
+        <TextBox HorizontalAlignment="Right" Margin="0,201,90,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262.77" Height="22"/>
+        <TextBox HorizontalAlignment="Right" Margin="0,241,90,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262.77" Height="22"/>
+        <Button Content="Reset" HorizontalAlignment="Left" Margin="311,0,0,491" VerticalAlignment="Bottom" Height="26" Width="88" RenderTransformOrigin="2.188,0.498" d:LayoutOverrides="HorizontalAlignment">
+            <Button.Effect>
+                <DropShadowEffect Opacity="0.5" BlurRadius="3" Color="#FF352F2F"/>
+            </Button.Effect>
+        </Button>
+        <Button Content="Close Requisition" Margin="790,391,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="144" FontWeight="Bold" d:LayoutOverrides="Height"/>
+        <Button Content="Close Requisition" Margin="790,421,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="144" FontWeight="Bold"/>
+        <Button Content="Close Requisition" Margin="790,451,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="144" FontWeight="Bold"/>
+        <Button Content="Close Requisition" Margin="790,481,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="144" FontWeight="Bold"/>
+        <Button Content="Close Requisition" Margin="790,511,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="144" FontWeight="Bold"/>
+        <Button Content="Close Requisition" Margin="790,541,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="144" FontWeight="Bold"/>
+    </Grid>
+</UserControl>

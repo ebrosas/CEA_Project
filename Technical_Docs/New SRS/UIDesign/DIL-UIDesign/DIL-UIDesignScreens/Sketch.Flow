@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SchemaVersion="2">
+  <SketchFlowGuid>dd1d4827-cec4-4606-a47a-c5fed56722f7</SketchFlowGuid>
+  <StartScreen>DIL_UIDesignScreens.Copy_of_Day_in_Lieu_Inquiry</StartScreen>
+  <Screens>
+    <Screen>
+      <Type>Navigation</Type>
+      <ClassName>DIL_UIDesignScreens.Screen_1</ClassName>
+      <DisplayName>Employee DIL Inquiry</DisplayName>
+      <FileName>Screen_1.xaml</FileName>
+      <Annotations />
+      <Position>
+        <X>-269</X>
+        <Y>-51</Y>
+      </Position>
+      <VisualTag>0</VisualTag>
+    </Screen>
+    <Screen>
+      <Type>Navigation</Type>
+      <ClassName>DIL_UIDesignScreens.Copy_of_Day_in_Lieu_Inquiry</ClassName>
+      <DisplayName>Contractor Registration</DisplayName>
+      <FileName>Copy_of_Day_in_Lieu_Inquiry.xaml</FileName>
+      <Annotations />
+      <Position>
+        <X>-838</X>
+        <Y>-61</Y>
+      </Position>
+      <VisualTag>0</VisualTag>
+    </Screen>
+    <Screen>
+      <Type>Navigation</Type>
+      <ClassName>DIL_UIDesignScreens.Day_in_Lieu_Requisition___Pre_approve</ClassName>
+      <DisplayName>Pre-approve Day-in-Lieu Requisition</DisplayName>
+      <FileName>Day_in_Lieu_Requisition___Pre_approve.xaml</FileName>
+      <Annotations />
+      <Position>
+        <X>-130</X>
+        <Y>-61</Y>
+      </Position>
+      <VisualTag>0</VisualTag>
+    </Screen>
+    <Screen>
+      <Type>Navigation</Type>
+      <ClassName>DIL_UIDesignScreens.Day_in_Lieu_Approval</ClassName>
+      <DisplayName>Day-in-Lieu Approval - Pre-approval</DisplayName>
+      <FileName>Day_in_Lieu_Approval.xaml</FileName>
+      <Annotations />
+      <Position>
+        <X>251</X>
+        <Y>-35</Y>
+      </Position>
+      <VisualTag>0</VisualTag>
+    </Screen>
+    <Screen>
+      <Type>Navigation</Type>
+      <ClassName>DIL_UIDesignScreens.Day_in_Lieu___Entitled___acquire_usage</ClassName>
+      <DisplayName>Day-in-Lieu - Entitled - acquire usage</DisplayName>
+      <FileName>Day_in_Lieu___Entitled___acquire_usage.xaml</FileName>
+      <Annotations />
+      <Position>
+        <X>57</X>
+        <Y>10</Y>
+      </Position>
+      <VisualTag>0</VisualTag>
+    </Screen>
+    <Screen>
+      <Type>Navigation</Type>
+      <ClassName>DIL_UIDesignScreens.Day_in_Lieu___Detail</ClassName>
+      <DisplayName>Day-in-Lieu - Detail</DisplayName>
+      <FileName>Day_in_Lieu___Detail.xaml</FileName>
+      <Annotations />
+      <Position>
+        <X>-418</X>
+        <Y>-9</Y>
+      </Position>
+      <VisualTag>0</VisualTag>
+    </Screen>
+    <Screen>
+      <Type>Navigation</Type>
+      <ClassName>DIL_UIDesignScreens.Day_in_Lieu_Approval_1</ClassName>
+      <DisplayName>Day-in-Lieu Approval - Consumption Request</DisplayName>
+      <FileName>Day_in_Lieu_Approval_1.xaml</FileName>
+      <Annotations />
+      <Position>
+        <X>-288</X>
+        <Y>49</Y>
+      </Position>
+      <VisualTag>0</VisualTag>
+    </Screen>
+    <Screen>
+      <Type>Navigation</Type>
+      <ClassName>DIL_UIDesignScreens.Day_in_Lieu_Approval___Consume</ClassName>
+      <DisplayName>Day-in-Lieu Approval - Pre-approve Request</DisplayName>
+      <FileName>Day_in_Lieu_Approval___Consume.xaml</FileName>
+      <Annotations />
+      <Position>
+        <X>-288</X>
+        <Y>84</Y>
+      </Position>
+      <VisualTag>0</VisualTag>
+    </Screen>
+    <Screen>
+      <Type>Navigation</Type>
+      <ClassName>DIL_UIDesignScreens.Bulk_Approval_</ClassName>
+      <DisplayName>Bulk Approval </DisplayName>
+      <FileName>Bulk_Approval_.xaml</FileName>
+      <Annotations />
+      <Position>
+        <X>-538</X>
+        <Y>96</Y>
+      </Position>
+      <VisualTag>0</VisualTag>
+    </Screen>
+    <Screen>
+      <Type>Navigation</Type>
+      <ClassName>DIL_UIDesignScreens.Copy_of_Contractor_Registration</ClassName>
+      <DisplayName>Contractor Card Generator</DisplayName>
+      <FileName>Copy_of_Contractor_Registration.xaml</FileName>
+      <Annotations />
+      <Position>
+        <X>-850</X>
+        <Y>36</Y>
+      </Position>
+      <VisualTag>0</VisualTag>
+    </Screen>
+    <Screen>
+      <Type>Navigation</Type>
+      <ClassName>DIL_UIDesignScreens.Project_Detail_View</ClassName>
+      <DisplayName>Project Detail View</DisplayName>
+      <FileName>Project_Detail_View.xaml</FileName>
+      <Annotations />
+      <Position>
+        <X>-592</X>
+        <Y>-26</Y>
+      </Position>
+      <VisualTag>0</VisualTag>
+    </Screen>
+  </Screens>
+  <Connections>
+    <Connection>
+      <Source>DIL_UIDesignScreens.Copy_of_Day_in_Lieu_Inquiry</Source>
+      <Target>DIL_UIDesignScreens.Copy_of_Contractor_Registration</Target>
+      <Type>Navigation</Type>
+      <TransitionType>Fade</TransitionType>
+      <VisualTag>0</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>DIL_UIDesignScreens.Copy_of_Contractor_Registration</Source>
+      <Target>DIL_UIDesignScreens.Copy_of_Day_in_Lieu_Inquiry</Target>
+      <Type>Navigation</Type>
+      <TransitionType>Fade</TransitionType>
+      <VisualTag>0</VisualTag>
+    </Connection>
+  </Connections>
+  <PrototypeRevision>0</PrototypeRevision>
+  <BrandingText>Microsoft SketchFlow Prototype</BrandingText>
+  <RuntimeOptions>
+    <HideNavigation>false</HideNavigation>
+    <HideAnnotationAndInk>false</HideAnnotationAndInk>
+    <DisableInking>false</DisableInking>
+    <HideDesignTimeAnnotations>false</HideDesignTimeAnnotations>
+    <ShowDesignTimeAnnotationsAtStart>false</ShowDesignTimeAnnotationsAtStart>
+  </RuntimeOptions>
+  <VisualTags>
+    <VisualTag>
+      <Name>Navigation</Name>
+      <Color>FF1E2AD6</Color>
+    </VisualTag>
+    <VisualTag>
+      <Name>Component</Name>
+      <Color>FF178F11</Color>
+    </VisualTag>
+    <VisualTag>
+      <Name>Yellow</Name>
+      <Color>FFFEC600</Color>
+    </VisualTag>
+    <VisualTag>
+      <Name>Orange</Name>
+      <Color>FFF06000</Color>
+    </VisualTag>
+    <VisualTag>
+      <Name>Red</Name>
+      <Color>FFCC0202</Color>
+    </VisualTag>
+    <VisualTag>
+      <Name>Violet</Name>
+      <Color>FF780099</Color>
+    </VisualTag>
+    <VisualTag>
+      <Name>Gray</Name>
+      <Color>FF6B6B6B</Color>
+    </VisualTag>
+    <VisualTag>
+      <Name>White</Name>
+      <Color>FFFFFFFF</Color>
+    </VisualTag>
+  </VisualTags>
+  <ViewState>
+    <Zoom>0.8</Zoom>
+    <Center>
+      <X>-201.56455908164742</X>
+      <Y>46.603563839104666</Y>
+    </Center>
+  </ViewState>
+</Data>

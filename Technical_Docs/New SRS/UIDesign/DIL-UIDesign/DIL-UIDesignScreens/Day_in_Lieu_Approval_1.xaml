@@ -1,0 +1,79 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" x:Name="Screen_1_Name"
+	mc:Ignorable="d"
+	x:Class="DIL_UIDesignScreens.Day_in_Lieu_Approval_1"
+	Width="1024" Height="800">
+
+	<Grid x:Name="LayoutRoot" Background="White" Height="800" Width="1024">
+		<ScrollViewer Margin="0,94.333,8,0" Height="705.667" VerticalAlignment="Top"/>
+		<Label Content="Day-in-Lieu Approval - Requisition No. 12345" HorizontalAlignment="Left" Margin="28.898,124.831,0,0" VerticalAlignment="Top" FontSize="17.333" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Background="{x:Null}" Foreground="#FF291BC0">
+			<Label.Effect>
+				<DropShadowEffect Opacity="0.5" Color="#FFB6AAAA" ShadowDepth="3"/>
+			</Label.Effect>
+		</Label>
+		<Border BorderBrush="Black" BorderThickness="1" Height="103.333" VerticalAlignment="Top">
+			<Border.Background>
+				<ImageBrush ImageSource="Page Banner.png"/>
+			</Border.Background>
+		</Border>
+		<Button Content="Approve" Margin="145.535,0,0,29.978" VerticalAlignment="Bottom" FontWeight="Bold" FontSize="13.333" Height="26" HorizontalAlignment="Left" Width="100">
+			<Button.Effect>
+				<DropShadowEffect Opacity="0.5" BlurRadius="3" Color="#FF352F2F"/>
+			</Button.Effect>
+		</Button>
+		<Button Content="&lt;&lt; Back" Margin="28.898,0,0,29.978" VerticalAlignment="Bottom" FontWeight="Bold" FontSize="13.333" Height="26" HorizontalAlignment="Left" Width="100">
+			<Button.Effect>
+				<DropShadowEffect Opacity="0.5" BlurRadius="3"/>
+			</Button.Effect>
+		</Button>
+		<TabControl Margin="28.898,176.884,51.352,88.145">
+			<TabItem Header="Details" FontFamily="Tahoma" FontWeight="Bold">
+				<Grid>
+					<Label Content="Employee No:" HorizontalAlignment="Left" Margin="24.443,109.576,0,0" Width="148.672" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Right" VerticalAlignment="Top"/>
+					<Label Content="Cost Center:" HorizontalAlignment="Left" Margin="24.443,182.908,0,0" Width="148.672" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Right" VerticalAlignment="Top"/>
+					<Label Content="Immediate Supervisor:" Margin="442.987,146.331,342.087,0" FontFamily="Tahoma" FontWeight="Bold" VerticalAlignment="Top" d:LayoutOverrides="Width"/>
+					<Label Content="Employee Name:" Margin="462.999,110.576,342.681,0" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Right" VerticalAlignment="Top"/>
+					<Label Content="Department:" Margin="462.999,183.908,342.681,0" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Right" VerticalAlignment="Top"/>
+					<Label Content="7600" HorizontalAlignment="Left" Margin="180.538,183.329,0,0" Width="217.561" FontFamily="Tahoma" VerticalAlignment="Top" FontWeight="Normal"/>
+					<Label Content="MOHAMED HUSNI MOHAMED AMEEN " HorizontalAlignment="Right" Margin="0,147.624,113.762,0" Width="217.561" FontFamily="Tahoma" Height="23.201" VerticalAlignment="Top" FontWeight="Normal"/>
+					<Label Content="INFORMATION &amp; COMM. TECHNOLOGY" Margin="0,183.908,103.323,0" FontFamily="Tahoma" HorizontalAlignment="Right" Width="228" VerticalAlignment="Top" FontWeight="Normal"/>
+					<Label Content="ERVIN OLINAS BROSAS" Margin="0,111.656,103.323,0" FontFamily="Tahoma" HorizontalAlignment="Right" Width="228" VerticalAlignment="Top" FontWeight="Normal"/>
+					<Label Content="Request Type:" HorizontalAlignment="Left" Margin="24.432,71.462,0,0" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Right" Width="148.673" VerticalAlignment="Top"/>
+					<Label Content="Lieu day consumption" HorizontalAlignment="Left" Margin="180.538,70.855,0,0" Width="217.561" FontFamily="Tahoma" VerticalAlignment="Top" FontWeight="Normal"/>
+					<Label Content="10003632" HorizontalAlignment="Left" Margin="178.316,111.101,0,0" Width="217.561" FontFamily="Tahoma" VerticalAlignment="Top" FontWeight="Normal"/>
+					<Label Content="Date Submitted:" Margin="442.206,71.462,342.871,0" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Right" VerticalAlignment="Top"/>
+					<Label Content="02 Novermber 2011" Margin="0,69.744,114.544,0" FontFamily="Tahoma" HorizontalAlignment="Right" Width="217.561" VerticalAlignment="Top" FontWeight="Normal"/>
+					<Label Content="Work Duration:" Margin="0,217.752,343.982,0" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Right" HorizontalAlignment="Right" Width="116.371" Height="22.994" VerticalAlignment="Top"/>
+					<Label Content="Time In: 7:30 AM  :  Time Out: 2:00 PM    " HorizontalAlignment="Right" Margin="0,218.254,8,0" Width="324.105" FontFamily="Tahoma" FontWeight="Normal" Height="22.492" VerticalAlignment="Top"/>
+					<Label Content="Employee Remarks:" HorizontalAlignment="Left" Margin="24.432,0,0,178.205" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Right" Width="148.306" Height="28.155" VerticalAlignment="Bottom"/>
+					<TextBox Margin="184.852,0,42.421,123.589" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" Background="{x:Null}" Height="77.222" VerticalAlignment="Bottom" Text="I would like to consume my lieu day on November 30, 2011. I have to attend to some family matters." FontWeight="Normal"/>
+					<Label Content="Approver's Remark:" HorizontalAlignment="Left" Margin="24.432,0,0,83.262" FontFamily="Tahoma" FontWeight="Bold" VerticalAlignment="Bottom" Width="148.673" HorizontalContentAlignment="Right"/>
+					<Label Content="Currently Assigned to:" Margin="444.508,33.192,342.681,0" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Right" Height="35.344" VerticalAlignment="Top"/>
+					<Label Content="ABDULLA A. HAMMED AL-ALAIWAT" Margin="0,33.806,103.323,0" FontFamily="Tahoma" HorizontalAlignment="Right" Width="228" FontWeight="Normal" Height="23.201" VerticalAlignment="Top"/>
+					<Label Content="Position:" Margin="59.622,146.331,0,0" FontFamily="Tahoma" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Width="113.483"/>
+					<Label Content="SOFTWARE ENGINEER" Margin="179.099,147.624,0,0" FontFamily="Tahoma" Height="23.201" VerticalAlignment="Top" HorizontalAlignment="Left" Width="217.561" FontWeight="Normal"/>
+					<Label Content="Current Status:" HorizontalAlignment="Left" Margin="24.443,29.002,0,0" Width="148.672" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Right" VerticalAlignment="Top"/>
+					<Label Content="OPEN" HorizontalAlignment="Left" Margin="178.316,29.423,0,0" Width="217.561" FontFamily="Tahoma" FontWeight="Normal" VerticalAlignment="Top"/>
+					<TextBox Margin="184.852,0,42.421,22.811" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" Background="{x:Null}" Height="79.38" VerticalAlignment="Bottom"/>
+					<Label Content="Entitlement Date:" HorizontalAlignment="Left" Margin="24.432,215.905,0,0" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Right" Width="148.673" VerticalAlignment="Top"/>
+					<Label Content="02 July 2011 (Saturday)" HorizontalAlignment="Left" Margin="179.427,215.297,0,0" Width="217.561" FontFamily="Tahoma" VerticalAlignment="Top" FontWeight="Normal"/>
+					<Label Content="Date to Consume:" HorizontalAlignment="Left" Margin="24.432,0,0,221.878" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Right" Width="148.673" VerticalAlignment="Bottom"/>
+					<Label Content="30 Novermber 2011" HorizontalAlignment="Left" Margin="180.538,0,0,222.485" Width="217.561" FontFamily="Tahoma" FontWeight="Normal" VerticalAlignment="Bottom"/>
+					<Label Content="Total Work Duration:" Margin="444.098,0,342.871,225.965" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Right" Height="22.994" VerticalAlignment="Bottom"/>
+					<Label Content="6 hrs 30 mins " HorizontalAlignment="Right" Margin="0,0,8,228.188" Width="324.105" FontFamily="Tahoma" FontWeight="Normal" Height="22.492" VerticalAlignment="Bottom"/>
+				</Grid>
+			</TabItem>
+			<TabItem Header="History" FontFamily="Tahoma">
+				<Grid Background="#FFE5E5E5"/>
+			</TabItem>
+		</TabControl>
+		<Button Content="Reject" Margin="261.535,0,0,29.978" VerticalAlignment="Bottom" FontWeight="Bold" FontSize="13.333" Height="26" HorizontalAlignment="Left" Width="100">
+			<Button.Effect>
+				<DropShadowEffect Opacity="0.5" BlurRadius="3" Color="#FF352F2F"/>
+			</Button.Effect>
+		</Button>
+	</Grid>
+</UserControl>
